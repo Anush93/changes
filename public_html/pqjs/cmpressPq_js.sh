@@ -1,0 +1,4 @@
+cat pq_strnfy_web.js pqvariables.js pqwovariables.js pq_updates.js pq_ipv6.js pq_shaping.js pqpie.js pqresize.js pq_wo_status_alerts.js pqmgmt.js pqmodal.js pqnwvariables.js pq_acjs_connector.js pqsourcedestapp.js pqpiechart.js pqsummary.js pq_bw_hist.js pq_cjs_connect.js pq_lcjs_connect.js pq_traffic_diagram.js pqflow.js pqinfo.js pqusers.js pq_config.js pq_link_util.js pq_ha.js  | yui-compressor --type js -o pq_web_core.min.js
+yui-compressor pq_index_d.js -o pqcore_init.min.js
+rm pq_web_core.js
+cat pq_strnfy_web.js pqvariables.js pqwovariables.js pq_updates.js pq_ipv6.js pq_shaping.js pqpie.js pqresize.js pq_wo_status_alerts.js pqmgmt.js pqmodal.js pqnwvariables.js pq_acjs_connector.js pqsourcedestapp.js pqpiechart.js pqsummary.js pq_bw_hist.js pq_cjs_connect.js pq_lcjs_connect.js pq_traffic_diagram.js pqflow.js pqinfo.js pqusers.js pq_config.js pq_link_util.js pq_ha.js >> pq_web_core.js

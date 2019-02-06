@@ -1,0 +1,127 @@
+/*Rule Tyepe Indications*/
+var PQ_WO_ADDR_SUNET = 2;
+var PQ_WO_ADDR_IPRNG = 3;
+
+/* WO command types */
+var WO_SETTINGS_UPDATE = 18;
+
+var WO_GET_EVENT_LIST = 24;
+
+/*WO Rule Adreess Operation Status*/
+
+var PQ_OP_SUCCESS = 10;
+var PQ_OP_FAIL = 2;
+var PQ_OP_DUPLICATE = 4;
+var PQ_OP_MAXR = 11;
+var PQ_OP_INVID = 12;
+
+//MAC address objects [ACJS Requests & Replies]
+
+var TS_MACADR_LIST_ADD = 166; 
+var TS_MACADR_LIST_UPDATE = 167;
+var TS_MACADR_LIST_DELETE = 168; 
+var TS_MACADR_GET_LIST = 169;
+
+//WO Schedule Types
+var WO_SCHD_RECURRING = 21;
+var WO_SCHD_TIMEPERIOD = 22;
+
+//WO Shaper Priority
+var WO_SPR_PR_LOW = 1;
+var WO_SPR_PR_MEDIUM = 50;
+var WO_SPR_PR_HEIGH = 99;
+
+//WO ACTIONS
+var WO_ACT_BLOCK = 1;
+var WO_ACT_ALLOW = 2;
+
+//hShaping table definitions
+
+var RULE_TABLE = 0;
+var PIPE_SCHEDULE_TABLE = 1;
+var URL_PROF_TABLE = 2;
+var APP_PROF_TABLE = 3;
+var SERV_PROF_TABLE = 4;
+
+//Add Application Watch Profiles
+
+var WO_AWPROF_LIST_ADD = 142; 
+var WO_AWPROF_LIST_DELETE = 143;
+var WO_GET_AWPROF_LIST = 144;
+var WO_AWPROF_ITEM_ADD = 145;
+var WO_AWPROF_ITEM_UPDATE = 146;
+var WO_AWPROF_ITEM_DELETE = 147;
+var WO_GET_AWPROF_ITEM_LIST = 148;
+
+////
+
+var WO_ADDR_LIST_ADD = 25;
+var WO_ADDR_LIST_UPDATE = 26;
+var WO_ADDR_LIST_DELETE = 27;
+var WO_GET_ADDR_LIST = 28;
+
+var WO_ADMIN_SHAPER_LIST_ADD = 253;
+var WO_ADMIN_SHAPER_LIST_UPDATE = 54;
+var WO_ADMIN_SHAPER_LIST_DELETE = 254;
+var WO_GET_ADMIN_SHAPER_LIST = 56;
+
+var WO_SHAPER_LIST_ADD = 53;
+var WO_SHAPER_LIST_UPDATE = 252;
+var WO_SHAPER_LIST_DELETE = 55;
+var WO_GET_USER_SHAPER_LIST = 255;
+
+var WO_SCHD_LIST_ADD = 65;
+var WO_SCHD_LIST_UPDATE = 66;
+var WO_SCHD_LIST_DELETE = 67;
+var WO_GET_SCHD_LIST = 68;
+
+var ML_APP_RULE_ADD = 150;
+var ML_APP_RULE_UPDATE = 151;
+var ML_APP_RULE_DELETE = 152;
+var WO_GET_APPRULE_LIST = 75;
+var ML_URL_RULE_ADD = 96;
+var ML_URL_RULE_UPDATE = 98;
+var WO_URLRULE_LIST_DELETE = 97;
+var WO_GET_URLRULE_LIST = 99;
+var ML_SVS_RULE_ADD = 156;
+var ML_SVS_RULE_UPDATE = 157;
+var ML_SVS_RULE_DELETE = 115;
+var WO_GET_SVSITEM_LIST = 110;
+
+var ML_USER_DEF_SPR_UPDATE = 215; 
+var ML_GET_USER_DEF_SPR = 216;
+
+////
+
+var ML_USER_IP_MASK_ADD = 219; 
+var ML_USER_IP_MASK_UPDATE = 220;  
+var ML_USER_IP_MASK_DELETE = 221;  
+var ML_GET_USER_IP_LIST = 222;  
+
+//Quota Profiles
+
+var WO_QUTAELE_LIST_ADD = 104;
+var WO_QUTAELE_LIST_DELETE = 105;
+var WO_QUTAELE_LIST_UPDATE = 106;
+var WO_GET_QUTAELE_LIST = 107;
+
+// Quota Visualization
+
+var QVIZ_GEN_DISPLAY = 197; 
+var QVIZ_RST_PROF = 198; 
+var QVIZ_RST_ELEM = 199; 
+
+// Quota Profile Types
+
+var QTPROF_RTYPE_DEF  = 0;
+var QTPROF_RTYPE_APP  = 1;
+var QTPROF_RTYPE_URL  = 2;
+var QTPROF_RTYPE_SVS  = 3;
+var QTPROF_RTYPE_RULE = 4;
+var QT_RTYPE_ELEMENT = 5;
+
+
+
+// Billing variables
+
+var ML_GET_BILL_STAT = 57;

@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 17, 2016, 9:06:42 PM
+    Author     : hasith
+*/
+/*.pq_sessionw_goback {
+    width: 32px;
+    height: 100%;
+    background-color: #000\9;
+    background-image: url(../image/back_inact.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}*/
+
+#lv_sessions_watch_status_bar_back_btn, #lv_session_watch_status_bar_back_btn{
+    width: 175px;
+    height: 70%;
+    background-color: #00bcd4; 
+    display:inline-block; 
+    float: left; 
+    border-radius: 5px; 
+    margin: 4px auto 4px 5px;
+    cursor:pointer; 
+}
+
+#lv_sessions_watch_status_bar_back_btn:hover, #lv_session_watch_status_bar_back_btn:hover{
+    background-color: #006a77;
+}
+
+/*#lv_session_watch_status_bar_back_btn{
+    width: 155px;
+    height: 80%;
+    background-color: #00bcd4; 
+    display:inline-block; 
+    float: left; 
+    border-radius: 5px; 
+    margin: 2px auto 2px 5px;
+}*/
+
+/*#lv_session_watch_status_bar_back_btn:hover{
+    background-color: #006a77;
+}*/
+
+/*.pq_sessionw_goback:hover{
+    background-image: url(../image/back_act.png); 
+}*/

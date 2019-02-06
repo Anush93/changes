@@ -1,0 +1,34 @@
+<div id="Maintenance">
+    <div id="Maintenance_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Device Maintenance</div> 
+        <div style="width: 100%;height: 100px;">
+            <div style="width: 100%; height: 20px"></div>
+            <div class="edit_panel">
+                <button type="button" id="ele_pdev_reset" class="delete" style="float: left; height: 200px; background: #1e2d35 url(image/reset.png) 15px 70px/120px 100px no-repeat; margin: 10px; margin-left: calc(50% - 330px); position: relative" onclick = "maintenance_reset()" ><span style=" display: block; position: absolute; top:10px; left:55px; font-size: 15px;">Refresh</span></button> 
+                <button type="button" id="ele_pdev_fallback" class="delete" style="float: left; height: 200px; background: #1e2d35 url(image/bypass.png) 25px 70px/100px 100px no-repeat; margin: 10px; position: relative" onclick = "maintenance_fallback()" ><span style=" display: block; position: absolute; top:10px; left:55px; font-size: 15px;">Bypass</span></button> 
+                <button type="button" id="ele_pdev_reboot" class="delete"  style="float: left; height: 200px; background: #1e2d35 url(image/restart.png) 25px 70px/100px 100px no-repeat; margin: 10px; position: relative" onclick = "maintenance_reboot()"><span style=" display: block; position: absolute; top:10px; left:50px; font-size: 15px;">Restart</span></button>
+                <button type="button" id="ele_pdev_powerdown" class="delete" style="float: left; height: 200px; background: #1e2d35 url(image/power.png) 25px 70px/100px 100px no-repeat; position: relative; margin: 10px;" onclick = "maintenance_poweroff()"><span style=" display: block; position: absolute; top:10px; left:40px; font-size: 15px;">Power Off</span></button>
+            </div>
+        </div>
+
+        <div id="maintenance_warning_modal" class="modal">
+            <div class="modal-content" style=" height: 180px;">
+                <span id="maintenance_cancel_warning_modal" class="close">×</span>                
+                <label style="color:#d43f3a; font-size: 16px; margin-left: 35%"> Attention!</label><br><br>
+                <label class='dmaintain_show_label'></label>
+                <br><br>
+                <button class='addUpdateRules' onclick="maintenance_cancel_op()" style="margin-top:10px; width: 100px; height: 30px; font-size: 14px; float: right; background-color: gray; margin-left: 10px">Cancel</button>
+                <button class='addUpdateRules' onclick="maintenance_do_operation(maintenance_warning_type);" style="margin-top:10px; width: 100px; height: 30px; font-size: 14px; float: right">Proceed</button>
+            </div>
+        </div>
+
+        <div id="maintenance_operation_modal" class="modal" style="z-index: 1000">
+            <div id="createDisconnectModalContent" class="modal-content" style="height: 200px;">
+                <label class="modalTitle" style="margin-left: 160px"> Done </label><br><br>
+                <div style="width: 100%; height: 5px"></div>
+                <label class="dmaintain_operation_label" style="margin-left: 60px">  </label>                 
+            </div>
+        </div> 
+    </div>
+</div>

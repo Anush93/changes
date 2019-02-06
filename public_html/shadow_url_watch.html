@@ -1,0 +1,142 @@
+<div id="C_Shadow_URL_Watch">
+
+    <div id="pq_lscw_stat_bar" style="font-size: 11px; width: 100%;height: 40px; background-color: #222222">
+        <button id="lv_session_watch_status_bar_back_btn" class='pq_url_wbtn' onclick='pq_go_back_sources()' style="float:left; display:inline-block; width: 130px; height: 30px; font-size: 11px; margin-left: 5px; background: #00bcd4 url(../image/back_act.png) 5px no-repeat; text-indent: 25px;">Back to Sources</button>        
+        <button id="lurl_watch_stop" class='pq_url_wbtn' style="float:left; display:block; padding-left: 25px; margin-top: 8px; width: 80px; height: 25px; font-size: 11px; margin-left: 15px; background: #e29030 url(../image/pause.png) 5px no-repeat; " onclick=''>Pause</button>
+        <button id="lurl_watch_start" class='pq_url_wbtn' style="float:left; display:none; padding-left: 25px; margin-top: 8px; width: 80px; height: 25px; font-size: 11px; margin-left: 15px; background: #21b955 url(../image/play.png) 5px no-repeat; " onclick=''>Restart</button>
+        <img class="pq_vcenter" src="image/client_large.png" style="width: 20px; height: 20px;float: left ;margin-right: 10px; margin-left: 20px; display:inline-block"/>
+        <a id="pq_lurlw_sip_text" style="color: white; float: left; text-decoration: none; display:inline-block; padding: 10px 0px" class="pq_bwevent_vcenter"> Source IP: </a>     
+        <img class="pq_vcenter" src="image/active.png" style="width: 20px; height: 20px;float: left ;margin-right: 10px; margin-left: 20px; display:inline-block"/>
+        <a id="pq_lurlw_status_text" style="color: white; float: left; text-decoration: none; display:inline-block; padding: 10px 0px; margin-right: 10px; " class="pq_bwevent_vcenter"> Status: Active </a>
+    </div>    
+
+    <div id = "pq_lurlw_status_ind" style="width: 100%; height: 4px; background-color: #47d147">
+    </div>
+
+    <div class="Pq_TableHolder" style="height: 35%; width:97%; display: inline-block; margin-top: 15px;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Request Monitor</div>                     
+        <div id='plot_live_url_stat' style="width: 100%; height:calc(100% - 70px);background-color: whitesmoke; margin-top: 20px">
+        </div>
+    </div>    
+
+    <div class="Pq_TableHolder" style="height: calc(60% - 70px); width:31%;  display: inline-block; margin-top: 25px">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px; padding-top: 1.4%">
+            <div style="width: 15px; background-color: #ac2925; height: 15px;float: left; margin-left: 25px; margin-top: 3px;"></div> 
+            HTTP Requests
+        </div>           
+        <div style="width: 95%; height: calc(100% - 55px); float: left; margin-top: 10px; margin-left: 10px; overflow:auto;">
+            <div style="width: 100%;height: 20px">
+                <div style="width: 100%; height: 100%; float: left;padding-left: 4px;">
+                    <div style="background-color: #006666;float: left; min-width: 120px;width: 40%;margin-right: 2px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">URL</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 108px;width: 30%;margin-right: 2px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">IP</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 68px;width: 23%;">
+                        <a style="margin-left: 40%;text-decoration: none;color: whitesmoke;font-size: 12px;">Client</a>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: calc(80% - 10px); min-width: 330px; "> 
+                <div style="width: 100%; height: 2px"></div>
+                <div id="htpu-list" style="width: 100%; height: 100%;">
+                    <ul class="list" style="width: 100%; height: 100%;margin: 0px;padding: 0px; padding-left: 4px;">
+                        <li style="background-color: #000\9; list-style: none; padding: 0px;margin: 0px">
+                            <div style="background-color: #09547c;float: left; min-width: 120px;width: 40%;overflow: hidden;margin-bottom: 2px;margin-right: 2px">
+                                <a class="wurl" style="white-space: nowrap;text-decoration: none; font-size: 10px;color: whitesmoke;padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #cccccc;float: left; min-width: 108px;width: 30%;margin-bottom: 2px;margin-right: 2px">
+                                <a class="wuip" style="text-decoration: none; font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #122b40;float: left; min-width: 68px;width: 23%;margin-bottom: 2px">
+                                <a class="wuport" style="text-decoration: none;color: whitesmoke;font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <div class="Pq_TableHolder" style="height:calc(60% - 70px); width:31%;  display: inline-block; margin-top: 25px">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px; padding-top: 1.4%">
+            <div style="width: 15px; background-color: #009688; height: 15px;float: left; margin-left: 25px; margin-top: 3px;"></div> 
+            HTTPS Client Requests
+        </div>           
+        <div style="width: 95%; height: calc(100% - 55px); float: left; margin-top: 10px; margin-left: 10px; overflow:auto;">
+            <div style="width: 100%;height: 20px">
+                <div style="width: 100%; height: 100%; float: left;padding-left: 4px;">
+                    <div style="background-color: #006666;float: left; min-width: 120px;width: 40%;margin-right: 2px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">URL</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 108px;width: 30%;margin-right: 2px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">IP</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 68px;width: 23%;">
+                        <a style="margin-left: 40%;text-decoration: none;color: whitesmoke;font-size: 12px;">Client</a>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: calc(80% - 10px); min-width: 330px">
+                <div style="width: 100%; height: 2px"></div>
+                <div id="htpsu-list" style="width: 100%; height: 100%;">
+                    <ul class="list" style="width: 100%; height: 100%;margin: 0px;padding: 0px; padding-left: 4px;">
+                        <li style="background-color: #000\9; list-style: none; padding: 0px;margin: 0px">
+                            <div style="background-color: #09547c;float: left; min-width: 120px;width: 40%;overflow: hidden;margin-bottom: 2px;margin-right: 2px">
+                                <a class="wurl" style="white-space: nowrap;text-decoration: none; font-size: 10px;color: whitesmoke;padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #cccccc;float: left; min-width: 108px;width: 30%;margin-bottom: 2px;margin-right: 2px">
+                                <a class="wuip" style="text-decoration: none; font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #122b40;float: left; min-width: 68px;width: 23%;margin-bottom: 2px">
+                                <a class="wuport" style="text-decoration: none;color: whitesmoke;font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>      
+
+    <div class="Pq_TableHolder" style="height: calc(60% - 70px); width:31%;  display: inline-block; margin-top: 25px">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px; padding-top: 1.4%">
+            <div style="width: 15px; background-color: #0066cc; height: 15px;float: left; margin-left: 25px; margin-top: 3px;"></div> 
+            DNS Response
+        </div>           
+        <div style="width: 95%; height: calc(100% - 55px); float: left; margin-top: 10px; margin-left: 10px; overflow:auto;">
+            <div style="width: 100%;height: 20px">
+                <div style="width: 100%; height: 100%; float: left;padding-left: 4px;">
+                    <div style="background-color: #006666;float: left; min-width: 120px;width: 40%;margin-right: 1px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">URL</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 108px;width: 30%;margin-right: 1px">
+                        <a style="margin-left: 45%;text-decoration: none; font-size: 12px;color: whitesmoke;">IP</a>
+                    </div>
+                    <div style="background-color: #006666;float: left; min-width: 68px;width: 25%;">
+                        <a style="margin-left: 25%;text-decoration: none;color: whitesmoke;font-size: 12px;">Server IP</a>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 100%;height: calc(80% - 10px); min-width: 330px">
+                <div style="width: 100%; height: 2px"></div>
+                <div id="dns-list" style="width: 100%; height: 100%;">
+                    <ul class="list" style="width: 100%; height: 100%;margin: 0px;padding: 0px; padding-left: 4px;">
+                        <li style="background-color: #000\9; list-style: none; padding: 0px;margin: 0px">
+                            <div style="background-color: #09547c;float: left; min-width: 120px;width: 40%;overflow: hidden;margin-bottom: 2px;margin-right: 1px">
+                                <a class="wurl" style="white-space: nowrap;text-decoration: none; font-size: 10px;color: whitesmoke;padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #cccccc;float: left; min-width: 108px;width: 30%;margin-bottom: 2px;margin-right: 1px">
+                                <a class="wuip" style="text-decoration: none; font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                            <div style="background-color: #122b40;float: left; min-width: 68px;width: 25%;margin-bottom: 2px">
+                                <a class="wuport" style="text-decoration: none;color: whitesmoke;font-size: 10px; padding-left: 5px"></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+
+</div> 

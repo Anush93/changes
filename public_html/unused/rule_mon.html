@@ -1,0 +1,65 @@
+<div id="Rule_Monitor">  
+    <div class="Pq_LinkPlotHolder" style="height:calc(100% - 40px); width: 95%">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Rule Monitor</div> 
+
+        <div id="Rule_Monitor_table_holder" style="width: 95%; height: calc(40% - 80px); overflow-y: auto; margin:auto">
+            <table id="Rule_Monitor_table" class="display cell-border AppUserTablesFont " cellspacing="0" width="100%" >
+                <thead>
+                    <tr> 
+                        <th>Rule ID</th> 
+                        <th>Packet Count</th> 
+                        <th>Downlink Packet Drop</th> 
+                        <th>Uplink Packet Drop</th> 
+                        <th>Active Sessions</th>    
+                        <th>Downlink Usage</th>                                     
+                        <th>Uplink Usage</th>                                     
+                        <th></th>    
+                    </tr>
+                </thead>                            
+
+            </table>  
+        </div>                      
+
+        <div class="Pq_LinkPlotHolder" style="height:30%; width: 96%">  
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id="rule_live_bwm" style="font-size: 14px; height:30px">Live Bandwidth</div> 
+            <div id="pq_rule_monitor_bw_stat" style="font-size: 11px; width: 100%;height: 30px; background-color: #222222">
+
+                <div style="width: 15px;height: 15px;background-color: green; float: left; margin-right: 10px; margin-left: 20px" class="pq_bwevent_vcenter"></div>  
+                <a id ="pq_rule_monitor_dlink_usage" style="font-size: 11px;float: left; margin-right: 50px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Received: 1.53 GB</a>                             
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: left; margin-right: 10px" class="pq_bwevent_vcenter"></div>     
+                <a id ="pq_rule_monitor_ulink_usage" style="font-size: 11px;float: left; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Sent:    223 MB</a>                            
+                <div class="btn-group pq_vcenter" style=" float: right;margin-right: 20px">
+                    <button type="button" onclick="btn_rule_bw_load_now(1)" autofocus="autofocus" class="btn btn-primary btn-xs">bandwidth (10 s)</button>
+                    <button type="button" onclick="btn_rule_bw_load_now(2)" class="btn btn-primary btn-xs">bandwidth (1 ms)</button>
+                </div>                            
+                <!--                            <a id ="pq_rule_monitor_dlink_usage" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Received: 1.53 GB</a>
+                                <div style="width: 15px;height: 15px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                                </div>                              
+                                <a id ="pq_rule_monitor_ulink_usage" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Sent:    223 MB</a>
+                                <div style="width: 15px;height: 15px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                                </div>                           -->
+            </div>  
+            <div style="width: 100%; height:calc(100% - 85px);background-color: whitesmoke;position: relative">
+                <div id="rule_av_bwm_plot" class="Pq_HPlot" style="width: 97%; height: 100%; padding: 20px; position: absolute; z-index: 10">
+                    <div style='padding: 3%; padding-left: 120px; font-size: 30px; font-family: Helvetica; font-weight: bold; color:#888; text-align: center; '> Select a Rule and click 'Live' button</div>
+                </div>
+                <div id="rule_lv_bwm_plot" class="Pq_HPlot" style="width: 97%; height: 100%; padding: 20px; position: absolute; z-index: -10"></div>
+            </div>
+        </div>     
+
+        <div class="Pq_LinkPlotHolder" style="height:30%; width: 96%">                        
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id="rule_pkt_drop_monitor" style="font-size: 14px; height:30px">Packet Drop</div> 
+            <div id="pq_rule_monitor_pkt_stat" style="font-size: 11px; width: 100%;height: 30px; background-color: #222222">                            
+                <div style="width: 15px;height: 15px;background-color: green; float: left; margin-right: 10px; margin-left: 20px" class="pq_bwevent_vcenter"></div>   
+                <a id ="pq_rule_monitor_dlink_pkt" style="font-size: 11px;float: left; margin-right: 35px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Downlink Packet Drop: 523</a>                            
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: left; margin-right: 10px" class="pq_bwevent_vcenter"></div>  
+                <a id ="pq_rule_monitor_ulink_pkt" style="font-size: 11px;float: left; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Uplink Packet Drop: 200</a>
+            </div>      
+
+            <div id="rule_pkt_drop_monitor_plot" style="width: 100%; height:calc(100% - 75px);background-color: whitesmoke;position: relative">
+                <div style='padding: 3%; font-size: 30px; font-family: Helvetica; font-weight: bold; color:#888; text-align: center; '> Select a Rule and click 'Live' button</div>
+            </div>
+        </div>  
+
+    </div>
+</div> 

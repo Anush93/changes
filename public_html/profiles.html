@@ -1,0 +1,100 @@
+<div id="Profile"> 
+    <div id="Profile_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">                 
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">User Profiles</div> 
+        <div id="profile_table_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel" style="margin-bottom: 15px;">         
+                <button type="button" onclick = "CreateProfile()" class="create setPrimary">Add Profile</button>               
+                <button type="button" disabled onclick = "EditProfile()" class="edit">Update Profile</button>  
+                <button type="button" disabled onclick = "DeleteProfile()" class="delete">Delete Profile</button> 
+                <button type="button" disabled onclick = "ResetProfilePwd()" class="reset">Reset Password</button>  
+            </div>    
+            <table id="Profile_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Key</th>                                     
+                        <th>Category</th> 
+                        <th>Username</th>                        
+                        <th>User Bandwidth (Kbps)</th> 
+                        <th>IP Entries</th>  
+                        <th>Watch</th>  
+                        <th>Status_val</th> 
+                        <th>Status</th>                                     
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+    </div>  
+
+    <div id="AddProfileModal" class="modal">
+
+        <div class="modal-content" style=" height: 390px;">
+            <span id="CloseAddProfile" class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 100px"> Add New Profile </label><br><br>
+
+            <label class="drop_down_label"> Category : </label>
+            <select id="profileCode" class="field_prop">
+                <option value="23">User</option>      
+                <option value="14">Administrator</option>                  
+            </select><br><br>
+
+            <label class="drop_down_label"> Email : </label>
+            <input id="profileEmail" type="email" placeholder="Enter your Email" class="field_prop"> <br><br>    
+
+            <label class="drop_down_label"> Bandwidth (Kbps): </label>
+            <input id="profileBw" type="text" placeholder="Enter user bandwidth (Kbps)" class="field_prop"> <br><br>                
+            
+            <label class="drop_down_label"> Password : </label>
+            <input id="profile_password" type="password" placeholder="Enter your Password" class="field_prop"> <br><br>             
+
+            <label class="drop_down_label"> Confirm Password : </label>
+            <input id="profile_password_confirm" type="password"  placeholder="Confirm your Password" class="field_prop"> <br><br>                                
+            <input id="password_confirm_msg" disabled type="text" class="field_prop" style="margin-top:-15px;border:none; background: transparent"> <br><br> 
+            <br>
+            <button id="addProfileToSystem" class='addUpdateRules' style="margin-top:-30px;">Add Profile</button>
+        </div> 
+    </div>            
+
+    <div id="EditProfileModal" class="modal">
+        <div class="modal-content" style=" height: 290px;">
+            <span id="CloseEditProfile" class="close">×</span>                
+            <label class="modalTitle" style=" margin-left: 112px"> Update Profile </label><br><br>
+
+            <label class="drop_down_label"> Category : </label>
+            <select disabled id="ProfileEditCode" class="field_prop">
+                <option value="23">User</option>    
+                <option value="12">Super-Administrator</option>  
+                <option value="14">Administrator</option>   
+            </select><br><br>
+
+            <label class="drop_down_label"> Email : </label>
+            <input id="profile_edit_email" type="email" class="field_prop"> <br><br>    
+
+            <label class="drop_down_label"> Bandwidth (Kbps): </label>
+            <input id="editProfileBw" type="text" placeholder="Enter user bandwidth (Kbps)" class="field_prop"> <br>             
+            
+            <input id="user_prof_edit_confirm_msg" readonly type="text" class="field_prop" style="margin-top:5px;border:none; cursor: default"><br><br>
+            <button id="editProfileButton" class='addUpdateRules' style="margin-top:5px;width: 150px;">Update</button>
+        </div>  
+    </div> 
+
+    <div id="ResetPwdModal" class="modal">
+        <div id="ResetPwdModalContent"  class="modal-content" style=" height: 290px;">
+            <span id="CloseResetPwd" class="close">×</span>                
+            <label class="modalTitle" style=" margin-left: 105px"> Reset Password </label><br><br>
+            
+            <div id="profile_edit_password_seg" >
+            <label class="drop_down_label"> Password : </label>
+            <input id="profile_edit_password" placeholder="Enter the current password" type="password" class="field_prop"> <br><br>                   
+            </div>
+
+            <label class="drop_down_label"> New Password : </label>
+            <input id="reset_password" type="password" placeholder="Enter the new password" class="field_prop"> <br><br>             
+
+            <label class="drop_down_label"> Confirm New Password : </label>
+            <input id="reset_password_confirm" type="password" placeholder="Confirm the new password" class="field_prop"><br>                                   
+
+            <input id="reset_password_confirm_msg" readonly type="text" class="field_prop" style="margin-top:5px;border:none; cursor: default"><br><br>
+            <button id="resetProfilePwdButton" class='addUpdateRules' style="margin-top:5px;width: 150px;">Update</button>
+        </div>  
+    </div>     
+</div> 

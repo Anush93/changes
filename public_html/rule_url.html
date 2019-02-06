@@ -1,0 +1,127 @@
+<div id="URL_Rule"> 
+    <div id="URL_Rule_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">URL Rules</div> 
+        <div id="url_rule_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">     
+                <button onclick = "Create(2)" class="create setPrimary">Add URL</button>               
+                <button disabled id="editURLRule" onclick = "Edit(2)" class="edit">Edit URL</button>  
+                <button disabled id="deleteURLRule" onclick = "Delete(2)" class="delete">Delete URL</button> 
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>                            
+            <table id="URL_Rule_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr style="height: 50px;">
+                        <th colspan="6" style="text-align: center;font-size: 14px">URL Rule Parameters</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Scheduled Behavior</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Default Behavior</th>
+                    </tr>    
+                    <tr> 
+                        <th>User ID</th>                  
+                        <th>URL ID</th> 
+                        <th>Authentication</th>    
+                        <th>DNS</th>
+                        <th>URL</th>
+                        <th>Schedule </th> 
+                        <th>Scheduled Action </th> 
+                        <th>Scheduled Downlink Pipe </th>         
+                        <th>Scheduled Uplink Pipe </th>    
+                        <th>Default Action </th>  
+                        <th>Default Downlink Pipe </th>    
+                        <th>Default Uplink Pipe </th>  
+                    </tr>
+                </thead>
+            </table>         
+        </div>        
+    </div>   
+
+    <div id="AddURLRuleModal" class="modal">
+        <div id="AddURLRuleModalContent" class="modal-content" style="height: 375px; width: 460px; min-height: 375px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 140px"> Add URL Rule</label><br><br>
+
+            <label class="drop_down_label" style="float:left;"> Authentication : </label>
+            <select id="add_url_rule_authen" class="field_prop" style="width: 150px; float:none; margin-left: 28px;">                     
+                <option value="1">HTTP</option>
+                <option value="2">HTTPS</option>
+                <option value="3">HTTP or HTTPS</option>
+            </select>
+            <label class="drop_down_label" style="margin-left: 25px;"> DNS : </label>
+            <select id="add_url_rule_dns_det" class="field_prop" style="width: 80px;"> 
+                <option value="0">Disable</option> 
+                <option value="1">Enable</option>                               
+            </select> 
+            <br><br><label class="drop_down_label"> URL : </label>
+            <input id="add_new_url_to_rule" type="text" class="field_prop" style="width: 300px;" ><hr style="border-color: #d2cdcd;"> 
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="add_url_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="add_sched_url_rule_action" disabled class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="append_sched_pipes_url_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="add_def_url_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="append_def_pipes_url_rule"></div>
+
+            <button id="addURLRuleToSystem" class="addUpdateRules">Add to System</button>     
+        </div>
+    </div>        
+
+    <div id="EditURLRuleModal" class="modal">
+        <div id="EditURLRuleModalContent" class="modal-content" style="height: 375px; width: 460px; min-height: 375px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 127px"> Update URL Rule</label><br><br>
+
+            <label class="drop_down_label" style="float:left;"> Authentication : </label>
+            <select id="edit_url_rule_authen" class="field_prop" style="width: 150px; float:none; margin-left: 28px;">                     
+                <option value="1">HTTP</option>
+                <option value="2">HTTPS</option>
+                <option value="3">HTTP or HTTPS</option>
+            </select>
+            <label class="drop_down_label" style="margin-left: 25px;"> DNS : </label>
+            <select id="edit_url_rule_dns_det" class="field_prop" style="width: 80px;"> 
+                <option value="0">Disable</option> 
+                <option value="1">Enable</option>                               
+            </select> 
+            <br><br><label class="drop_down_label"> URL : </label>
+            <input id="edit_url_to_rule" type="text" class="field_prop" style="width: 300px;" ><hr style="border-color: #d2cdcd;"> 
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="edit_url_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="edit_sched_url_rule_action" class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="edit_sched_pipes_url_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="edit_def_url_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="edit_def_pipes_url_rule"></div>
+            <!--<br>-->
+
+            <button id="editURLRuleToSystem" class="addUpdateRules">Update</button>     
+        </div>
+    </div>    
+
+</div> 

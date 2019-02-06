@@ -1,0 +1,24 @@
+<div id="Status_Traffic">
+    <div class='pq_tc_diagram_filter_bar'></div>
+
+    <div class="edit_panel" style="padding-top: 10px;">
+        <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;margin-right: 15px;">Change User</button> 
+        <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+    </div> 
+    
+    <div class="Pq_TableHolder" style="height: calc(100% - 110px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Traffic Diagram</div> 
+        <div class="PieChartContentHolder" style="height: calc(100% - 60px); width: 49%; margin-top: 20px"> 
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText " style="height: 5%; font-size: 14px;"> Downlink Traffic </div> 
+            <div style="height: 5%; font-weight: bold; padding-left: 5%; padding-top: 10px; display:inline-block"> Sources </div> 
+            <div style="height: 5%; font-weight: bold; margin-left: 65%; padding-top: 10px; display:inline-block "> Destinations </div>              
+            <div id="diagram_tc_in" style="height: calc(90% - 10px); overflow-y: scroll; font-family: Arial; font-size: 11px;"></div>        
+        </div>  
+        <div class="PieChartContentHolder" style="height: calc(100% - 60px); width: 48%; margin-left: 10px; margin-top: 20px"> 
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText " style="height: 5%; font-size: 14px;"> Uplink Traffic </div> 
+            <div style="height: 5%; font-weight: bold; padding-left: 5%; padding-top: 10px; display:inline-block"> Sources </div> 
+            <div style="height: 5%; font-weight: bold; margin-left: 65%; padding-top: 10px; display:inline-block "> Destinations </div>              
+            <div id="diagram_tc_out" style="height: calc(90% - 10px);overflow-y: scroll; font-family: Arial; font-size: 11px; "></div>         
+        </div>                          
+    </div>     
+</div> 

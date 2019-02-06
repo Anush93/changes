@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>       
+        <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>    
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>     
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/select.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/clockpicker.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="css/common.min.css" rel="stylesheet" type="text/css"/>
+
+        <script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/moment.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>   
+        <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>     
+        <script src="js/d3pie.min.js" type="text/javascript"></script>
+        <script src="js/randomColor.min.js" type="text/javascript"></script>   
+        <script src="js/d3.v3.min.js" type="text/javascript"></script>        
+        <script src="js/d3.chart.min.js" type="text/javascript"></script>
+        <script src="js/d3.chart.sankey.min.js" type="text/javascript"></script>      
+        <script src="js/Chart.min.js" type="text/javascript"></script>
+        <script src="js/liquidFillGauge.min.js" type="text/javascript"></script>
+        <script src="js/pdfmake.min.js" type="text/javascript"></script>     
+        <script src="js/datatable_helpers.min.js" type="text/javascript"></script>
+        <script src="js/dygraph-combined.min.js" type="text/javascript"></script>        
+        <script src="js/viz.v1.0.0.min.js" type="text/javascript"></script> 
+        <script src="js/clockpicker.min.js" type="text/javascript"></script>        
+        <script src="js/smooth-plotter.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ajax-blob-arraybuffer.min.js" type="text/javascript"></script>
+        <script src="js/jquery.cookie.min.js" type="text/javascript"></script>
+        <script src="js/list.min.js" type="text/javascript"></script>
+        <script src="js/jscolor.js" type="text/javascript"></script>   
+    </head>
+    <body>
+        <div>
+            <input id="select_all_app_util_dlink" type="checkbox" value="2" style="margin-left: 10px; margin-top: 15px" ><label class="timeSelectorText" style="color:#000; margin-left: 3px;" for="select_all_app_util_dlink" >Select All</label> 
+            <br>
+            <input id="iv" type="checkbox" onchange="activate(this)" name="something">
+
+        </div>
+        <script>
+
+
+            $("#select_all_app_util_dlink").on('change', function () {
+                $("#iv").prop("checked", true).change();
+            });
+            
+            function activate(e){
+                alert("Activated");
+            }
+            
+
+
+//            $("body").on("click", "#select", function () {
+//                $("input[type=checkbox]").prop("checked", false).change();
+//            });
+
+        </script>
+
+    </body>
+</html>

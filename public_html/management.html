@@ -1,0 +1,87 @@
+<div id="Interface_Management">
+    <div id="Interface_Management_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Management Interface Configurations</div> 
+        <div style="width: 100%; height: 30px">                
+        </div>
+        <div>
+            <div style="width: 698px; height: 160px;position: relative; margin: auto; background-color: white; background-image: url(image/pdev_740.png); background-repeat: no-repeat;background-size: 100%;">
+                <div id="mgmt_o_mask" class="alpha60" style="width: 45px;display: none; height: 45px;position: absolute; top: 100px; left: 223px; border: 2px #00FF00;border-style: solid;">
+                </div>
+                <div id="mgmt_t_mask" class="alpha60" style="width: 45px;display: none; height: 45px;position: absolute; top: 100px; left: 260px; border: 2px #00FF00;border-style: solid;">
+                </div>
+            </div>
+        </div>            
+        <div id="mgmt_prop" style="width: 100%;height:calc(100% - 305px)"> 
+            <div class="mgmt_table_plane">                    
+                <div id="mgmt_table_holder" style="width: 100%;">
+                    <div class="edit_panel">
+                        <button type="button" id="deleteProfile" style="float: right; background: #245580 url(image/info.png) no-repeat 10px center;" disabled onclick = "info_mgmt_interface_show()" class="delete">Interface info</button> 
+                        <button type="button" id="createProfile" style="float: right" onclick = "edit_mgmt_interface_prop()" class="edit" disabled>Edit</button>
+                    </div>
+                    <table id="mgmt_iface_table" class="hover row-border order-column StatusTablesFont display" cellspacing="0" width="100%"> 
+                        <thead>
+                            <tr style="height: 5px;padding: 0px;margin:15px;font-size: 12px; background-color: #122b40;color: #ffffff"> 
+                                <th>Key</th> 
+                                <th>Interface</th>                                     
+                                <th>IP Address</th> 
+                                <th>Subnet</th>                                    
+                                <th>Default Gateway</th>  
+                                <th>DNS Server</th> 
+                                <th>Status</th>                                     
+                            </tr>
+                        </thead>
+                    </table>
+                </div>                   
+            </div>
+        </div>
+
+        <div id="editMgmtModal" class="modal">
+            <div class="modal-content" style=" height: 390px;">
+                <span id="closeEditMgmtModal" class="close">×</span>                
+                <label style="font-size: 16px; margin-left: 35%"> Edit Interface </label><br><br>
+
+                <label class="drop_down_label"> Interface : </label>
+                <input disabled id="mgmt_edit_infc" class="field_prop"> <br><br>    
+
+                <label class='drop_down_label'> IP Address : </label>
+                <input id='mgmt_edit_ip' required type='text' value='0.0.0.0' title="hello" class='field_prop'><br><br>                   
+
+                <label class='drop_down_label'> Subnet : </label>
+                <input id='mgmt_edit_subnet' required type='text' value='0.0.0.0' class='field_prop'><br><br>                   
+
+
+                <label class='drop_down_label'> Default Gateway : </label>
+                <input id='mgmt_edit_dgw' required type='text' value='0.0.0.0' class='field_prop'><br><br>                   
+
+                <label class='drop_down_label'> DNS Server : </label>
+                <input id='mgmt_edit_dnss' required type='text' value='0.0.0.0' class='field_prop'><br>                 
+                <input id="mgmt_edit__confirm_msg" type="text" disabled class="field_prop" style="margin-top:5px;border:none; background: transparent"> <br> 
+                <br>
+                <button id="editMgmtButton" class='addUpdateRules' style="margin-top:10px;">Update</button>
+            </div>
+        </div>
+
+        <div id="mgmtInfoProModal" class="modal">
+            <div class="modal-content" style=" height: 300px;">
+                <span id="closemgmtInfoModal" class="close">×</span>                
+                <label style="font-size: 16px; margin-left: 35%"> Interface Info</label><br><br>
+
+                <label class="drop_down_label"> Interface : </label>
+                <input disabled id="mgmt_info_infc" class="field_prop"> <br><br>    
+
+                <label class='drop_down_label'> IP Address : </label>
+                <input disabled id='mgmt_info_ip' required type='text' class='field_prop'><br><br>                   
+
+                <label class='drop_down_label'> Subnet : </label>
+                <input disabled id='mgmt_info_subnet' required type='text' class='field_prop'><br><br>                   
+
+
+                <label class='drop_down_label'> Default Gateway : </label>
+                <input disabled id='mgmt_info_dgw' required type='text' class='field_prop'><br><br>                   
+
+                <label class='drop_down_label'> DNS Server : </label>
+                <input disabled id='mgmt_info_dnss' required type='text' class='field_prop'><br><br>                   
+            </div>
+        </div>
+    </div>
+</div>

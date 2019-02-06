@@ -1,0 +1,68 @@
+<div id="Object_Addresses"> 
+    <div id="Object_Addresses_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Addresses</div> 
+        <div id="object_address_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button type="button" onclick = "Create(2)" class=" create">Create New</button>               
+                <button type="button" disabled onclick = "Edit(2)" class=" edit">Edit</button>  
+                <button type="button" disabled onclick = "Delete(2)" class=" delete">Delete</button>                               
+            </div>    
+            <table id="Address_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Address ID</th> 
+                        <th>Address Name</th> 
+                        <th>Type</th>                                    
+                        <th>IP Addresses</th>  
+                        <th>Occurrences</th>     
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>      
+
+    <div id="CreateAddressModal" class="modal">
+        <div id="CreateAddressModalContent" class="modal-content" style=" height: 300px;">
+            <span class="close">×</span>
+
+            <label class="modalTitle" style="margin-left: 30%"> Add New Address </label><br><br>
+            <label class="drop_down_label"> Address Name : </label>
+            <input id="addAddressName" required type="text" pattern="\w{1,24}" class="field_prop"> <br><br>                     
+
+            <label class="drop_down_label"> Category : </label>
+            <select name="destination" id="AddressCode" class="field_prop">                 
+                <option>IP Address</option>
+                <option>Subnet</option>
+                <option disabled>IP Range</option>
+            </select><br><br>
+            <div id="appendAddress">
+                <label class='drop_down_label'> IP Address : </label>
+                <input id='addIP' type='text' value='0.0.0.0' class='field_prop'><br><br>                    
+            </div> 
+
+            <br>
+            <button id="addAddressToSystem" class='addUpdateRules'>Add to System</button>  
+
+        </div>
+    </div>        
+
+    <div id="EditAddressModal" class="modal">
+        <div id="EditAddressModalContent"  class="modal-content" style=" height: 350px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 30%"> Edit Address </label><br><br>
+            <label class="drop_down_label"> Address Name : </label>
+            <input id="editAddressName" required type="text" class="field_prop"  pattern="\w{1,24}"> <br><br>                     
+
+            <label class="drop_down_label"> Category : </label>
+            <select name="destination" id="AddressCodeEdit" class="field_prop">
+                <option>IP Address</option>
+                <option >Subnet</option>                
+                <option disabled>IP Range</option>
+            </select><br><br>
+            <div id="editAddress"></div><br>
+            <button id="editAddressToSystem" class='addUpdateRules'>Update</button>              
+
+        </div>
+    </div>   
+
+</div>

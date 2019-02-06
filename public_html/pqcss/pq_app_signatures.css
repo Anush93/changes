@@ -1,0 +1,58 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2016, 10:20:23 AM
+    Author     : himantha
+*/
+
+#App_Database_Container::-webkit-scrollbar{
+    width:  50px;
+}
+
+#App_Database_Container::-webkit-scrollbar-track-piece{
+    background-color:transparent;
+}
+
+
+/*.pq_bwh_move_bar{
+    width: 100%;
+    height: 30px;
+    background-color: #a2aec7;
+}*/
+
+.pq_bwh_prv_btxt{
+    margin-left: calc(50% - 82px);
+    float: left;
+    width: 60px;
+}
+
+.pq_bwh_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_bwh_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_bwh_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}

@@ -1,0 +1,70 @@
+<div id="C_Shadow_Server_Watch">
+
+    <div id="pq_lscw_stat_bar" style="font-size: 11px; width: 100%;height: 40px; background-color: #222222">
+        <button id="shdw_serv_home_back_btn" class='pq_url_wbtn' style="float:left; display:inline-block; width: 110px; height: 30px; font-size: 11px; margin-left: 5px; background: #00bcd4 url(../image/back_act.png) 5px no-repeat; text-indent: 25px;">Back to Home</button>        
+        <img class="pq_vcenter" src="image/client_large.png"  style="width: 20px;height: 20px;float: left;margin-right: 5px; margin-left: 40px; display:inline-block"/>
+        <a id="pq_lscw_sip_text" style="color: white; float: left; text-decoration: none; display:inline-block; padding: 10px 0px" class="pq_bwevent_vcenter"> Source IP:  192.168.1.121</a>
+        <img class="pq_vcenter" src="image/sessions.png" style="width: 20px; height: 20px;float: left ;margin-right: 10px; margin-left: 20px; display:inline-block"/>
+        <a id="pq_lscw_ses_text" style="color: white; float: left; text-decoration: none; display:inline-block; padding: 10px 0px" class="pq_bwevent_vcenter"> Sessions: 83</a>
+    </div>
+
+    <div style="height: 40%; width: 100%; background: transparent; box-shadow: none; border:none">               
+
+        <div class="Pq_TableHolder" style="height: 100%; width:72%; display: inline-block;">
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Bandwidth Usage (10 s Average)</div> 
+            <div style="width: 100%;height: 28px;background-color: #222">
+                <img src="image/up_ch.png" style="float: left; margin-right: 15px; margin-left: 10px" class="pq_bwevent_vcenter"/>
+                <a style="float: left;font-size: 12px; color: #D5E4F3; text-decoration: none;" class="pq_bwevent_vcenter"></a>
+                <a id ="pq_lsd_uplink_pkts" style="font-size: 11px;float: right; margin-right: 30px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Packets Sent : 0</a>
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>                
+                <a id ="pq_lsd_uplink_usage" style="font-size: 11px;float: right; margin-right: 30px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Sent : 0 MB</a>
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+                <a id ="pq_lsd_downlink_pkts" style="font-size: 11px;float: right; margin-right: 30px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Packets Received: 0</a>
+                <div style="width: 15px;height: 15px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>                  
+                <a id ="pq_lsd_downlink_usage" style="font-size: 11px;float: right; margin-right: 30px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Received: 0 MB</a>
+                <div style="width: 15px;height: 15px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>            
+            </div>
+            <div style="width: 100%; height:calc(100% - 75px);background-color: whitesmoke;position: relative">
+                <div id='plot_live_sources_updown' style="width: calc(100%); height:100%;background-color: whitesmoke;position: absolute; z-index: 100">
+                </div>
+            </div>
+        </div>
+
+        <div class="Pq_TableHolder" style="height: 100%; width:23%;  display: inline-block; margin-top: 0px">
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Live Usage</div>   
+            <!--<div style="width: 2px;height: 28px; background-color: #D5E4F3; float: left"></div>-->
+            <div style="width: calc(100%);height: 28px;background-color: #222;">
+                <div class="btn-group pq_vcenter" style=" float: right;margin-right: 20px">
+                    <button id ="btn_lw_bt_one" type="button" onclick="btn_sc_sum_load_now(1)" class="btn btn-primary btn-xs" style="margin-top: 2px; height:20px">Applications</button>
+                    <button id ="btn_lw_bt_two" type="button" onclick="btn_sc_sum_load_now(2)" class="btn btn-primary btn-xs" style="margin-top: 2px; height:20px">Destinations</button>
+                    <button id ="btn_lw_bt_three" type="button" onclick="btn_sc_sum_load_now(3)" class="btn btn-primary btn-xs" style="margin-top: 2px; height:20px">Services</button>
+                </div>
+                <img src="image/applications.png" style="float: left; margin-left: 10px;" class="pq_bwevent_vcenter"/>
+                <a style="float: left;font-size: 12px; color: #D5E4F3; text-decoration: none;" class="pq_bwevent_vcenter"></a>                                      
+            </div>
+            <div id="pq_live_usage_pie_hlder" style="float: left; padding: 0; margin: 0 ; display: block; text-align: center; height: 70%; width: 60%;overflow: visible"></div>
+            <div style="width: 40%; height: calc(100% - 80px);float: left; overflow-y: auto; margin-top: 10px;">
+                <div id="pq_live_usage_legend" style="width: 100%; top:0px; position: relative;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Pq_TableHolder" style="height: calc(55% - 60px); margin-top: 35px ">
+        <div id="tc_diag_type" class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Source Diagram</div>      
+        <div style="width: 100%;height: 35px;background-color: #222">
+            <img src="image/sd_diagram.png" style="float: left; margin-right: 15px; margin-left: 10px" class="pq_bwevent_vcenter"/>
+            <div style="width: 40px;height: 100%; float: right"></div>
+            <div class="btn-group pq_vcenter" style=" float: right;">
+                <button id="shadow_serv_traffic" type="button" onclick="btn_sc_load_now(1)" class="btn btn-primary btn-xs">Traffic</button>
+                <button type="button" onclick="btn_sc_load_now(2)" class="btn btn-primary btn-xs">Sessions</button>
+            </div>
+        </div>
+        <div id='plot_live_sources_diagram_holder' style="font-size: 10px; overflow-y: scroll; width: 100%; height:calc(100% - 80px);background-color: whitesmoke">
+            <div id='plot_live_sources_diagram' style="width: 98%; background-color: whitesmoke; float: left;padding: 0; margin: 10px ;display: block; min-height: 500px">
+        </div>
+    </div>
+</div> 

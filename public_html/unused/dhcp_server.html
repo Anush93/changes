@@ -1,0 +1,60 @@
+<div id="DHCP_Server"> 
+    <div id="DHCP_Server_Holder" class="Pq_TableHolder" style="height: calc(100% - 40px);">                 
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">DHCP Server</div> 
+        <div id="ldap_server_table_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">         
+                <button type="button" id="createLdap"  class="create" onclick="CreateDhcpServer()">Create New</button> 
+                <button type="button" id="editLdap"   class="edit" disabled onclick="EditDhcpServer()">Edit</button> 
+                <button type="button" id="deleteLdap"   class="delete" disabled onclick="delete_dhcp_server_from_list()">Delete</button> 
+                <button type="button" id="server2DHCPList" class="pq_url_wbtn" style="float:right; width: 120px; height:30px; font-size: 12px; background: #208830;" ><span>DHCP Users</span></button>                 
+            </div>    
+            
+            <table id="DHCP_Server_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Id</th> 
+                        <th>Name</th>                                     
+                        <th>Server IP</th> 
+                        <th>Status</th>     
+                        <th>Connection Status</th> 
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+    </div>  
+
+    <div id="CreateDHCPServerModal" class="modal">
+        <div class="modal-content" style="height: 215px;">
+            <span id="CloseNewDHCPServerModal" class="close">×</span>
+
+            <label class="modalTitle" style=" margin-left: 100px"> Add DHCP Server </label><br><br>
+            
+            <label class="drop_down_label"> Name : </label>
+            <input id="add_dhcp_name" required type="text"  placeholder="" class="field_prop"><label hidden id="dhcp_namereqd_add" style="float: right;color: red;font-size: 19px">*</label> <br><br>
+
+            <label class="drop_down_label"> Server IP : </label>
+            <input id="add_dhcp_ip" required type="text"  placeholder="" class="field_prop"><label hidden id="dhcp_ipreqd_add" style="float: right;color: red;font-size: 19px">*</label> <br><br>
+    
+            <button id="addDhcpServerToSystem" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 85px;display:inline-block; margin-right: 5px;">Add</button>
+            <button id="clearDhcpAdd" class='addUpdateRules' style="width: 100px;height: 30px;margin-right: -220px; display:inline-block">Clear</button>            
+        </div>
+    </div>           
+    
+     <div id="EditDHCPServerModal" class="modal">
+        <div class="modal-content" style=" height: 215px;">
+            <span id="CloseEditDHCPServerModal" class="close">×</span>
+
+            <label class="modalTitle" style="margin-left: 100px"> Edit DHCP Server </label><br><br>
+            
+            <label class="drop_down_label"> Name : </label>
+            <input id="dhcp_name_edit" required type="text"  placeholder="" class="field_prop"><label hidden id="dhcp_namereqd_edit" style="float: right;color: red;font-size: 19px">*</label> <br><br>
+
+            <label class="drop_down_label"> Server IP : </label>
+            <input id="dhcp_ip_edit" required type="text"  placeholder="" class="field_prop"><label hidden id="dhcp_ipreqd_edit" style="float: right;color: red;font-size: 19px">*</label> <br><br>
+    
+            <button id="editDhcpServerToSystem" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 85px;display:inline-block; margin-right: 5px;">Update</button>
+            <button id="clearDhcpEdit" class='addUpdateRules' style="width: 100px;height: 30px;margin-right: -220px; display:inline-block">Clear</button>
+        </div>
+    </div>           
+
+</div> 

@@ -1,0 +1,67 @@
+<div id="Link_Utilization">      
+    <div style="width: 100%;height: 40px;background-color: #222">
+        <label class="drop_down_label_reporting" style="color:#fff; margin-left: 20px"> Link : </label>   
+        <div class="btn-group" style="margin-left: 2px; margin-top: 2px">
+            <button type="button" id="app_bwm_dlink_btn" onclick="btn_link_util_bw_load_now(1)" class="btn btn-primary btn-xs">Downlink</button>
+            <button type="button" id="app_bwm_ulink_btn" onclick="btn_link_util_bw_load_now(2)" class="btn btn-primary btn-xs">Uplink</button>
+        </div>                   
+    </div>
+
+    <div class="edit_panel" style="margin-top: 10px;">
+        <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;margin-right: 15px;">Change User</button> 
+        <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+    </div> 
+
+    <div class="Pq_LinkPlotHolder" style="z-index: 100; height: calc(100% - 110px); width:97%; position: absolute; margin-top: 10px;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id='bwm_prof_plot_title' style="height: 30px; font-size: 16px;"></div> 
+        <div class="System" id="pq_dlink_util_plot_System" style="width:250px; height: calc(100% - 60px);">
+            <div style="height: calc(100% - 10px); width: 100%;">                   
+                <div style="border-radius: 5px 5px 0 0; height: 30px" class="SystemStatsPanelHeader" >
+                    <div class="pq_vcenter SystemStatsPanelHeaderText" style="font-size: 14px; margin-left: calc(50% - 54px);">Application List</div>   
+                </div>
+                <div class="util">
+                    <ul class="nav nav-tabs">
+                        <li class="active" ><a data-toggle="tab" id="app_bwm_profile_tab" onclick="load_app_bwm_prof_table()" href="#profile_content" style='padding:5px; font-size: 12px;'>Profiles</a></li>
+                        <li ><a id="app_bwm_all_tab" data-toggle="tab" onclick="load_app_bwm_all_table()" href="#app_util_dlink_all" style='padding:5px; font-size: 12px;'>All Applications</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content" style="width: 100%; height: calc(100% - 60px); overflow-y: auto">
+
+                    <div  class="all tab-pane" id="app_util_dlink_all">
+                        <!--                        <input id="stacked_mode_app_util_dlink" type="checkbox" value="1" style="margin-left: 15px; margin-top: 15px;"><label class="timeSelectorText" style="color:#000; margin-left: 3px;" for="stacked_mode_app_util_dlink">Stacked Mode</label>     
+                                                <input id="select_all_app_util" type="checkbox" value="2" style="margin-left: 10px; margin-top: 15px" ><label class="timeSelectorText" style="color:#000; margin-left: 3px;" for="select_all_app_util" >Select All</label> -->
+                        <table  id="App_Dlink_Util_table" class="display cell-border AppUserTablesFont " cellspacing="0" width="100%" ></table>
+                    </div>
+
+                    <div class="profile tab-pane active" id="profile_content" >
+                        <button  id="addProfilebuttonId" class="createprofile setPrimary" onclick="init_app_bwm_profile_add()">Create Profile</button>
+                        <div id="addProfileId" style="display: none;margin-top: 10px;">
+                            <input type="text" id="profile_input" style="padding-left: 5px; margin-left: 10px; font-size: 11px; font-family: Helvetica; width:calc(100% - 20px)" name="profile"  placeholder="Enter New Profile Name" required><br> 
+                            <button type="button" onclick="add_app_bwm_profile()"  style="background: #33469c; border-radius: 5px; color:white; height: 25px; margin-top: 5px; font-size: 11px; padding-top: 3px; width: 60px; margin-left: calc(50% - 63px);" >Create</button>
+                            <button type="button" onclick="cancelProfile()" style="background: #d65959; border-radius: 5px; color:white; height: 25px; margin-top: 5px; font-size: 11px; padding-top: 3px; width: 60px;">Cancel</button>
+                        </div>
+                        <div id="profile_button_grp" class="btn-group profile_button_grp" style="margin-top: 10px;">
+                            <div id="sub_profile_button_grp" class="sub_profile_button_grp"></div>
+                        </div>
+                    </div>
+                </div> 
+            </div>  
+        </div>           
+        <div class="Pq_LinkPlotHolder" id='pq_dlink_util_plot' style="height:calc(100% - 60px); width: calc(100% - 300px); position: absolute;  ">    
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText " style="font-size: 14px; height: 30px">Application Bandwidth (10 s Average)</div> 
+            <div id="AppBwm_Ntwrk_Dlink_Plot" class="Pq_HPlot" style="width: calc(100% - 5px); height: calc(100% - 45px); padding: 5px; z-index: 100; position: absolute; "></div>
+            <div id="AppBwm_Ntwrk_Ulink_Plot" class="Pq_HPlot" style="width: calc(100% - 5px); height: calc(100% - 45px); padding: 5px; z-index: -10; position: absolute; "></div>          
+        </div>          
+    </div>
+
+    <div id='Add_App_BWM_Prof_Window' class="modal">
+        <div class="modal-content" style=" height: 400px; ">
+            <span id="CloseAddApplication" class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 50px"> Add Applications to Profile </label><br>
+            <div id='applist'>
+                <input type="text" id="app_search_input" style='margin-top: 10px; margin-bottom: 10px; font-size: 11px; padding: 2px;' onkeyup="appsearch()" placeholder="Search Applications.." title="Type in a name">
+                <ul id="app_list_ul" style="height: 275px; list-style:none; margin-left: -40px; overflow-y: auto"></ul>
+            </div>
+        </div>
+    </div>
+</div>

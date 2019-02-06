@@ -1,0 +1,36 @@
+<div id="Session_Sessions"> 
+    <div class='pq_session_filter_bar' id="pq_ses_win_filter"></div>
+
+    <div class="edit_panel" style="padding-top: 10px;">
+        <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;margin-right: 15px;">Change User</button> 
+        <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+    </div> 
+
+    <div id="Session_Sessions_Holder" class="Pq_TableHolder" style="position: relative; height: calc(100% - 105px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Session Table</div>                     
+        <div id="session_table_holder" style="position: absolute; width: 100%; padding: 20px; height: calc(100% - 30px);" >
+            <table id="Session_Table" class="display cell-border StatusTablesFont" cellspacing="0" width="100%">
+                <thead>
+                    <tr> 
+                        <th>Source IP</th>
+                        <th>User</th>
+                        <th>SIP Type</th>
+                        <th>Destination IP</th>
+                        <th>DIP Type</th>
+                        <th>Source Port</th>
+                        <th>Destination Port</th>
+                        <th>Protocol</th>
+                        <th>VLAN ID</th> 
+                        <th>Application</th>
+                        <th onclick="pq_table_sort_ses_data()" style="cursor: pointer"><img style="margin-top: -10px; cursor: pointer" src="image/sort_desc.png"/>Data (Sent/Received)</th>
+                        <th>Data Received</th>
+                        <th>Watch</th>                         
+                        
+                    </tr>
+                </thead> 
+            </table>   
+        </div>      
+    </div>    
+</div> 
+
+

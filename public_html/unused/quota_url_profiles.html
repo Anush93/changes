@@ -1,0 +1,97 @@
+<div id="Quota_URL_Profiles"> 
+    <div id="Quota_URL_Profiles_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 40px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Quota URL Profiles</div> 
+        <div id="quota_url_profile_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button type="button" id="newQuotaURLProfCreate" onclick = "Create_Q(7)" class=" create">Create New</button> 
+                <button type="button" disabled id="newQuotaURLProfDelete" onclick = "Delete_Q(7)" class=" delete">Delete</button>  
+                <button type="button" id="addURL2List" class="pq_url_wbtn" style="float:right; width: 105px; height:30px; font-size: 12px; background: #208830" ><span>URL List</span></button>  
+            </div>   
+            <table id="Quota_URL_Prof_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>URL Prof ID</th> 
+                        <th>Profile Name</th>                                    
+                        <th>Details</th>  
+                        <th>Occurrences</th>     
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+        <div id="object_new_quota_url_holder" class="Pq_TableHolder" style="width: calc(100% - 40px); height:55%; position:absolute; bottom:25px">
+            <div id="object_new_quota_urls_holder" style="width: 100%; padding: 20px">    
+                <div class="edit_panel">     
+                    <button type="button" disabled id="editQuotaURLProfCreate" onclick = "New_Quota_URL_Control(1)" class="create">Add URL</button>               
+                    <button type="button" disabled id="editQuotaURLProfEdit" onclick = "New_Quota_URL_Control(2)" class="edit">Edit URL</button>  
+                    <button type="button" disabled id="editQuotaURLProfDel" onclick = "Delete_Q(8)" class="delete">Delete URL</button> 
+                </div>                            
+                <table id="Quota_URL_Prof_List_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                    <thead>
+                        <tr> 
+                            <th>URL ID</th> 
+                            <th>Prof ID</th> 
+                            <th>Authentication</th> 
+                            <th>URL</th>                                                         
+                            <th>Quota Profile</th> 
+                        </tr>
+                    </thead>
+                </table>  
+            </div>                 
+        </div>        
+    </div>   
+
+    <div id="CreateQuotaURLName" class="modal">
+        <div class="modal-content" style=" height: 200px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 70px"> Add Quota URL Profile </label><br><br>
+            <label class="drop_down_label"> Name : </label>
+            <input id="addQuotaURLObjectName" required type="text" class="field_prop" style="width: 300px;" pattern="\w{1,24}"> <br><br>   
+            <br>
+            <button id="addQuotaURLNameToTable" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>  
+
+    <div id="CreateQuotaURLModal" class="modal">
+        <div id="CreateQuotaURLModalContent" class="modal-content" style="height: 270px; width: 500px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="  margin-left: 160px"> Add URL Quota </label><br><br>               
+            <label class="drop_down_label"> Authentication : </label>
+            <select id="add_quota_url_authen" class="field_prop" style="width: 340px;">                     
+                <option value="1">HTTP</option>
+                <option value="2">HTTPS</option>
+                <option value="3">HTTP or HTTPS</option>
+            </select><br><br>            
+            <label class="drop_down_label"> URL : </label>
+            <select id="add_quota_url" class="field_prop" style="width: 340px;"> 
+            </select><br><br>   
+            <label class="drop_down_label"> Quota Profile: </label>
+            <select id="add_quota_url_profile" class="field_prop" style="width: 340px;"> 
+            </select><br><br>
+            <button id="addQuotaURLToTable" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>      
+
+    <div id="EditQuotaURLModal" class="modal">
+        <div  id="EditQuotaURLModalContent" class="modal-content" style="height: 270px; width: 500px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 155px"> Edit URL Quota</label><br><br>                
+            <label class="drop_down_label"> Authentication : </label>
+            <select id="edit_quota_url_authen" class="field_prop" style="width: 340px;">                     
+                <option value="1">HTTP</option>
+                <option value="2">HTTPS</option>
+                <option value="3">HTTP or HTTPS</option>
+            </select><br><br>            
+            <label class="drop_down_label"> URL : </label>
+            <select id="edit_quota_url" class="field_prop" style="width: 340px;"> 
+            </select><br><br>                
+            <label class="drop_down_label"> Quota Profile : </label>
+            <select id="edit_quota_url_profile" class="field_prop" style="width: 340px;"> 
+            </select><br><br>
+            <button id="editQuotaURLToTable" class='addUpdateRules'>Update</button>  
+        </div>
+    </div>  
+
+</div>
+     
+
+

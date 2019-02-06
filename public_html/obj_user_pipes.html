@@ -1,0 +1,108 @@
+<div id="Object_User_Pipes"> 
+    <div id="Object_User_Pipes_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">User Pipes</div> 
+        <div id="object_user_pipe_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button disabled onclick = "Create(7)" class="create setPrimary">Create New</button>               
+                <button disabled onclick = "Edit(7)" class="edit">Edit</button>  
+                <button disabled onclick = "Delete(7)" class="delete">Delete</button> 
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>   
+            <table id="User_Pipe_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>User ID</th>  
+                        <th>User Pipe ID</th> 
+                        <th>Admin Pipe ID</th> 
+                        <th>Pipe Name</th> 
+                        <th>Pipe Type</th> 
+                        <th>Pipe Generation</th> 
+                        <th>Guaranteed Bandwidth (Kbps)</th> 
+                        <th>Maximum Bandwidth (Kbps)</th>                                                                
+                        <th>Priority</th>                                     
+                        <th>Occurrences</th>    
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>        
+
+    <div id="CreateUserPipeModal" class="modal">
+        <div class="modal-content" style="height: 505px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 115px"> Add User Pipe </label><br><br>
+            
+            <label class="drop_down_label"> Admin Pipe : </label>
+            <select id="add_user_admin_pipe" class="field_prop" style="width: 200px;">
+            </select> <br><br>             
+            
+            <label class="drop_down_label"> User Pipe Name : </label>
+            <input id="addUserPipeName" type="text" value="" pattern="\w{1,24}" class="field_prop" > <br><br>   
+
+            <label class="drop_down_label"> Pipe Type : </label>
+            <select id="addUserPipeType" class="field_prop">                   
+                <option value="0">Per-IP</option>
+                <option value="1">Shared</option>
+            </select> <br><br>
+            
+            <label class="drop_down_label"> Pipe Generation : </label>
+            <select id="addUserGroupingType" class="field_prop">                   
+                <option value="0">Per-Item</option>
+                <option value="1">Per-Profile</option>
+                <option value="2">Per-Rule</option>
+            </select> <br><br>            
+
+            <label class="drop_down_label"> Guaranteed <br> Bandwidth (Kbps) : </label>
+            <input id="addUserPipeGuarantBW" type="text" class="field_prop" ><br><br>                      
+
+            <label class="drop_down_label"> Maximum <br> Bandwidth (Kbps) : </label>
+            <input id="addUserPipeMaxBW" type="text" class="field_prop" > <br><br>   
+
+            <label class="drop_down_label"> Priority : </label>
+            <input id="addUserPipePriority" type="text" class="field_prop" > <br><br><br> 
+ 
+            <button id="addUserPipeToSystem" class="addUpdateRules">Add to System</button> 
+        </div>
+    </div>        
+
+    <div id="EditUserPipeModal" class="modal">
+        <div class="modal-content" style="height: 505px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 100px"> Update User Pipe </label><br><br>
+            
+            <label class="drop_down_label"> Admin Pipe : </label>
+            <select id="edit_user_admin_pipe" class="field_prop" style="width: 200px;">
+            </select> <br><br>             
+            
+            <label class="drop_down_label"> User Pipe Name : </label>
+            <input id="editUserPipeName" type="text" value="" pattern="\w{1,24}" class="field_prop" > <br><br>   
+
+            <label class="drop_down_label"> Pipe Type : </label>
+            <select id="editUserPipeType" class="field_prop">                   
+                <option value="0">Per-IP</option>
+                <option value="1">Shared</option>
+            </select> <br><br>
+            
+            <label class="drop_down_label"> Pipe Generation : </label>
+            <select id="editUserGroupingType" class="field_prop">                   
+                <option value="0">Per-Item</option>
+                <option value="1">Per-Profile</option>
+                <option value="2">Per-Rule</option>
+            </select> <br><br>            
+
+            <label class="drop_down_label"> Guaranteed <br> Bandwidth (Kbps) : </label>
+            <input id="editUserPipeGuarantBW" type="text" class="field_prop" ><br><br>                      
+
+            <label class="drop_down_label"> Maximum <br> Bandwidth (Kbps) : </label>
+            <input id="editUserPipeMaxBW" type="text" class="field_prop" > <br><br>  
+
+            <label class="drop_down_label"> Priority : </label>
+            <input id="editUserPipePriority" type="text" class="field_prop" > <br><br><br>     
+
+            <button id="editUserPipeToSystem" class="addUpdateRules" style="width: 150px;">Update</button>                     
+
+        </div>
+    </div>          
+
+</div> 

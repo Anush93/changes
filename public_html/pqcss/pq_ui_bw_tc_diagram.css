@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 26, 2016, 1:05:37 PM
+    Author     : hasith
+*/
+.pq_tc_dgm_refresh {
+    width: 52px;
+    height: 100%;
+    background-color: #222;
+    background-image: url(../image/refresh_off.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 2px;
+}
+
+.pq_tc_dgm_refresh:hover{
+    background-image: url(../image/refresh_on.png); 
+}
+
+.text{
+    font-size:10px;
+}

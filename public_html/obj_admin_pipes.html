@@ -1,0 +1,77 @@
+<div id="Object_Admin_Pipes"> 
+    <div id="Object_Admin_Pipes_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Admin Pipes</div> 
+        <div id="object_admin_pipe_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button onclick = "Create(6)" class=" create setPrimary">Create New</button>               
+                <button disabled onclick = "Edit(6)" class=" edit">Edit</button>  
+                <button disabled onclick = "Delete(6)" class=" delete">Delete</button> 
+            </div>    
+            <table id="Admin_Pipe_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Pipe ID</th> 
+                        <th>Pipe Name</th> 
+                        <th>Guaranteed Bandwidth (Kbps)</th> 
+                        <th>Maximum Bandwidth (Kbps)</th>    
+                        <th>Priority</th>
+                        <th>Occurrences</th>    
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>        
+
+    <div id="CreateAdminPipeModal" class="modal">
+        <div class="modal-content" style="height: 335px; width: 450px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 125px"> Add Admin Pipe </label><br><br>
+            <label class="drop_down_label"> Pipe Name : </label>
+            <input id="addAdminPipeName" type="text" value="" pattern="\w{1,24}" class="field_prop" > <br><br>   
+
+            <label class="drop_down_label"> Guaranteed Bandwidth (Kbps) : </label>
+            <input id="adminPipeGuarantBW" type="text" class="field_prop" ><br><br>                      
+
+            <label class="drop_down_label"> Maximum Bandwidth (Kbps) : </label>
+            <input id="adminPipeMaxBW" type="text" class="field_prop" > <br><br>    
+
+            <label class="drop_down_label"> Priority : </label>
+            <select id="addPipePriority" class="field_prop">
+                <option value="1">Low</option>
+                <option value="50">Medium</option>
+                <option value="99">High</option>
+            </select> <br><br><br>  
+
+            <button id="addAdminPipeToSystem" class="addUpdateRules">Add to System</button>                    
+
+        </div>
+    </div>        
+
+    <div id="EditAdminPipeModal" class="modal">
+        
+        <div class="modal-content" style="height: 335px; width: 450px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 113px"> Update Admin Pipe </label><br><br>
+            <label class="drop_down_label"> Pipe Name : </label>
+            <input id="editAdminPipeName" type="text" value="" pattern="\w{1,24}" class="field_prop" > <br><br>   
+
+            <label class="drop_down_label"> Guaranteed Bandwidth (Kbps) : </label>
+            <input id="editAdminPipeGuarantBW" type="text" class="field_prop" ><br><br>                      
+
+            <label class="drop_down_label"> Maximum Bandwidth (Kbps) : </label>
+            <input id="editAdminPipeMaxBW" type="text" class="field_prop" > <br><br>          
+
+            <label class="drop_down_label"> Priority : </label>
+            <select id="editPipePriority" class="field_prop">
+                <option value="1">Low</option>
+                <option value="50">Medium</option>
+                <option value="99">High</option>
+            </select> <br><br><br>    
+       
+ 
+            <button  id="editAdminPipeToSystem" class="addUpdateRules" style="width: 150px;">Update</button>                       
+
+        </div>
+    </div>          
+
+</div> 

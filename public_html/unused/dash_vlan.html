@@ -1,0 +1,179 @@
+<div id="Dashboard_Vlans">
+
+    <div class="System" style="height: calc(100% - 30px);">
+        <div id="Pq_System" style="height: calc(100% - 0px); width: 100%; background: white;">
+            <div style="border-radius: 5px 5px 0 0" class="SystemStatsPanelHeader">
+                <img class="pq_vcenter" src="image/statistics.png" style="margin-left: 10px; float: left"/>
+                <div class="pq_vcenter SystemStatsPanelHeaderText">  Bandwidth Plot Type</div>
+            </div>
+
+            <div style="width: 100%; height: 75px; background: white;">
+                <input id="radio_vlan_one_msec" type="radio" name="dash_vlan_plot_type" value="0" style="margin-left: 10px; margin-top: 10px;"><label class="timeSelectorText" style="color:black" for="radio_vlan_one_msec" >1 ms average</label><br>  
+                <input id="radio_vlan_one_sec" type="radio" name="dash_vlan_plot_type" value="1" style="margin-left: 10px" checked><label class="timeSelectorText" style="color:black" for="radio_vlan_one_sec" >10 s average</label><br> 
+                <!--<input id="radio_vlan_ten_sec" type="radio" name="dash_vlan_plot_type" value="2" style="margin-left: 10px"><label class="timeSelectorText" style="color:black" for="radio_vlan_ten_sec">10 s average</label>-->     
+            </div>  
+
+            <div class="SystemStatsPanelHeader">
+                <img class="pq_vcenter" src="image/alert.png" style="margin-left: 10px; float: left"/>
+                <div class="pq_vcenter SystemStatsPanelHeaderText"> VLANs</div>
+            </div>
+
+            <div style="width: 100%; height: 65%; overflow-y: auto;">
+                <div id="PQ_Vlan_List" style="height: calc(100% - 35px); width: 100%; overflow-y: auto;"></div>
+            </div>              
+        </div>
+    </div>                
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(25% - 20px); position: relative; width: 79%;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px); font-size: 13px;" >Downlink VLAN Maximum Bandwidth</div> 
+        <div id="vlan_max_dlink_one_msec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div> 
+    </div> 
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(25% - 20px); position: relative; width: 79%;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px); font-size: 13px;">Uplink VLAN Maximum Bandwidth</div> 
+        <div id="vlan_max_ulink_one_msec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div>
+    </div>
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(25% - 20px); position: relative; width: 79%;">
+        <div id="vlan_bw_dlink_label" class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px); font-size: 13px;"></div> 
+        <!--<div id="vlan_dlink_ten_sec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div>-->      
+        <div id="vlan_dlink_one_sec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div>   
+        <div id="vlan_dlink_one_msec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: -10" ></div>  
+    </div> 
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(25% - 20px); position: relative; width: 79%;">
+        <div id="vlan_bw_ulink_label" class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px); font-size: 13px;">Uplink Bandwidth - VLAN</div> 
+        <!--<div id="vlan_ulink_ten_sec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div>-->      
+        <div id="vlan_ulink_one_sec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: 100" ></div>   
+        <div id="vlan_ulink_one_msec_plot" class="Pq_HPlot" style="width: 97%; height: 75%; padding: 10px; position: absolute; z-index: -10" ></div> 
+    </div>             
+</div>
+
+
+
+<!--<div id="CHold">
+    <div class="Pq_HMolder">
+        <div  class="Pq_MPlotHolder">
+            <div class="Pq_HPlotHolder" style="padding-top: 0px;">
+
+                <div style="height: 30px;width: 100%;font-size: 12px">
+                    <div class="pq_suy_wgt_head"> 
+                        <a class="pq_hvcenter" id="mw_downlink_bw_ind" style="float: left; color: white; margin-right: 10px; text-decoration: none;">Downlink Bandwidth (1 ms)</a>
+                    </div>
+                </div>
+                <div  style="width: 100%;height: calc(100% - 25px);font-size: 12px; padding-top: 5px">
+                    <div id="CHD_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                </div>                   
+
+                                <div>
+                                    <div id="mw_uplink_bw_ind" class="Pq_Center Pq_HPlotTitle">Uplink Bandwidth (Mbps - 1 ms)</div>
+                                </div>
+                                <div id="CHU_Plot" class="Pq_HPlot"></div>
+            </div>
+            <div class="Pq_HPlotHolder Pq_HPlotMargin" style="padding-top: 0px;">
+
+                <div style="height: 30px;width: 100%;font-size: 12px">
+                    <div class="pq_suy_wgt_head"> 
+                        <a class="pq_hvcenter" id="mw_uplink_bw_ind" style="float: left; color: white; margin-right: 10px; text-decoration: none;">Uplink Bandwidth (1 ms)</a>
+                    </div>
+                </div>
+                <div  style="width: 100%;height: calc(100% - 25px);font-size: 12px; padding-top: 5px">
+                    <div id="CHU_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                </div>  
+
+                                <div>
+                                    <div id="mw_downlink_bw_ind" class="Pq_Center Pq_HPlotTitle">Downlink Bandwidth (Mbps - 1 ms)</div>
+                                </div>
+                                <div id="CHD_Plot" class="Pq_HPlot"></div>
+            </div>                         
+        </div>
+        <div class="Pq_HOptions" style="background-color: #222">
+            <div id="Pq_Sopt_Head"><div class="Pq_Center" style="width: 100px;text-align: center">System</div> </div>
+            <div id="Pq_System" style="height: calc(100% - 35px);width: 100%;background: linear-gradient(#97c0d1 ,#d6f1f4,#97c0d1);">
+                <div style="width: 100%;height: 40px; background-color: #97c0d1">
+                    <img class="pq_vcenter" src="image/event_sh.png" style="float: left; margin-left: 5px"/>
+                    <a class="pq_vcenter" id="pq_mw_event_count" style="font-size: 13px;color: #122b40; float: left; margin-left: 7px; text-decoration: none;">Events: 0</a>
+                </div>
+                <div style="width: 100%; height: 40px; background-color: #cfdce1">
+                    <img class="pq_vcenter" src="image/session_details.png" style="margin-left: 10px; float: left"/>
+                    <a class="pq_vcenter" style="font-size: 12px;float: left; margin-left: 10px; text-decoration: none;"> Session Statistics</a>
+                </div>
+                <img src="image/bullet.png" style="width: 10px;height: 10px;margin-top: 6px; margin-left: 18px; float: left"/>
+                <a id="pq_mw_session_ps" style="font-size: 11px; margin-left: 3px; text-decoration: none;">New Sessions Per-Second: updating ..</a>
+                <img src="image/bullet.png" style="width: 10px;height: 10px;margin-top: 6px; margin-left: 18px; float: left"/>
+                <a id="pq_mw_session_count" style="font-size: 11px; margin-left: 3px; text-decoration: none;">Total Sessions: updating ..</a>
+                <div style="width: 100%; height: 40px; background-color: #cfdce1">
+                    <img class="pq_vcenter" src="image/time_up.png" style="margin-left: 10px; float: left"/>
+                    <a class="pq_vcenter" style="font-size: 12px;float: left; margin-left: 10px; text-decoration: none;"> Uptime</a>
+                </div>
+                <img src="image/bullet.png" style="width: 10px;height: 10px;margin-top: 6px; margin-left: 18px; float: left"/>
+                <a id="pq_mw_uptime" style="font-size: 11px; margin-left: 3px; text-decoration: none;">updating ..</a>
+                <div style="width: 100%; height: 40px; background-color: #cfdce1">
+                    <img class="pq_vcenter" src="image/vlan.png" style="margin-left: 10px; float: left"/>
+                    <a class="pq_vcenter" style="font-size: 12px;float: left; margin-left: 10px; text-decoration: none;"> VLAN Mode</a>
+                </div> 
+                <img src="image/bullet.png" style="width: 10px;height: 10px;margin-top: 6px; margin-left: 18px; float: left"/>
+                <a style="font-size: 11px; margin-left: 3px; text-decoration: none;">Stacked Mode</a>
+                <label style="float: right; margin-right: 30px"><input type="checkbox" name="pq_vtogle" onclick="pq_vlan_state_changed(this)"></label>
+            </div>
+        </div>
+    </div> 
+
+    <div class="Pq_HMolder">
+        <div class="Pq_MPlotHolder" style="position: relative">
+            <div style="width: 100%; height: 100%; position: absolute">
+                <div class="Pq_HPlotHolder" style="padding-top: 0px;">
+
+                    <div style="height: 30px;width: 100%;font-size: 12px">
+                        <div class="pq_suy_wgt_head"> 
+                            <a class="pq_hvcenter" style="float: left; color: white; margin-right: 10px; text-decoration: none;">VLAN Downlink Bandwidth (1 ms)</a>
+                        </div>
+                    </div>
+                    <div  style="width: 100%;height: calc(100% - 25px);font-size: 12px; padding-top: 5px">
+                        <div id="CHVd_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                        <div id="CHVSd_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                    </div>           
+
+                                        <div>
+                                            <div class="Pq_Center Pq_HPlotTitle">VLAN Uplink Bandwidth (Mbps - 1 ms)</div>
+                                        </div>
+                                        <div class="Pq_HPlot" style="position: relative">
+                                            <div id="CHVu_Plot" style="width: 100%; height: 100%; position: absolute"></div>
+                                            <div id="CHVSu_Plot" style="width: 100%; height: 100%; position: absolute"></div>
+                                        </div>
+                </div>
+
+                <div class="Pq_HPlotHolder Pq_HPlotMargin" style="padding-top: 0px;">
+
+
+                    <div style="height: 30px;width: 100%;font-size: 12px">
+                        <div class="pq_suy_wgt_head"> 
+                            <a class="pq_hvcenter" style="float: left; color: white; margin-right: 10px; text-decoration: none;">VLAN Uplink Bandwidth (1 ms)</a>
+                        </div>
+                    </div>
+                    <div  style="width: 100%;height: calc(100% - 25px);font-size: 12px; padding-top: 5px">
+                        <div id="CHVu_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                        <div id="CHVSu_Plot" style="width: calc(100% - 20px); height: calc(100% - 10px); padding: 2px"></div>
+                    </div>    
+
+                                        <div>
+                                            <div class="Pq_Center Pq_HPlotTitle">VLAN Downlink Bandwidth (Mbps - 1 ms)</div>
+                                        </div>
+                                        <div  class="Pq_HPlot" style="position: relative">
+                                            <div id="CHVd_Plot" style="width: 100%; height: 100%; position: absolute"></div>
+                                            <div id="CHVSd_Plot" style="width: 100%; height: 100%; position: absolute"></div>
+                                        </div>
+                </div> 
+            </div>
+            <div id="uvs_updating_ind" class='pq_updater_zee' style='position: absolute; width: 100%; height: 100%;background-color: #fafafa;'>
+                <img src='image/gif/sg_update.gif' style='float: left' class='pq_hvcenter'>
+                <a style='float: left; margin-left: 30px;font-size: 16px; color: #1a7cea; text-decoration: none;' class='pq_hvcenter'>Switching ..</a>
+            </div>
+        </div>
+
+        <div class="Pq_HOptions" style="background: linear-gradient(paleturquoise ,paleturquoise,whitesmoke,paleturquoise); margin-top: 1px">
+            <div id="Pq_Vopt_Head"><div class="Pq_Center" style="width: 100px;text-align: center">VLAN List</div> </div>
+            <div id="PQ_Vlan_List" style="height: calc(100% - 35px);width: 100%;background-color: rgba(10,12,43,0.3);overflow-x: auto"></div>
+        </div>
+    </div>
+</div>-->

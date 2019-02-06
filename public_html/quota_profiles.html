@@ -1,0 +1,122 @@
+<div id="Quota_Prof"> 
+    <div id="Quota_Prof_Holder" class="Pq_TableHolder" style="height: calc(100% - 40px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Quota Profiles</div> 
+        <div id="quota_prof_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button  onclick = "Create_Q(5)" class="create">Create New</button>               
+                <button  disabled onclick = "Edit_Q(5)" class="edit">Edit</button>  
+                <button  disabled onclick = "Delete_Q(5)" class="delete">Delete</button>  
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>    
+            <table id="Quota_Prof_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Quota ID</th> 
+                        <th>Quota Name</th> 
+                        <th>Quota Limiting Type</th> 
+                        <th>Quota (MB)</th>   
+                        <th>Quota Sharing Type</th> 
+                        <th>Quota Generation</th> 
+                        <th>Default Action</th>     
+                        <th>Downlink Shaper</th>  
+                        <th>Uplink Shaper</th>  
+                        <th>Occurrences</th>    
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>        
+
+    <div id="CreateQuotaProfModal" class="modal">
+        <div id="CreateQuotaProfModalContent" class="modal-content" style="height: 400px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 95px"> Add Quota Profile </label><br><br>
+            <label class="drop_down_label"> Quota Profile Name : </label>
+            <input id="addQuotaProfName" type="text" value="" pattern="\w{1,24}" class="field_prop"><br><br>   
+
+            <label class="drop_down_label"> Quota Limiting Type : </label>
+            <select id="addQuotaProfType" class="field_prop">                   
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Monthly</option>
+            </select> <br><br>
+
+            <label class="drop_down_label"> Maximum Quota (MB) : </label>
+            <input id="addQuotaProfAmount" type="text" value="0" class="field_prop" > <br><br>    
+
+            <label class="drop_down_label"> Quota Sharing Type : </label>
+            <select id="addQuotaPipeType" class="field_prop">                   
+                <option value="0">Per-IP</option>
+                <option value="1">Shared</option>
+            </select> <br><br>
+
+            <label class="drop_down_label"> Quota Generation : </label>
+            <select id="addQuotaGroupingType" class="field_prop">                   
+                <option value="0">Per-Item</option>
+                <option value="1">Per-Profile</option>
+                <option value="2">Per-Rule</option>
+            </select> <br><br>                 
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="add_def_quota_action" class="field_prop">
+                <option value="0">Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2">Simple Shaping</option>
+            </select> <br><br>            
+
+            <div id="append_quota_prof_shapers">                         
+            </div>             
+
+            <button id="addQuotaProfToSystem" class="addUpdateRules">Add to System</button>                    
+
+        </div>
+    </div>        
+
+    <div id="EditQuotaProfModal" class="modal">
+        <div id="EditQuotaProfModalContent" class="modal-content" style="height: 400px">
+            <span class="close">×</span>
+
+            <label class="modalTitle" style=" margin-left: 95px"> Edit Quota Profile </label><br><br>
+            <label class="drop_down_label"> Quota Profile Name : </label>
+            <input id="editQuotaProfName" required type="text" value="" pattern="\w{1,24}" class="field_prop"><br><br>   
+
+            <label class="drop_down_label"> Quota Limiting Type : </label>
+            <select id="editQuotaProfType" class="field_prop">                   
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Monthly</option>
+            </select> <br><br>
+
+            <label class="drop_down_label"> Maximum Quota (MB) : </label>
+            <input id="editQuotaProfAmount" required type="text" value="0" class="field_prop" > <br><br>    
+
+            <label class="drop_down_label"> Quota Sharing Type : </label>
+            <select id="editQuotaPipeType" class="field_prop">                   
+                <option value="0">Per-IP</option>
+                <option value="1">Shared</option>
+            </select> <br><br>
+
+            <label class="drop_down_label"> Quota Generation : </label>
+            <select id="editQuotaGroupingType" class="field_prop">                   
+                <option value="0">Per-Item</option>
+                <option value="1">Per-Profile</option>
+                <option value="2">Per-Rule</option>
+            </select> <br><br>                 
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="edit_def_quota_action" class="field_prop">
+                <option value="0">Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2">Simple Shaping</option>
+            </select> <br><br>            
+
+            <div id="edit_quota_prof_shapers">                         
+            </div>       
+
+            <button id="editQuotaProfToSystem" class="addUpdateRules">Update</button>                        
+
+        </div>
+    </div>          
+
+</div> 

@@ -1,0 +1,123 @@
+<div id="App_Rule"> 
+    <div id="Dest_Rule_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Destination Rules</div> 
+
+        <div id="app_rule_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">     
+                <button id="addDestRule" onclick = "Create(1)" class="create setPrimary">Add Destination</button>               
+                <button disabled id="editDestRule" onclick = "Edit(1)" class="edit">Edit Destination</button>  
+                <button disabled id="deleteDestRule" onclick = "Delete(1)" class="delete">Delete Destination</button> 
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>                            
+            <table id="Dest_Rule_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr style="height: 50px;">
+                        <th colspan="3" style="text-align: center;font-size: 14px">Destination Details</th>
+                        <th colspan="4" style="text-align: center;font-size: 14px">Scheduled Behavior</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Default Behavior</th>
+                    </tr>    
+                    <tr> 
+                        <th>User ID</th>
+                        <th>Dest ID</th>
+                        <th>Destination</th>
+                        <th>Schedule </th> 
+                        <th>Scheduled Action </th> 
+                        <th>Scheduled Downlink Pipe </th>         
+                        <th>Scheduled Uplink Pipe </th>    
+                        <th>Default Action </th>  
+                        <th>Default Downlink Pipe </th>    
+                        <th>Default Uplink Pipe </th>  
+                    </tr> 
+                </thead>
+            </table>               
+        </div>        
+    </div>   
+
+    <div id="AddDestRuleModal" class="modal">
+        <div id="AddDestRuleModalContent" class="modal-content" style="height: 325px; width: 460px; min-height: 325px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 110px"> Add Destination Rule</label><br><br>
+
+            <!--            <label class="drop_down_label" style="float:left;"> Category : </label>
+                        <select id="destAddressCode" class="field_prop" style="width: 130px; float:none; margin-left: 28px;">                     
+                            <option value="0">IP Address</option>
+                            <option value="1">Subnet</option>
+                            <option value="2">IP Range</option>
+                        </select><br><br>-->
+
+            <label class='drop_down_label' id="dest_rule_addr_type_label"> IP Address : </label>
+            <input id='addDestRuleIP' type='text' style="width: 331px;" placeholder='0.0.0.0' class='field_prop'>                    
+
+            <hr style="border-color: #d2cdcd;"> 
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="add_dest_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="add_sched_dest_rule_action" disabled class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="append_sched_pipes_dest_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="add_def_dest_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="append_def_pipes_dest_rule"></div>
+
+            <button id="addDestRuleToSystem" class="addUpdateRules">Add to System</button>     
+        </div>
+    </div>      
+
+    <div id="EditDestRuleModal" class="modal">
+        <div  id="EditDestRuleModalContent" class="modal-content" style="height: 325px; width: 460px; min-height: 325px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 95px"> Update Destination Rule</label><br><br>                
+<!--            <label class="drop_down_label"> Category : </label>
+            <select id="destAddressCodeEdit" class="field_prop" style="width: 130px; float:none; margin-left: 28px;">  
+                <option value="0">IP Address</option>
+                <option value="1">Subnet</option>
+                <option value="2">IP Range</option>
+            </select><br><br>-->
+
+            <label class='drop_down_label' id="edit_dest_rule_addr_type_label"> IP Address : </label>
+            <input id='editDestRuleIP' type='text' style="width: 331px;" placeholder='0.0.0.0' class='field_prop'>                    
+
+
+            <hr style="border-color: #d2cdcd;">             
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="edit_dest_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="edit_sched_dest_rule_action" class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="edit_sched_pipes_dest_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="edit_def_dest_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="edit_def_pipes_dest_rule"></div>          
+
+            <button id="editDestRuleToSystem" class='addUpdateRules'>Update</button>  
+        </div>
+    </div>  
+
+</div>
+
+

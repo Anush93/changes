@@ -1,0 +1,243 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 22, 2016, 11:05:21 AM
+    Author     : User_Pc
+*/
+
+#Rule_Addition, 
+#Object_Addr_IP, 
+#Object_Addr_Mac, 
+#Object_Addr_AD, 
+#Object_Addr_Prof, 
+#Dest_Rule,
+#App_Rule, 
+#Object_App_List,
+#Object_DHCP_User_List,
+#Service_Rule,
+#Object_Service_List,
+#Object_Schedules, 
+#Object_Admin_Pipes, 
+#Object_User_Pipes,
+#Quota_Prof,
+#Default_Pipe,
+#Quota_Usage,
+#URL_Rule,
+#Object_URL_List,
+#New_App_Control,
+#Rule_Monitor, 
+#Shaper_Monitor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+button:disabled,button:disabled:hover,
+#addAddressToSystem:disabled,#addScheduleToSystem:disabled {
+    background: #dddddd;
+    color:gray;
+}
+
+.edit_panel{
+    width: 100%; 
+    height: 40px;
+    background: #fff;
+}
+
+.create,.edit, .reset, .delete, .userRule{
+    background:#1a8cff; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;    
+}
+
+.addPort{
+    background:#1a8cff; 
+    font-size: 16px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:25px; 
+    height:25px;    
+    border:none; 
+    border-radius:5px;  
+    margin-left: 130px;
+    font-weight: bold;
+
+}
+
+.plot{
+    width: 55px; 
+    height: 25px; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    /*left: 150px;*/ 
+    /*float:right;*/
+}
+
+.edit_panel_button:hover{
+    background-color: #0066cc;
+} 
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 100px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    height: 500px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;    
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.drop_down_label{
+
+    font-size: 12px;
+    font-family:helvetica;
+    font-style: inherit ;
+}
+
+.field_prop{
+    width: 200px; 
+    height: 25px;
+    font-size: 12px; 
+    font-family:helvetica;
+    float: right;
+    padding-left: 2px;
+}
+
+.check_box_prop{
+    /*margin-left: 160px;*/
+    font-size: 12px; 
+    font-family:helvetica;
+}
+
+.addUpdateRules{
+
+    background:#5cd65c; 
+    font-size: 16px; 
+    font-family:helvetica; 
+    color:#fff; width:250px; 
+    border:none; 
+    border-radius:5px; 
+    margin:auto; 
+    display:block; 
+    height: 40px;       
+}
+
+.addUpdateRules:hover{
+    background-color: #47d147;
+}  
+
+#createNewAppCtrl{
+    background:#1a8cff; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;        
+}
+
+#createNewAppCtrl:disabled {
+    background: #dddddd;
+    color:gray;
+}
+
+.modalTitle{
+    color:#757575; 
+    font-size: 20px;
+}
+
+.pq_back_btn {
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;    
+    width: 150px; 
+    height:30px; 
+    font-size: 12px; 
+    background: #eea236 
+}
+
+.pq_back_btn span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.pq_back_btn span:after {
+    content: '«';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -10px;
+    transition: 0.5s;
+}
+
+.pq_back_btn:hover span {
+    padding-left: 15px;
+}
+
+.pq_back_btn:hover span:after{
+    opacity: 1;
+    left: 0;
+}

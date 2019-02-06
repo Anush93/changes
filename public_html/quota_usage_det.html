@@ -1,0 +1,40 @@
+<div id="Quota_Usage_Det"> 
+    <div style="width: 100%; height: 40px;background-color: #222">
+        <button id="shdw_serv_home_back_btn" hidden class='pq_url_wbtn' style="float:left; display:inline-block; width: 150px; height: 30px; font-size: 11px; background: #00bcd4 url(../image/back_act.png) 5px no-repeat; text-indent: 25px;" onclick="load_quota_usage_window()">Back to Quota Usage</button>        
+        <button class="pq_back_btn" id="reset_qta_prof_btn" style="float:right; width: 100px;">Reset Profile</button>
+    </div>
+
+    <div id="Quota_Usage_Det_Holder" class="Pq_TableHolder" style="height: calc(100% - 70px); width:calc(100% - 50px)"> 
+        <div id="quota_rule_vis_label" class="BWPlotHolderHeader BWPlotHolderHeaderText">Rule 1 - Application Quota Usage</div> 
+        
+        <input type="search" id="quota_viz_ip_search_input" style="margin: 15px 15px 10px 20px; width: 300px" placeholder="Search IPs..">
+        <button onClick="Filter_quota_viz_ip()" style="margin-top: 20px; width: 80px; height:20px; font-family:helvetica; font-size: 11px; background: #5cd65c; color:#fff; border:none; border-radius:5px; " >Search</button>     
+        <div id="quoata_usage_det_table_holder" style="width: 100%; padding: 20px">
+            <table id="Quota_Usage_Prof_Det_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Rule ID</th>  
+                        <th>Element ID</th>  
+                        <th>IP</th>
+                        <th>Application</th>
+                        <th>Current Usage</th>
+                        <th>Maximum USage</th>
+                        <th>Expiry Date</th> 
+                        <th>Status</th> 
+                        <th>Action</th> 
+                    </tr>
+                </thead>
+            </table>  
+        </div>
+    </div>
+
+    <div id="q_usage_reset_warning_modal" class="modal">
+        <div class="modal-content" style=" height: 190px;">           
+            <label style="color:#967910; font-size: 16px; margin-left: 142px"> Warning!</label><br><br>
+            <label id='q_usage_reset_show_label'></label>
+            <br><br>
+            <button class='addUpdateRules' onclick="q_usage_reset_cancel_op()" style="margin-top:10px; width: 100px; height: 30px; font-size: 14px; float: right; background-color: gray; margin-left: 10px">Cancel</button>
+            <button class='addUpdateRules' onclick="q_usage_reset_do_operation();" style="margin-top:10px; width: 100px; height: 30px; font-size: 14px; float: right">Proceed</button>
+        </div>
+    </div>
+</div>

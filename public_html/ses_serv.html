@@ -1,0 +1,27 @@
+
+<div id="Session_Services"> 
+    <div class='pq_session_filter_bar' id="pq_service_win_filter"></div>
+    
+    <div class="edit_panel" style="padding-top: 10px;">
+        <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;margin-right: 15px;">Change User</button> 
+        <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+    </div> 
+    
+    <div id="Session_Services_Holder" class="Pq_TableHolder" style="position: relative; height: calc(100% - 105px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Service Table</div>                     
+        <div id="service_table_holder" style="position: absolute; width: 100%; padding: 20px" >
+            <table id="Ses_Service_Table" class="display cell-border StatusTablesFont" cellspacing="0" width="100%">
+                <thead>
+                    <tr> 
+                        <th>Services</th>                                    
+                        <th onclick="pq_table_sort_ses(3)" class="" style="cursor: pointer; text-align: center"><img style="margin-top: -10px; cursor: pointer" src="image/sort_desc.png"/>Sessions</th>
+                        <th>Bytes Sent</th>
+                        <th>Bytes Received</th>
+                        <th onclick="pq_table_sort_data(3)" class="" style="cursor: pointer; text-align: center"><img style="margin-top: -10px; cursor: pointer" src="image/sort_desc.png"/>Data</th>
+                        <th>Watch</th>                                     
+                    </tr>
+                </thead>                                 
+            </table>   
+        </div>  
+    </div>    
+</div>  

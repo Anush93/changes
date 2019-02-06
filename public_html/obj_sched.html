@@ -1,0 +1,78 @@
+<div id="Object_Schedules"> 
+    <div id="Object_Schedules_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Schedules</div> 
+        <div id="object_schedule_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button disabled onclick = "Create(5)" class="create setPrimary">Create New</button>               
+                <button disabled onclick = "Edit(5)" class="edit">Edit</button>  
+                <button disabled onclick = "Delete(5)" class="delete">Delete</button>  
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>    
+            <table id="Schedule_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>User</th> 
+                        <th>Schedule ID</th> 
+                        <th>Schedule Name</th> 
+                        <th>Type</th>                                     
+                        <th>Active Days</th>                                    
+                        <th>Start Time</th>  
+                        <th>End Time</th>                                      
+                        <th>Occurrences</th>    
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>  
+
+    <div id="CreateScheduleModal" class="modal">
+        <div class="modal-content" id="CreateScheduleModalContent" style="height: 440px">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 110px;"> Add Schedule </label><br><br>
+            <label class="drop_down_label"> Name : </label>
+            <input id="addScheduleName" required type="text" class="field_prop" pattern="\w{1,24}"> <br><br>   
+
+            <label class="drop_down_label"> Type : </label>
+            <select id="ScheduleCode" class="field_prop">                     
+                <option >Weekly Recurring</option>
+                <option >One Time</option>
+            </select><br><br>
+            <div id="appendSchedule">                     
+                <label class="drop_down_label"> Days : </label> 
+                <input type="checkbox" style="margin-left: 118px" id='Recur_1'> <label class="check_box_prop">Monday </label>      
+                <input type="checkbox" style="margin-left: 41px" id='Recur_2'> <label class="check_box_prop">Tuesday </label><br>                              
+                <input type="checkbox" style="margin-left: 157px" id='Recur_3'> <label class="check_box_prop">Wednesday </label>   
+                <input type="checkbox" style="margin-left: 20px" id='Recur_4'> <label class="check_box_prop">Thursday </label><br>                        
+                <input type="checkbox" style="margin-left: 157px" id='Recur_5'> <label class="check_box_prop">Friday</label>         
+                <input type="checkbox" style="margin-left: 51px" id='Recur_6'> <label class="check_box_prop">Saturday</label><br>                              
+                <input type="checkbox" style="margin-left: 157px" id='Recur_7'> <label class="check_box_prop">Sunday</label><br><br>
+                <label class="drop_down_label"> Start Time : </label>                     
+                <input type="text" id='startTimeRecur' class="clockpicker field_prop " placeholder ="Start Time" style="margin-left: 90px; text-indent: 5px"> <br><br>                    
+                <label class="drop_down_label"> End Time : </label>  
+                <input type="text" id='endTimeRecur' class="clockpicker field_prop" placeholder ="End Time" style="margin-left: 90px; text-indent: 5px"><br>                    
+            </div> 
+            <br>
+            <button id="addScheduleToSystem" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>        
+
+    <div id="EditScheduleModal" class="modal">
+        <div class="modal-content" id="EditScheduleModalContent" >
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 100px"> Update Schedule </label><br><br>
+            <label class="drop_down_label"> Name : </label>
+            <input id="editScheduleName" required type="text" class="field_prop" pattern="\w{1,24}"> <br><br>   
+
+            <label class="drop_down_label"> Type : </label>
+            <select id="ScheduleCodeEdit" class="field_prop">
+                <option >Weekly Recurring</option>
+                <option >One Time</option>
+            </select><br><br>
+            <div id="editSchedule">                         
+            </div> 
+            <br> 
+            <button id="editScheduleToSystem" class='addUpdateRules' style="width: 150px;">Update</button>     
+        </div>
+    </div>        
+</div> 

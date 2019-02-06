@@ -1,0 +1,46 @@
+<div id="ProfileIP"> 
+    <div id="ProfileIP_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">                 
+        <div id="ProfileIP_label" class="BWPlotHolderHeader BWPlotHolderHeaderText">IP List</div> 
+        <div id="profile_ip_table_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel" style="margin-bottom: 15px;">         
+                <button class="pq_back_btn" onclick="load_profiles()"><span>Back to Profiles</span></button>
+                <button onclick = "CreateProfileIP()" class="create setPrimary">Add IP</button>               
+                <button disabled onclick = "EditProfileIP()" class="edit">Update IP</button>  
+                <button disabled onclick = "DeleteProfileIP()" class="delete">Delete IP</button> 
+            </div>    
+            <table id="ProfileIP_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>User ID</th>
+                        <th>Key</th>
+                        <th>IP Address/Subnet</th>                            
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+    </div>  
+
+    <div id="AddProfileIPModal" class="modal">
+
+        <div class="modal-content" style=" height: 185px;">
+            <span onclick="closeModal()" class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 120px"> Add New IP </label><br><br>
+
+            <label class='drop_down_label'> IP Address : </label>
+            <input id='profileIP' type='text' placeholder="Enter your IP Address/Subnet" class='field_prop'><br><br>
+            <button id="addProfileIPToSystem" class='addUpdateRules' style="margin-top:5px;">Add IP</button>
+        </div> 
+    </div>            
+
+    <div id="EditProfileIPModal" class="modal">
+        <div class="modal-content" style=" height: 185px;">
+            <span onclick="closeModal()" class="close">×</span>                
+            <label class="modalTitle" style=" margin-left: 130px"> Update IP </label><br><br>
+
+            <label class='drop_down_label'> IP Address : </label>
+            <input id='profile_edit_IP' type='text' class='field_prop'><br><br>               
+
+            <button id="editProfileIPButton" class='addUpdateRules' style="margin-top:5px;width: 150px;">Update</button>
+        </div>  
+    </div>      
+</div> 

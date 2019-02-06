@@ -1,0 +1,45 @@
+<div id="Default_Pipe"> 
+    <div id="Default_Pipe_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Default Pipe</div> 
+        <div id="default_pipe_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">           
+                <button onclick = "Edit_Default_Pipe()" class="create">Update Default Pipe</button>  
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>    
+            <table id="Default_Pipe_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr style="height: 50px;">
+                        <th colspan="3" style="text-align: center;font-size: 14px">Default Pipe Parameters</th>
+                        <th colspan="2" style="text-align: center;font-size: 14px">Guaranteed Bandwidth</th>
+                        <th colspan="2" style="text-align: center;font-size: 14px">Maximum Bandwidth</th>
+                    </tr> 
+                    <tr> 
+                        <th>Action</th> 
+                        <th>Type</th> 
+                        <th>Priority</th>                         
+                        <th>Downlink (Kbps)</th> 
+                        <th>Uplink (Kbps)</th> 
+                        <th>Downlink (Kbps)</th> 
+                        <th>Uplink (Kbps)</th> 
+                    </tr>
+                </thead>
+            </table>  
+        </div>     
+    </div>        
+
+    <div id="EditDefaultPipeModal" class="modal">
+        <div id="EditDefaultPipeModalContent" class="modal-content" style="height: 155px; max-height: 530px; height: 100%; overflow-y: scroll;">
+            <span class="close" onclick="closeModal()">×</span>
+            <label class="modalTitle" style=" margin-left: 90px"> Update Default Pipe </label><br><br>
+            <label class="drop_down_label"> Action : </label>
+            <select id="edit_licensed_def_pipe_action" class="field_prop" style="width: 200px;">      
+                <option value="0" >Allow</option>          
+                <option value="2" >Shape</option>
+            </select><br><br>              
+            <div id="edit_licensed_def_pipe"></div>             
+
+            <button id="editDefaultPipeToSystem" class="addUpdateRules">Update</button>   
+        </div>
+    </div>         
+</div> 

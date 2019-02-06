@@ -1,0 +1,510 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 4, 2017, 11:33:50 AM
+    Author     : himantha
+*/
+
+body, html {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    /*min-width: 1900px;*/  
+}
+
+/*Need Width*/
+.Pq_Center{
+    position: relative;
+    top: 50%;
+    transform:  translateY(-50%);    
+    margin: 0 auto;
+}
+
+.Pq_LinkPlotHolder{
+    background: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 25px;
+    width: 80%;
+    height: 47%; 
+    margin-top: 15px;    
+}
+
+.Pq_HPlot{
+    height: calc(100% - 40px);
+    width: calc(100%);
+    border-radius: 0;
+}
+
+.Pq_VCenter{
+    position: relative;
+    left: -5px;
+    top: 50%;
+    border-radius: 0;
+}
+
+/*.panel-default>a{
+    text-decoration: none;    
+} 
+
+.panel-title>a{
+    text-decoration: none;    
+}*/
+
+.panel-clr_one {    
+    /*background: #0c0b0b;*/ 
+    background: linear-gradient(to bottom, #151715 0%,#4b4b4c 10%,#0e0e0e 100%);
+    color: white;
+    font-weight: bold;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.panel-clr_one:hover {
+    color: #337ab7;
+    background-color: #ffae00;   
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    /*text-decoration: none;   Background highlight takes place with this*/
+}
+
+.panel-sub-sub{    
+    /*background: #0c0b0b;*/  
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    color:#ff9900; 
+    font-size: 11px;   
+}
+
+.pq_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#Header{    
+    background-color: #f9f9f9;
+    color: white;
+    height: 40px;
+    /*    background: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5)); */
+    border-radius: 0;
+}
+
+#Header_Border{    
+    background-color: #848487;
+    color: #848487;
+    height: 2px;
+    border-radius: 0;
+}
+
+#Body {
+    margin: 0;
+    height: 100%;
+    background-color: #848487;
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1340px;
+}
+
+#Header_Pq {
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    background:#fff;
+    height: inherit;
+    float: left;
+}
+
+#Header_Pq_Text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font: caption;
+    font-size: larger;
+    border-radius: 0;
+}
+
+#Header_Text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font: caption;
+    font-weight: bold;
+    font-size: larger;
+    color: #265D3E;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-left: 200px;
+    border-radius: 0;
+    z-index: 10;
+}
+
+#Menu {
+    position: absolute;
+    width: 200px;
+    background-color: #0c0b0b;
+    height: calc(100% - 40px);
+    float: left;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0;
+    min-height: 600px;
+}
+
+#Content {
+    position: absolute;
+    left: 200px;
+    width: calc(100% - 200px);
+    height: calc(100% - 40px);
+    float: left;
+    background-color: darkgray;
+    border-radius: 0;
+}
+
+#Home, 
+#User_Summary, 
+#Link_Utilization,
+#App_Link_Utilization_User,
+#Dashboard_Destinations, 
+#Dashboard_Services,
+#Dashboard_Vlans,
+#Interface_Management,
+#Media_Config,
+#Maintenance,
+#System_Info,
+#C_Shadow_Session_Watch, 
+#C_Shadow_Server_Watch, 
+#C_Shadow_URL_Watch,
+/*#Det_Rep_Summary,
+#Det_Rep_Bw,
+#Det_Rep_Sources,
+#Det_Rep_Dests,
+#Det_Rep_Apps,
+#Det_Rep_Ports,
+#Det_Rep_Det_Sources,
+#Det_Rep_Det_Dests,
+#Det_Rep_Det_Apps,
+#Det_Rep_Det_Ports,
+#C_LDAP_Server*/
+#HA_Device{    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    min-height: 600px;
+    min-width: 1140px;    
+}
+
+#Rule_Addition_Panel, 
+#Objects_Panel, 
+#Link_Util_App_Panel,
+#Monitor_Panel{
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    /*background: #0c0b0b;*/  
+    color:gold; 
+    font-size: 12px; 
+}   
+
+#Rule_Addition_Panel:hover, 
+#Objects_Panel:hover, 
+#Monitor_Panel:hover{
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+}   
+
+.System {
+    position: relative;
+    width: 16%;
+    background-color: #f0f5f5;
+    height: 91%;
+    float: right;    
+    border-radius: 0;
+    min-width: 190px;
+    margin: 15px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;  
+}
+
+#Pq_Sopt_Head {
+    width: 100%;
+    height: 35px;
+    color: white;
+    background: -webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pq_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_fillGauge {
+    position: relative; 
+    margin-left: 20%; 
+    margin-top: 10%; 
+    font-family: Helvetica; 
+    font-weight: bold;
+}
+
+.node rect {
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+    stroke-width: 0;
+}
+.node text {
+    text-shadow: 0 1px 0 #fff;
+    font-size: 10px;
+}
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.dygraph-ylabel{
+    font-size: 12px;
+    font-family: Helvetica;
+    color: #111a28; 
+    font-weight: bold;
+}
+
+/*.nav, 
+.nav > li > a {
+  color:gold; 
+  font-size: 12px;  
+}*/
+
+/*
+.nav > li > a:focus {
+  color: #337ab7;
+  text-decoration: none;
+  background-color: red;
+}*/
+
+.pq_loggin_btn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #4cae4c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    width: 80px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;    
+}
+
+.SystemStatsPanelHeader{
+    width: 100%; 
+    height: 5%; 
+    background: #014242;
+    /*background: -webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/ 
+}
+
+.SystemStatsPanelHeaderText{
+    text-align: center;  
+    font-size: 12px;
+    float: left; 
+    margin-left: 10px; 
+    color:#fff; 
+    font-weight: bold;
+
+}
+
+/*::-webkit-scrollbar
+{
+    width:0px;
+}
+::-webkit-scrollbar-track-piece
+{
+    background-color:transparent;
+}*/
+
+.disabledPanel,.disabledPanel:focus {
+    pointer-events: none;
+    color: grey;
+    cursor: not-allowed;    
+}
+
+/*.menu_element_highlight_color{
+    background-color: #ffae00;    
+}*/
+
+.panel-sub {    
+    /*background: #0c0b0b;*/  
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    color:gold; 
+    font-size: 12px; 
+}
+
+.panel-sub:hover, .panel-sub-sub:hover {
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+}
+
+.nav, 
+.nav > li > a {
+    color:gold;  
+}
+
+.panel-title:hover,
+.panel-title:focus {
+    display: block;
+    cursor: pointer;
+
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+    display: block;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.tooltip > .tooltip-inner {
+    background-image: url(../image/info-icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px 10px;  
+    background-size: 16px;
+    background-color: #fff1ba; 
+    color: black; 
+    border: 2px solid black; 
+    padding: 10px;
+    font-size: 11px;
+    max-width: 300px;
+    padding-left: 30px;    
+}
+
+.header_panel > a:before, .secondary-header_panel> a:before{
+    content: "\2212";
+    font-family: FontAwesome;
+    float: left;         
+    color: whitesmoke;
+    margin-left: -5px;
+    margin-right: 15px;
+    color:white;
+}
+
+.header_panel > a.collapsed:before, .secondary-header_panel > a.collapsed:before {
+    content: "\002B"; 
+    margin-left: -5px;
+    margin-right: 15px;
+    color:white;
+}
+
+/*.panel-collapse li::before, .panel-collapse li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}*/
+.nav li>a::before {
+    border-top: 10px dotted #fff;
+    top: 15px;
+    width: 8px;
+    height: 0;
+}
+
+
+.panel-collapse, .panel-collapse ul, .panel-collapse li {
+    position: relative;
+}
+
+.panel-collapse ul {
+    list-style: none;
+    padding-left: 25px;
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+}
+.panel-collapse li::before, .panel-collapse li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+.panel-collapse li::before {
+    border-top: 1px solid #fff;
+    top: 17px;
+    width: 15px;
+    height: 0;
+}
+.panel-collapse li::after {
+    border-left: 1px solid #fff;
+    height: calc(100%);
+    width: 0px;
+    top: 10px;
+}
+.panel-collapse ul > li:last-child::after {
+    height: 8px;
+}
+
+.panel-collapse-sub {
+    list-style: none;
+    padding-left: 8px;
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+}
+
+.panel-collapse-sub>li::before {
+    border-top:none !important;
+    top: 17px;
+    width: 15px;
+    height: 0;
+}
+.panel-collapse-sub>li::after {
+    border-left:none !important;
+    height: calc(100%);
+    width: 0px;
+    top: 10px;
+}
+
+.alpha60 {
+    background: #006666;
+    background: rgba(36, 195, 58, 0.3);
+}
+
+select:disabled {
+    background: #ebebe4;
+}
+
+#tooltip_dt {
+    position: absolute;
+    z-index: 1001;
+    display: none;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    font-family: Helvetica;
+    font-size: 10px;
+    width: 150px;
+}
+
+#rule_user_search_input{
+    background-image: url(../image/search.png);; 
+    background-position: 5px 7px; 
+    background-repeat: no-repeat; 
+    width: 100%; 
+    font-size: 13px; 
+    padding: 12px 20px 12px 30px;
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+    height: 30px;
+}
+
+/*.ad_display{
+    display:none;
+}
+
+.dhcp_display{
+    display:none;
+}*/

@@ -1,0 +1,80 @@
+<div id="HA_Device">   
+    <div id="HA_Device_Holder" class="Pq_TableHolder" style="height: calc(100% - 40px);">                 
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">High Availability</div> 
+        <div id="ha_device_table_holder" style="width: 100%; padding: 20px">
+
+            <div class="edit_panel"> 
+                <button id='ha_devc_ip' class="create" style="margin: 0px;pointer-events: none; background: transparent; color: black; font-family: monospace; width: 200px" >Device IP : 192.168.1.25</button> 
+                <button id='ha_devc_id' class="create" style="margin: 0px; margin-left: 20px; pointer-events: none; background: transparent; font-family: monospace; color: black; width: 120px" >Device ID : 1 </button> 
+                <button class='pq_session_wbtn' style='background: #ffae00' onclick="haModalBroker(2)">Change ID</button>
+                <button id='ha_devc_state' class="create" style="margin: 0px; margin-left: 20px; pointer-events: none; background: transparent; font-family: monospace; color: black; width: 210px" >Device State : Primary </button> 
+                <button id='set_ha_devc_state_btn' class='pq_session_wbtn' style='background: #ffae00; width: 80px;' onclick="haModalBroker(3)">Change State</button>
+                <button id='ha_devc_vip' class="create" style="margin: 0px; margin-left: 20px;pointer-events: none; background: transparent; font-family: monospace; color: black; width: 230px" >Virtual IP : 192.168.1.25/28</button> 
+                <button class='pq_session_wbtn' style='background: #ffae00' onclick="haModalBroker(4)">Change IP</button>
+            </div> 
+
+            <div class="edit_panel" style="margin-top: 20px">         
+                <button class="create" style="margin: 0px;" onclick="haModalBroker(1)">Add Device</button> 
+                <button class="delete" style="margin: 0px;" disabled onclick="DeleteHaDevice()">Remove</button> 
+                <button id="ha_device_reset" class="pq_url_wbtn" disabled style="float:right; width: 120px; height:30px; font-size: 12px; background: #208830; margin: 0px" onclick = "maintenance_reset()">Reset Device</button>                 
+
+            </div>    
+
+            <table id="HA_Device_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>HA Id</th> 
+                        <th>Device Id</th> 
+                        <th>IP Address</th>                                     
+                        <th>State</th>           
+                        <th>Connection Status</th> 
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+    </div>  
+
+    <div id="CreateHaDeviceModal" class="modal">
+        <div class="modal-content" style="height: 185px;">
+            <span id="CloseNewHaDevice" class="close">×</span>
+
+            <label class="modalTitle" style="margin-left: 130px"> Add Device </label><br><br>
+            <label class="drop_down_label"> Device IP : </label>
+            <input type="text" id="add_ha_device_ip" class="field_prop" style="width: 280px" placeholder="Add Device IP"><br><br>
+            <br>
+
+            <button id="addHaDeviceToSystem" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 85px;display:inline-block">Add</button>
+            <button id="cancelHaDeviceAdd" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 10px; margin-right: -220px; display:inline-block">Cancel</button>
+        </div>
+    </div>            
+
+
+    <div id="ChangeHaDeviceIDModal" class="modal">
+        <div class="modal-content" style="height: 185px;">
+            <span id="closeHaDeviceIDEdit" class="close">×</span>
+
+            <label class="modalTitle" style="margin-left: 130px"> Edit Device ID </label><br><br>
+            <label class="drop_down_label"> Device ID : </label>
+            <input type="text" id="edit_ha_device_id" class="field_prop" style="width: 280px" placeholder="Add Device ID"><br><br>
+            <br>
+
+            <button id="editHaDeviceIDToSystem" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 85px;display:inline-block">Add</button>
+            <button id="cancelHaDeviceIDEdit" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 10px; margin-right: -220px; display:inline-block">Cancel</button>
+        </div>
+    </div>   
+
+    <div id="ChangeHaDeviceVIPModal" class="modal">
+        <div class="modal-content" style="height: 185px;">
+            <span id="closeHaDeviceVIPEdit" class="close">×</span>
+
+            <label class="modalTitle" style="margin-left: 130px"> Edit Virtual IP </label><br><br>
+            <label class="drop_down_label"> Virtual IP : </label>
+            <input type="text" id="edit_ha_device_vip" class="field_prop" style="width: 280px" placeholder="Add Virtual IP"><br><br>
+            <br>
+
+            <button id="editHaDeviceVIPToSystem" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 85px;display:inline-block">Add</button>
+            <button id="cancelHaDeviceVIPEdit" class='addUpdateRules' style="width: 100px;height: 30px;margin-left: 10px; margin-right: -220px; display:inline-block">Cancel</button>
+        </div>
+    </div>       
+
+</div> 

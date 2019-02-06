@@ -1,0 +1,211 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 30, 2017, 4:21:45 PM
+    Author     : himantha
+*/
+
+.pq_bwh_grap_tool_bar{
+    width: 100%;
+    height: 40px;
+    background-color: lightslategray;
+    font-size: 12px;
+}
+
+.pq_bwh_graph_holder {
+    width: 100%; 
+    height: calc(50% - 15px); 
+    background-color: whitesmoke;
+}
+
+.pq_bwh_graph_headl{
+    width: 100%;
+    height: 32px;
+    background-color: #2e6da4;
+    color: white;
+    font-size: 13px;
+}
+
+.pq_bwh_graph_htxt{
+    margin-left: 5px;
+    float: left;
+}
+
+.pq_bwh_link_selection{
+    float: right;
+    margin-right: 10px;
+}
+
+
+.pq_bwh_graph_plate{
+    width: 100%;
+    height: calc(100% - 32px);
+    background-color: whitesmoke;
+    float: left;
+}
+
+.pq_bwh_grap_hgap{
+    width: 100%;
+    height: 4px;
+}
+
+.pq_bwh_grapth_endt{
+    float: right;
+    font-size: 12px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.pq_bwh_link_png{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_min_com{
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.pq_bwh_move_bar{
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: #a2aec7;
+}
+
+.pq_bwh_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_bwh_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}
+.pq_bwh_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_bwh_prv_btxt{
+    margin-left: calc(50% - 76px);
+    float: left;
+    width: 60px;
+}
+
+
+.pq_bwh_ession_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: right;
+}
+
+.pq_bwh_ession_png:hover{
+    content: url(../image/close_session_act.png); 
+}
+
+
+.pq_bwh_ession_btxt{
+    margin-left: 15px;
+    float: right;
+    width: 100px;
+}
+
+.pq_bwh_next_button{    
+}
+
+.pq_bwh_prev_button{    
+}
+
+.pq_bwh_ession_button {
+}
+
+.custom-menu {
+    display: none;
+    z-index:2000;
+    position: absolute;
+    background-color:#c4d8da;
+    border: 1px solid #08b2fe;
+    overflow: hidden;
+    height: 30px;
+    width: 220px;
+    white-space:wrap;
+}
+
+.custom-menu li {
+    padding: 5px 10px;
+}
+
+.custom-menu:hover {
+    background-color: #c4c6c7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget td.day {
+    width: 200px;
+    line-height: 10px;
+    font-size: 11px;
+}
+
+th.dow {
+    font-size: 12px;
+}
+
+.pq_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bw_hist_nxt_prev_btn {    
+    font-size: 14px; 
+    font-family:Georgia; 
+    color:#4a4242; 
+    width: 100px;
+    height: 30px;    
+    float: left;
+    border:none; 
+    border-radius:5px; 
+    display:block; 
+    padding-left: 20px;
+    background-color: transparent;   
+}
+
+#bw_hist_prev_btn{    
+    background: url(../image/previous_nom.png) right no-repeat;
+}
+
+#bw_hist_next_btn {    
+    background: url(../image/next_nom.png) left no-repeat; 
+}
+
+#bw_hist_prev_btn:disabled {    
+    color:#aaaaaa; 
+    background: url(../image/previous_nom_dis.png) right no-repeat;
+}
+
+#bw_hist_next_btn:disabled {    
+    color:#aaaaaa; 
+    background: url(../image/next_nom_dis.png) left no-repeat;
+}

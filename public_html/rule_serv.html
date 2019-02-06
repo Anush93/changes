@@ -1,0 +1,113 @@
+<div id="Service_Rule"> 
+    <div id="Service_Rule_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Service Rules</div> 
+
+        <div id="service_rule_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">     
+                <button id="addServiceRule" onclick = "Create(4)" class="create setPrimary">Add Service</button>               
+                <button disabled id="editServiceRule" onclick = "Edit(4)" class="edit">Edit Service</button>  
+                <button disabled id="deleteServiceRule" onclick = "Delete(4)" class="delete">Delete Service</button> 
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>                            
+            <table id="Service_Rule_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr style="height: 50px;">
+                        <th colspan="4" style="text-align: center;font-size: 14px">Service Rule Parameters</th>
+                        <th colspan="4" style="text-align: center;font-size: 14px">Scheduled Behavior</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Default Behavior</th>
+                    </tr>    
+                    <tr> 
+                        <th>User ID</th> 
+                        <th>Port</th>
+                        <th>Global ID</th>                        
+                        <th>Type</th>
+                        <th>Schedule </th> 
+                        <th>Scheduled Action </th> 
+                        <th>Scheduled Downlink Pipe </th>         
+                        <th>Scheduled Uplink Pipe </th>    
+                        <th>Default Action </th>  
+                        <th>Default Downlink Pipe </th>    
+                        <th>Default Uplink Pipe </th>  
+                    </tr>
+                </thead>
+            </table>
+        </div>        
+    </div>   
+
+    <div id="AddServiceRuleModal" class="modal">
+        <div id="AddServiceRuleModalContent" class="modal-content" style="height: 355px; min-height: 355px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 100px"> Add Service Rule</label><br><br>        
+            <label class='drop_down_label'> Port No : </label>
+            <input id='add_serv_rule_port' type='text' value='0' class='field_prop'><br><br>   
+            <label class="drop_down_label"> Protocol : </label>
+            <select id="add_serv_rule_protocol" class="field_prop" >                 
+                <option value="1">TCP</option>
+                <option value="2">UDP</option>
+                <option value="3">Any</option>
+            </select><br><br>               
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="add_serv_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="add_sched_serv_rule_action" disabled class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="append_sched_pipes_serv_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="add_def_serv_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="append_def_pipes_serv_rule"></div>   
+
+            <button id="addServiceRuleToSystem" class="addUpdateRules">Add to System</button> 
+        </div>
+    </div>        
+
+    <div id="EditServiceRuleModal" class="modal">
+        <div id="EditServiceRuleModalContent" class="modal-content" style="height: 355px; min-height: 355px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 82px"> Update Service Rule</label><br><br>        
+            <label class='drop_down_label'> Port No : </label>
+            <input id='edit_serv_rule_port' type='text' value='0' class='field_prop'><br><br>   
+            <label class="drop_down_label"> Protocol : </label>
+            <select id="edit_serv_rule_protocol" class="field_prop" >                 
+                <option value="1">TCP</option>
+                <option value="2">UDP</option>
+                <option value="3">Any</option>
+            </select><br><br>               
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="edit_serv_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="edit_sched_serv_rule_action" class="field_prop" style="width: 200px;">   
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="edit_sched_pipes_serv_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="edit_def_serv_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="edit_def_pipes_serv_rule"></div>          
+
+            <button id="editServiceRuleToSystem" class="addUpdateRules">Update</button>  
+        </div>
+    </div>  
+</div> 

@@ -1,0 +1,23 @@
+<div id="AppSignature"> 
+    <div class="Pq_TableHolder">                    
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Application Signatures</div> 
+        <div id="signature_table_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button type="button" id="addSignature" onclick = "initSignatureDB()" class="create">Add Signature</button>               
+                <button type="button" id="deleteSignature" disabled onclick = "deleteSignature()" class="delete">Delete Signature</button>   
+                <button type="button" id="updateSignature" disabled onclick = "updateSignatures()" class="edit">Update Signatures</button>  
+            </div>    
+            <table id="Signature_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>Key</th>                                     
+                        <th>Application</th> 
+                        <th>Category</th> 
+                        <th>Status_val</th> 
+                        <th>Status</th>                                     
+                    </tr>
+                </thead>
+            </table>  
+        </div>  
+    </div>    
+</div>  

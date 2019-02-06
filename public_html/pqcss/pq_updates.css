@@ -1,0 +1,148 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 15, 2017, 1:08:10 PM
+    Author     : Hasareli Fernando
+*/
+
+.update_button_area{
+    width: calc(100% - 15px);
+    height: 45px;
+    margin-top:20px;
+    position: relative;
+    margin-left: 20px;       
+}
+.update_button_area button{
+    display: inline;
+    background-color:#4CAF50 ;
+    width:100px; 
+    border: none;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 12px;
+    height: 30px;
+}
+.update_detail{
+    margin-top: 15px;
+    max-height: 225px;
+    overflow-y: auto;
+}
+.update_status{
+    margin-top: 65px;
+    height: 225px;
+    overflow-y: auto;
+}
+.connection_status{
+    margin-top: 50px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4CAF50;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/***** Custom Input Styling *****/
+
+label.fileLabel input[type="file"] {
+    position: fixed;
+    z-index: -1000;
+    display: none;
+}
+.fileLabel {
+    border: 2px solid #AAA;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: #f1f5fb;
+    cursor:pointer;
+    font-size: 12px;
+}
+.fileLabel:hover {
+    background: #CCC;
+}
+.fileLabel:active {
+    background: #CCF;
+}
+.fileLabel :invalid + span {
+    color: #A44;
+}
+.fileLabel :valid + span {
+    color: #4A4;
+}
+
+/*****/
+
+#offline_file_upload:disabled, #license_file_upload:disabled{
+    background-color: #bfbfbf;
+}
+
+.pq_upd_config_bck_sched,
+.pq_upd_config_bck_serv{
+    position: relative; 
+    /*font-size: 11px;*/ 
+    width: 100%;
+    height: 40px; 
+    background-color: transparent; 
+    margin-top: 1px; 
+    display:none; 
+}

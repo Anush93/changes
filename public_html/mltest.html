@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>       
+        <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>    
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>     
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/select.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/clockpicker.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="css/common.min.css" rel="stylesheet" type="text/css"/>
+        <link href="pqcss/pq_web_core.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/moment.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>   
+        <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>     
+        <script src="js/d3pie.min.js" type="text/javascript"></script>
+        <script src="js/randomColor.min.js" type="text/javascript"></script>   
+        <script src="js/d3.v3.min.js" type="text/javascript"></script>        
+        <script src="js/d3.chart.min.js" type="text/javascript"></script>
+        <script src="js/d3.chart.sankey.min.js" type="text/javascript"></script>      
+        <script src="js/Chart.min.js" type="text/javascript"></script>
+        <script src="js/liquidFillGauge.min.js" type="text/javascript"></script>
+        <script src="js/pdfmake.min.js" type="text/javascript"></script>     
+        <script src="js/datatable_helpers.min.js" type="text/javascript"></script>
+        <script src="js/dygraph-combined.min.js" type="text/javascript"></script>        
+        <script src="js/viz.v1.0.0.min.js" type="text/javascript"></script> 
+        <script src="js/clockpicker.min.js" type="text/javascript"></script>        
+        <script src="js/smooth-plotter.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ajax-blob-arraybuffer.min.js" type="text/javascript"></script>
+        <script src="js/jquery.cookie.min.js" type="text/javascript"></script>
+        <script src="js/list.min.js" type="text/javascript"></script>
+        <script src="js/jscolor.js" type="text/javascript"></script>
+        <script src="pqjs/pq_web_core.min.js" type="text/javascript"></script>
+        <script src="pqjs/pqcore_init.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div style="background-color:darkgray;width: 100%;height: 100%">
+            <div style="width: 100%;height: 100px;background-color: #006263">
+                <label class="pq_hvcenter" style="float: left;color: white;font-size: 24px">ML Test</label>
+                <button id="btn_infreqd_open" class='addUpdateRules pq_vcenter' style="margin-top:5px;float: right;margin-right: 20px">Open</button>
+            </div>
+        </div>
+
+        <div id="EditProfileModal" class="modal">
+            <div class="modal-content" style=" height: 500px;">
+                <span id="CloseEditProfile" class="close">×</span>                
+                <label style="color:#5f5c5c; font-size: 20px; margin-left: 130px"> Add Info Request </label><br><br>
+
+                <label class="drop_down_label"> Req Type : </label>
+                <input id="infreq_type" required type="email" class="field_prop"> <br><br>
+
+                <label class="drop_down_label"> AG 1 : </label>
+                <input id="infreq_ag1" required type="email" class="field_prop"> <br><br>  
+
+                <label class="drop_down_label"> AG 2 : </label>
+                <input id="infreq_ag2" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> AG 3 : </label>
+                <input id="infreq_ag3" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> AG 4 : </label>
+                <input id="infreq_ag4" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> AG 5 : </label>
+                <input id="infreq_ag5" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> AG 6 : </label>
+                <input id="infreq_ag6" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> STR 1 : </label>
+                <input id="infreq_str1" required type="email" class="field_prop"> <br><br> 
+
+                <label class="drop_down_label"> STR 2 : </label>
+                <input id="infreq_str2" required type="email" class="field_prop"> <br><br> 
+
+                <button id="btn_infreq_sent" class='addUpdateRules' style="margin-top:5px;">Sent</button>
+            </div>
+        </div>
+
+        <div id="StatusModal" class="modal">
+            <div id="StatusModalContent" class="modal-content" style="width:370px; height:170px; margin: auto; border-radius: 17px; padding: 0px; background: whitesmoke">
+                <div id="StausText" class="StatusContentHolderHeader StatusContentHolderHeaderText "></div> 
+                <div id="userStatusModalImage" style="display: inline-block; float: left; margin: 12px;"></div> 
+                <div id="userStatusModalText" style="display: inline-block; width:280px; height:120px;"></div> 
+            </div>
+        </div> 
+
+        <div id="DisconnectModal" class="modal">
+            <div id="createDisconnectModalContent" class="modal-content" style="height: 200px;">
+                <label class="modalTitle" style=" margin-left: 28%"> System Status </label><br><br>
+                <label class="drop_down_label"> The System is Disconnected! Please Refresh to Continue </label>
+                <button id="discon_refresh" class="addUpdateRules" onClick="window.location.reload();" style="margin-top: 40px; width: 100px" >Refresh</button>                  
+            </div>
+        </div> 
+
+        <script>
+            $("#EditProfileModal").show();
+
+            update_acjs_elements = function (def, name, email, e0, e1, e2, e3, e4, e5) {
+                var cmd_buffer = new ArrayBuffer(4 * 7 + name.length + email.length);
+                var req = new Uint32Array(cmd_buffer, 0, 7);
+                req[0] = pq_4_8_32(CJS_REQUEST_START, INFORMATION_UPDATE, def, 0);
+                req[1] = e0;
+                req[2] = e1;
+                req[3] = e2;
+                req[4] = e3;
+                req[5] = e4;
+                req[6] = e5;
+
+                if (name !== '') {
+                    req[5] = name.length;
+                    var bname = new Uint8Array(cmd_buffer, 4 * 7, name.length);
+                    for (var cit = 0; cit < name.length; cit++) {
+                        bname[cit] = name.charCodeAt(cit);
+                    }
+                }
+
+                if (email !== '') {
+                    req[6] = email.length;
+                    var bname = new Uint8Array(cmd_buffer, 4 * 7 + name.length, email.length);
+                    for (var cit = 0; cit < email.length; cit++) {
+                        bname[cit] = email.charCodeAt(cit);
+                    }
+                }
+                return cmd_buffer;
+            };
+
+            $("#btn_infreqd_open").click(function () {
+                $("#EditProfileModal").show();
+            });
+
+
+            $("#btn_infreq_sent").click(function () {
+                var cmd_buffer = update_acjs_elements($('#infreq_type').val(), $('#infreq_str1').val(),
+                        $('#infreq_str2').val(),
+                        $('#infreq_ag1').val(),
+                        $('#infreq_ag2').val(),
+                        $('#infreq_ag3').val(),
+                        $('#infreq_ag4').val(),
+                        $('#infreq_ag5').val(),
+                        $('#infreq_ag6').val());
+
+                var cookie = $.cookie('pqsf');
+                $.ajax({
+                    data: cmd_buffer,
+                    processData: false,
+                    headers: {"PARAQUMTEC": cookie},
+                    timeout: 10000,
+                    type: 'POST',
+                    url: '/'
+                }).done(function (data, textStatus, jqXHR) {
+                    $("#EditProfileModal").hide();
+                    Init_WO_Param(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+                    show_acjs_status_modal(data.charCodeAt(0));
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    console.error('Problems when posting...');
+                });
+            });
+//    var cmd_buffer = update_acjs_elements(WO_RULE_LIST_ADD, '', pq_2_16_32(src_id, dest_id), pq_2_16_32(d_shp_id, u_shp_id), pq_2_16_32(app_id, url_prof), pq_2_16_32(serv_id, sched_id), pq_2_16_32(shpr_type, merge), 0);
+        </script>
+    </body>
+</html>

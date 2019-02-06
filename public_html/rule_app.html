@@ -1,0 +1,108 @@
+<div id="App_Rule"> 
+    <div id="App_Rule_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 30px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Application Rules</div> 
+
+        <div id="app_rule_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">     
+                <button id="addAppRule" onclick = "Create(3)" class="create setPrimary">Add Application</button>               
+                <button disabled id="editAppRule" onclick = "Edit(3)" class="edit">Edit Application</button>  
+                <button disabled id="deleteAppRule" onclick = "Delete(3)" class="delete">Delete Application</button> 
+                <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;">Change User</button> 
+                <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+            </div>                            
+            <table id="App_Rule_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr style="height: 50px;">
+                        <th colspan="4" style="text-align: center;font-size: 14px">Application Rule Parameters</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Scheduled Behavior</th>
+                        <th colspan="3" style="text-align: center;font-size: 14px">Default Behavior</th>
+                    </tr>    
+                    <tr> 
+                        <th>User ID</th>                  
+                        <th>App ID</th> 
+                        <th>Application</th>
+                        <th>Schedule </th> 
+                        <th>Scheduled Action </th> 
+                        <th>Scheduled Downlink Pipe </th>         
+                        <th>Scheduled Uplink Pipe </th>    
+                        <th>Default Action </th>  
+                        <th>Default Downlink Pipe </th>    
+                        <th>Default Uplink Pipe </th>  
+                    </tr> 
+                </thead>
+            </table>               
+        </div>        
+    </div>   
+
+    <div id="AddAppRuleModal" class="modal">
+        <div id="AddAppRuleModalContent" class="modal-content" style="height: 310px; width: 400px; min-height: 310px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 80px"> Add Application Rule </label><br><br>
+            <label class="drop_down_label"> Application : </label>
+            <input type="search" list="appControlID" class="field_prop">
+            <datalist id="appControlID" >
+            </datalist><br><br> 
+            <input id="addedApp" hidden type="text" class="field_prop">
+
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="add_app_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="add_sched_app_rule_action" disabled class="field_prop" style="width: 200px;">   
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="append_sched_pipes_app_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="add_def_app_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="append_def_pipes_app_rule"></div>            
+
+            <button id="addAppRuleToSystem" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>      
+
+    <div id="EditAppRuleModal" class="modal">
+        <div  id="EditAppRuleModalContent" class="modal-content" style="height: 310px; width: 400px; min-height: 310px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 65px"> Update Application Rule</label><br><br>                
+            <label class="drop_down_label"> Application : </label>
+            <input id="editAddedApp" type="text" class="field_prop"> <br><br>  
+
+            <label class="drop_down_label"> Rule Schedule : </label>
+            <select id="edit_app_rule_schedule" class="field_prop" style="width: 200px;">
+            </select> <br><br> 
+
+            <label class="drop_down_label"> Scheduled Action : </label>
+            <select id="edit_sched_app_rule_action" class="field_prop" style="width: 200px;">      
+                <option selected disabled value="10" >N/A</option>
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>      
+
+            <div id="edit_sched_pipes_app_rule"></div>      
+
+            <label class="drop_down_label"> Default Action : </label>
+            <select id="edit_def_app_rule_action" class="field_prop" style="width: 200px;">                     
+                <option value="0" >Allow</option>
+                <option value="-1">Block</option>                
+                <option value="2" >Shape</option>
+            </select><br><br>
+            <div id="edit_def_pipes_app_rule"></div>          
+
+            <button id="editAppToProfile" class='addUpdateRules'>Update</button>  
+        </div>
+    </div>  
+
+</div>
+
+

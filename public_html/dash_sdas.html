@@ -1,0 +1,60 @@
+<div id="Dashboard_Sources">
+
+    <div class="Pq_BWHolder">         
+        
+        <div class="edit_panel" style="margin-top: 10px;">
+            <button onclick = "show_rule_user_popup()" class="userRule" style="float: right; background: #009688; width: 100px;margin-right: 15px;">Change User</button> 
+            <label class="drop_down_label" style="width:200px; float: right; text-align: end; margin-top: 12px;" id="rule_user_label"></label>
+        </div> 
+
+        <div class="Pq_BWPlotHolder" style="height: calc(50% - 30px);width: calc(50% - 30px);display: inline-block; margin-top: 10px;">
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id="dashPie_src_dlink_header" style="font-size: 14px; height: 2em"></div> 
+
+            <div class="PieChartContentHolder" style="height: calc(100% - 50px); width: calc(100% - 30px)">                                
+                <div id="dashPie_src_dlink" class="PieChartHolder" style="height: calc(100% - 40px); width: calc(50% - 20px);margin-top: 30px"></div>    
+                <div class="PieChartDetailHolder" id="dashPie_pie_dlink_table_holder" style="height: calc(100% - 30px)">  
+                    <table id="dashPie_pie_dlink_table" class="display cell-border AppUserTablesFont" style="height:100%; overflow: scroll"></table>  
+                    <a style="font-size: 10px; text-decoration: none; color:gray">* % on piechart is based only on top ten elements, while % on table is based on total downlink traffic</a>
+                </div> 
+            </div> 
+        </div> 
+        
+        <div class="Pq_BWPlotHolder" style="height: calc(50% - 30px); width: calc(50% - 30px); display: inline-block; margin-left: 20px; margin-top: 10px;">
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id="dashPie_src_ulink_header" style="font-size: 14px; height: 2em"></div> 
+
+            <div class="PieChartContentHolder" style="height: calc(100% - 50px); width: calc(100% - 30px)">                             
+                <div id="dashPie_src_ulink" class="PieChartHolder" style="height: calc(100% - 40px); width: calc(50% - 20px);margin-top: 30px"></div>    
+                <div class="PieChartDetailHolder" id="dashPie_pie_ulink_table_holder" style="height: calc(100% - 30px)">  
+                    <table id="dashPie_pie_ulink_table" class="display cell-border AppUserTablesFont" style="height:100%; overflow: scroll"></table>  
+                    <a style="font-size: 10px; text-decoration: none; color:gray">* % on piechart is based only on top ten elements, while % on table is based on total uplink traffic</a>
+                </div> 
+            </div> 
+        </div>         
+
+        <div class="Pq_BWPlotHolder" style="height: calc(50% - 40px);">            
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" id="dashPie_bw_plot" style="font-size: 14px; height: 2em"></div>             
+
+            <div style="width: 100%;height: 28px;background-color: #222">
+                <img src="image/up_ch.png" style="float: left; margin-right: 15px; margin-left: 10px" class="pq_bwevent_vcenter"/>
+                <a style="float: left;font-size: 12px; color: #D5E4F3; text-decoration: none;" class="pq_bwevent_vcenter"></a>
+                <a id ="pq_dashPie_srcdesapp_ulink_pkts" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Packets Sent: 0 </a>
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>                
+                <a id ="pq_dashPie_srcdesapp_ulink_usage" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Sent: 0 MB</a>
+                <div style="width: 15px;height: 15px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+                <a id ="pq_dashPie_srcdesapp_dlink_pkts" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Packets Received: 0 </a>
+                <div style="width: 15px;height: 15px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>                  
+                <a id ="pq_dashPie_srcdesapp_dlink_usage" style="font-size: 11px;float: right; margin-right: 100px;color: whitesmoke; text-decoration: none;" class="pq_bwevent_vcenter">Data Received: 0 MB</a>
+                <div style="width: 15px;height: 15px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>            
+            </div>
+            <div style="width: 100%; height:calc(100% - 75px);background-color: whitesmoke;position: relative">
+                <div id='plot_dashPie_srcdesapp_updown' style="width: calc(100%); height:100%;background-color: whitesmoke;position: absolute; z-index: 100">
+                </div>
+            </div>          
+            
+        </div> 
+    </div>                 
+</div>

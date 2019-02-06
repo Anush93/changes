@@ -1,0 +1,394 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 28, 2016, 3:02:59 PM
+    Author     : Hasith Dharmarathna <hasith@paraqum.com at ParaQum tec>
+*/
+
+
+.pq_flow_filter_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    background: #2a3338;
+}
+
+.pq_tc_diagram_filter_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    padding: 4px;
+}
+
+.pq_flow_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_flow_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pq_flow_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.pq_flow_fadd {
+    width: 100px;
+    height: 26px;
+    float: left;        
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.pq_flow_fadd:hover{
+    background-color: #2b542c;
+}
+
+.pq_flow_drop_down {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.pq_flow_drop_down a{
+    color: #122b40;
+    padding: 3px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.pq_flow_drop_down_text{
+    font-size: 11px;
+    cursor:pointer;
+    font-family: Helvetica;
+}
+
+.pq_flow_dropwb {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    z-index: 100;
+}
+
+.pq_bwh_endtime_png{
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.pq_flow_drop_down a:hover{
+    background-color: #e6e6d2;
+}
+
+.bq_bwh_lend_time{
+    float: right;
+    margin-right: 10px;
+    color: white;
+}
+
+.pq_flow_dis_element {    
+    position: relative;
+    float: left;
+    background-color: #1c94c4;
+    width: auto;
+    height: 26px;
+    /*padding: 1px;*/
+    margin-right: 10px;
+}
+
+.pq_flow_dis_element_title {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;color: white;
+    text-decoration: none;
+}
+
+.pq_flow_dis_element_value {
+    font-size: 11px;
+    padding-left: 1px; 
+    padding-right: 10px;
+    float: left;color: black;
+    text-decoration: none;
+}
+
+
+.pq_flow_dis_element_image {
+    float: left;
+    background-image: url(../image/remove.png);
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.pq_flow_dis_element_image:hover{
+    background-image: url(../image/remove_inact.png); 
+}
+
+.pq_flow_input_element {
+    height: 26px;
+    width:  auto;
+    border: none;
+    background-color: #0f68ad;
+    float: left;    
+}
+
+.pq_flow_input_field {
+    height: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 3px;
+    font-size: 11px;
+}
+
+.pq_flow_input_label {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+.pq_flow_remove {
+    width: 90px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/cancel_off.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/cancel_off.png) 4px no-repeat; 
+    float: right;
+    margin-right: 3px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_remove:hover{
+    background-image: url(../image/cancel_on.png); 
+}
+
+.pq_flow_refresh {
+    width: 72px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/refresh_on.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/refresh_on.png) 4px no-repeat; 
+    float: right;
+    margin-right: 3px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_refresh:hover{
+    background-image: url(../image/refresh_off.png); 
+}
+
+.pq_flow_apply {
+    width: 90px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/apply_off.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/apply_off.png) 4px no-repeat; 
+    float: right;
+    color: white;
+    border:none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_apply:hover{
+    background-image: url(../image/apply_on.png); 
+}
+
+.pq_flow_not_selected {
+    width: 400px;
+    height: 100px;
+    background-color: #1b6d85;
+}
+
+.pq_flow_not_selected_img {
+    background-image: url(../image/flow_thumb.png);
+    width: 64px;
+    height: 64px;
+    float: left;
+}
+
+.pq_flow_not_selected_txt{
+    font-size: 15px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;
+    color: white;
+}
+
+.pq_flow_not_selected_thumb {
+    background-image: url(../image/info.png);
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.pq_flow_details_element {
+    height: 140px;
+    width: 100%;
+    background-color: rgba(2,4,4,0.1);
+    padding: 4px;
+}
+
+.pq_flow_details_element_filter {
+    width: 900px;
+    height: 100%;
+    /*background-color: #000\9;*/
+    float: left;
+}
+
+.pq_flow_details_element_bar {
+    height: 40px;;
+    width: 100%;
+    /*background-color: #000\9;*/
+}
+
+.pq_flow_details_element_cell {
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 200px;
+    height: 38px;
+    background-color: rgba(16, 78, 139, 0.6);
+}
+
+.pq_flow_details_element_thumb {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    float: left;
+    background-color: rgba(50,205,50,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+}
+
+.pq_flow_details_element_ttl {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_details_element_val {
+    font-size: 11px;
+    padding-left: 1px; 
+    padding-right: 10px;
+    float: left;color: black;
+}
+
+.pq_flow_info_element {
+    width: 400px;
+    height: 100%;
+    /*background-color: #000\9;*/
+    float: right;
+}
+
+.pq_flow_info_speed_element {
+    width: 158px;
+    height: 100%;
+    background-color: darkslategray; 
+    float: left;
+    margin-right: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pq_flow_info_speed_val {
+    width: 100%;
+    height: 100px;
+    background-color: darkslategray;
+}
+
+.pq_flow_info_speed_val_txt {
+    font-size: 20px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_info_speed_ttl {
+    width: 100%;
+    height: 32px;
+    background-color: white;
+}
+
+.pq_flow_info_speed_ttl_txt{
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: black;
+}
+
+.pq_flow_info_other_element {
+    width: calc(100% - 160px);
+    height: 100%;
+    /*background-color: #000\9;*/ 
+    float: left;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.pq_flow_info_packet_element {
+    width: 100%;
+    height: 50%;
+    margin-top: 2px;
+    /*    background-color: #000\9;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.pq_flow_info_other_val {
+    width: 100%;
+    height: calc(80% - 4px);
+    background-color: darkslategray;
+}
+
+.pq_flow_info_other_val_txt{
+    font-size: 18px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_info_other_ttl {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+}
+
+.pq_flow_info_other_ttl_txt{
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: black;
+}

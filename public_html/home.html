@@ -1,0 +1,50 @@
+<div id="Home">
+    
+    <div class="System" style="height: calc(100% - 30px);">
+        <div id="Pq_System" style="height: calc(100% - 35px);width: 100%; background: white;">
+
+            <div class="SystemStatsPanelHeader" style="border-radius: 5px 5px 0 0">  
+                <img class="pq_vcenter" src="image/uptime.png" style="margin-left: 10px; float: left"/>
+                <div class="pq_vcenter SystemStatsPanelHeaderText"> Uptime</div>
+            </div>
+
+            <div style="width: 100%; height: 4%;">
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter" id="pq_mw_uptime" style="font-size: 11px; margin-left: 30px">12 day(s) 13 hour(s) 23 min(s)</div>
+            </div>
+
+            <div style="margin-top: 2%" class="SystemStatsPanelHeader">
+                <img class="pq_vcenter" src="image/statistics.png" style="margin-left: 10px; float: left"/>
+                <div class="pq_vcenter SystemStatsPanelHeaderText">  Session Statistics</div>
+            </div>
+
+            <div style="width: 100%; height: 4%;">
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter panel-title" id="pq_mw_session_ps" style="font-size: 11px; margin-left: 30px; cursor: auto">New Sessions Per-Second: 0</div>
+            </div>
+
+            <div style="width: 100%; height: 4%;">
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter panel-title" id="pq_mw_session_count" style="font-size: 11px; margin-left: 30px; cursor: auto">Total Sessions: 0</div>
+            </div>                         
+
+            <div style="margin-top: 4%" class="SystemStatsPanelHeader">
+                <img class="pq_vcenter" src="image/alert.png" style="margin-left: 10px; float: left"/>
+                <div class="pq_vcenter SystemStatsPanelHeaderText"> Events</div>
+            </div>
+
+            <div id="notific_area" style="width: 100%; height: 65%; overflow-y: auto;">
+            </div>  
+        </div>
+    </div>                
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(50% - 22px); position: relative; width: 79%;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px)" >Downlink Bandwidth (10 s Average)</div>  
+        <div id="CHD_av_Plot" class="Pq_HPlot" style="width: 97%; height: 80%; padding: 10px; position: absolute; z-index: 100" ></div>  
+    </div> 
+
+    <div class="Pq_LinkPlotHolder" style="height: calc(50% - 22px); position: relative; width: 79%;">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:calc(10% + 10px)">Uplink Bandwidth (10 s Average)</div> 
+        <div id="CHU_av_Plot" class="Pq_HPlot" style="width: 97%; height: 80%; padding: 10px; position: absolute; z-index: 100" ></div>  
+    </div>
+</div>

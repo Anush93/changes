@@ -1,0 +1,2981 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 4, 2017, 11:33:50 AM
+    Author     : himantha
+*/
+
+body, html {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    /*min-width: 1900px;*/  
+}
+
+/*Need Width*/
+.Pq_Center{
+    position: relative;
+    top: 50%;
+    transform:  translateY(-50%);    
+    margin: 0 auto;
+}
+
+.Pq_LinkPlotHolder{
+    background: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 25px;
+    width: 80%;
+    height: 47%; 
+    margin-top: 15px;    
+}
+
+.Pq_HPlot{
+    height: calc(100% - 40px);
+    width: calc(100%);
+    border-radius: 0;
+}
+
+.Pq_VCenter{
+    position: relative;
+    left: -5px;
+    top: 50%;
+    border-radius: 0;
+}
+
+/*.panel-default>a{
+    text-decoration: none;    
+} 
+
+.panel-title>a{
+    text-decoration: none;    
+}*/
+
+.panel-clr_one {    
+    /*background: #0c0b0b;*/ 
+    background: linear-gradient(to bottom, #151715 0%,#4b4b4c 10%,#0e0e0e 100%);
+    color: white;
+    font-weight: bold;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+
+.panel-clr_one:hover {
+    color: #337ab7;
+    background-color: #ffae00;   
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    /*text-decoration: none;   Background highlight takes place with this*/
+}
+
+.panel-sub-sub{    
+    /*background: #0c0b0b;*/  
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    color:#ff9900; 
+    font-size: 11px;   
+}
+
+.pq_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#Header{    
+    background-color: #f9f9f9;
+    color: white;
+    height: 40px;
+    /*    background: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5)); */
+    border-radius: 0;
+}
+
+#Header_Border{    
+    background-color: #848487;
+    color: #848487;
+    height: 2px;
+    border-radius: 0;
+}
+
+#Body {
+    margin: 0;
+    height: 100%;
+    background-color: #848487;
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1340px;
+}
+
+#Header_Pq {
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    background:#fff;
+    height: inherit;
+    float: left;
+}
+
+#Header_Pq_Text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font: caption;
+    font-size: larger;
+    border-radius: 0;
+}
+
+#Header_Text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font: caption;
+    font-weight: bold;
+    font-size: larger;
+    color: #265D3E;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-left: 200px;
+    border-radius: 0;
+    z-index: 10;
+}
+
+#Menu {
+    position: absolute;
+    width: 200px;
+    background-color: #0c0b0b;
+    height: calc(100% - 40px);
+    float: left;    
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0;
+    min-height: 600px;
+}
+
+#Content {
+    position: absolute;
+    left: 200px;
+    width: calc(100% - 200px);
+    height: calc(100% - 40px);
+    float: left;
+    background-color: darkgray;
+    border-radius: 0;
+}
+
+#Home, 
+#User_Summary, 
+#Link_Utilization,
+#App_Link_Utilization_User,
+#Dashboard_Destinations, 
+#Dashboard_Services,
+#Dashboard_Vlans,
+#Interface_Management,
+#Media_Config,
+#Maintenance,
+#System_Info,
+#C_Shadow_Session_Watch, 
+#C_Shadow_Server_Watch, 
+#C_Shadow_URL_Watch,
+/*#Det_Rep_Summary,
+#Det_Rep_Bw,
+#Det_Rep_Sources,
+#Det_Rep_Dests,
+#Det_Rep_Apps,
+#Det_Rep_Ports,
+#Det_Rep_Det_Sources,
+#Det_Rep_Det_Dests,
+#Det_Rep_Det_Apps,
+#Det_Rep_Det_Ports,
+#C_LDAP_Server*/
+#HA_Device{    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    min-height: 600px;
+    min-width: 1140px;    
+}
+
+#Rule_Addition_Panel, 
+#Objects_Panel, 
+#Link_Util_App_Panel,
+#Monitor_Panel{
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    /*background: #0c0b0b;*/  
+    color:gold; 
+    font-size: 12px; 
+}   
+
+#Rule_Addition_Panel:hover, 
+#Objects_Panel:hover, 
+#Monitor_Panel:hover{
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+}   
+
+.System {
+    position: relative;
+    width: 16%;
+    background-color: #f0f5f5;
+    height: 91%;
+    float: right;    
+    border-radius: 0;
+    min-width: 190px;
+    margin: 15px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;  
+}
+
+#Pq_Sopt_Head {
+    width: 100%;
+    height: 35px;
+    color: white;
+    background: -webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pq_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_fillGauge {
+    position: relative; 
+    margin-left: 20%; 
+    margin-top: 10%; 
+    font-family: Helvetica; 
+    font-weight: bold;
+}
+
+.node rect {
+    fill-opacity: .9;
+    shape-rendering: crispEdges;
+    stroke-width: 0;
+}
+.node text {
+    text-shadow: 0 1px 0 #fff;
+    font-size: 10px;
+}
+.link {
+    fill: none;
+    stroke: #000;
+    stroke-opacity: .2;
+}
+
+.dygraph-ylabel{
+    font-size: 12px;
+    font-family: Helvetica;
+    color: #111a28; 
+    font-weight: bold;
+}
+
+/*.nav, 
+.nav > li > a {
+  color:gold; 
+  font-size: 12px;  
+}*/
+
+/*
+.nav > li > a:focus {
+  color: #337ab7;
+  text-decoration: none;
+  background-color: red;
+}*/
+
+.pq_loggin_btn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #4cae4c;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px;
+    width: 80px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;    
+}
+
+.SystemStatsPanelHeader{
+    width: 100%; 
+    height: 5%; 
+    background: #014242;
+    /*background: -webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/ 
+}
+
+.SystemStatsPanelHeaderText{
+    text-align: center;  
+    font-size: 12px;
+    float: left; 
+    margin-left: 10px; 
+    color:#fff; 
+    font-weight: bold;
+
+}
+
+/*::-webkit-scrollbar
+{
+    width:0px;
+}
+::-webkit-scrollbar-track-piece
+{
+    background-color:transparent;
+}*/
+
+.disabledPanel,.disabledPanel:focus {
+    pointer-events: none;
+    color: grey;
+    cursor: not-allowed;    
+}
+
+/*.menu_element_highlight_color{
+    background-color: #ffae00;    
+}*/
+
+.panel-sub {    
+    /*background: #0c0b0b;*/  
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+    color:gold; 
+    font-size: 12px; 
+}
+
+.panel-sub:hover, .panel-sub-sub:hover {
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+}
+
+.nav, 
+.nav > li > a {
+    color:gold;  
+}
+
+.panel-title:hover,
+.panel-title:focus {
+    display: block;
+    cursor: pointer;
+
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    color: #e0ebeb;
+    text-decoration: none;    
+    background-color: #6f5e5e;
+    display: block;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: searchfield-cancel-button;
+}
+
+.tooltip > .tooltip-inner {
+    background-image: url(../image/info-icon.png);
+    background-repeat: no-repeat;
+    background-position: 5px 10px;  
+    background-size: 16px;
+    background-color: #fff1ba; 
+    color: black; 
+    border: 2px solid black; 
+    padding: 10px;
+    font-size: 11px;
+    max-width: 300px;
+    padding-left: 30px;    
+}
+
+.header_panel > a:before, .secondary-header_panel> a:before{
+    content: "\2212";
+    font-family: FontAwesome;
+    float: left;         
+    color: whitesmoke;
+    margin-left: -5px;
+    margin-right: 15px;
+    color:white;
+}
+
+.header_panel > a.collapsed:before, .secondary-header_panel > a.collapsed:before {
+    content: "\002B"; 
+    margin-left: -5px;
+    margin-right: 15px;
+    color:white;
+}
+
+/*.panel-collapse li::before, .panel-collapse li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}*/
+.nav li>a::before {
+    border-top: 10px dotted #fff;
+    top: 15px;
+    width: 8px;
+    height: 0;
+}
+
+
+.panel-collapse, .panel-collapse ul, .panel-collapse li {
+    position: relative;
+}
+
+.panel-collapse ul {
+    list-style: none;
+    padding-left: 25px;
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+}
+.panel-collapse li::before, .panel-collapse li::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+}
+.panel-collapse li::before {
+    border-top: 1px solid #fff;
+    top: 17px;
+    width: 15px;
+    height: 0;
+}
+.panel-collapse li::after {
+    border-left: 1px solid #fff;
+    height: calc(100%);
+    width: 0px;
+    top: 10px;
+}
+.panel-collapse ul > li:last-child::after {
+    height: 8px;
+}
+
+.panel-collapse-sub {
+    list-style: none;
+    padding-left: 8px;
+    background: linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%);
+}
+
+.panel-collapse-sub>li::before {
+    border-top:none !important;
+    top: 17px;
+    width: 15px;
+    height: 0;
+}
+.panel-collapse-sub>li::after {
+    border-left:none !important;
+    height: calc(100%);
+    width: 0px;
+    top: 10px;
+}
+
+.alpha60 {
+    background: #006666;
+    background: rgba(36, 195, 58, 0.3);
+}
+
+select:disabled {
+    background: #ebebe4;
+}
+
+#tooltip_dt {
+    position: absolute;
+    z-index: 1001;
+    display: none;
+    border: 2px solid #ebebeb;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    font-family: Helvetica;
+    font-size: 10px;
+    width: 150px;
+}
+
+#rule_user_search_input{
+    background-image: url(../image/search.png);; 
+    background-position: 5px 7px; 
+    background-repeat: no-repeat; 
+    width: 100%; 
+    font-size: 13px; 
+    padding: 12px 20px 12px 30px;
+    border: 1px solid #ddd; 
+    margin-bottom: 12px; 
+    height: 30px;
+}
+
+/*.ad_display{
+    display:none;
+}
+
+.dhcp_display{
+    display:none;
+}*//*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 25, 2016, 10:44:52 AM
+    Author     : User_Pc
+*/
+
+#Dashboard_Applications {
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;   
+}
+
+#Dashboard_Sources {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;   
+}
+
+.Pq_BWHolder{
+    width: 100%;
+    height: 97%;
+    border-radius: 0;
+}
+
+.Pq_BWPlotHolder{
+    background: #f0f5f5;
+    margin-top: 1px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 25px;
+    width: 97%;
+    height: 48%; 
+    margin-top: 15px;
+    /*min-width: 1650px;*/
+}
+
+.BWPlotHolderHeader {
+    border-radius: 5px 5px 0px 0px;    
+    background: #014242;
+    width: 100%;
+    height: 35px; 
+    position: relative;    
+    /*background:-webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/
+    text-align: center;    
+}
+
+.BWPlotHolderHeaderText {
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: bold;
+    color:#fff;    
+    padding-top: 0.6%;
+}
+
+.PieChartContentHolder{
+    background: whitesmoke;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 15px;
+    height: calc(100% - 35px); 
+    width: calc(100% - 30px);
+    float: left;
+}
+
+.PieChartContentHolderHeader {
+
+    border-radius: 5px 5px 0px 0px;    
+    /*background: #004d66;*/
+    width: 100%;
+    height: 10%; 
+    position: relative;    
+    background:silver;
+    text-align: center;    
+}
+
+.PieChartContentHolderHeaderText {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color:black;    
+    padding-top: 1%;
+}
+
+.PieChartHolder{    
+    border-radius: 5px 5px 5px 5px;
+    width: 47%;
+    height: 83%;      
+    float:left;
+}
+
+.PieChartDetailHolder{    
+    border-radius: 5px 5px 5px 5px;
+    width: calc(50% - -20px);
+    height: calc(100% - 10px);      
+    float:right;
+}
+
+.AppUserTablesFont {
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.AppUserTablesFontSelected {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+table.dataTable tbody td {
+    padding: 3px 3px
+}
+
+.PieSegmentContentHolder{
+    background-color: whitesmoke;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 15px;
+    width: 52%;
+    height: 83%; 
+    margin-top: 15px;
+    float:right;
+}
+
+.PieSegmentHolder{ 
+    margin-top: 10px;
+    border-radius: 5px 5px 5px 5px;
+    width: 97%;
+    height: calc(100% - 50px);
+    margin-left: 15px;
+    background: beige;
+}
+
+.PieSegmentInfoHolder{ 
+    margin-top: 8px;
+    border-radius: 5px 5px 5px 5px;
+    width: 97%;
+    height: 20%;
+    margin-left: 15px;
+    background: beige;
+}
+
+.dashPie_src_bw{
+    height: calc(40% - 20px);
+    width: calc(45%);
+    border-radius: 0;
+}
+
+.Pq_Source_Ulink_Plot{
+    height: calc(40% - 20px);
+    width: calc(45%);
+    border-radius: 0;
+}.flot-x-axis div.flot-tick-label { 
+    font-size: 90%;
+    font-weight: bold;
+
+    max-width:100px !important;
+
+    transform: translateX(-40%)translateY(-100%) rotate(-70deg); /* CSS3 */
+    transform-origin: bottom right;
+
+    -ms-transform: translateX(-40%)translateY(-100%) rotate(-70deg); /* IE */
+    -ms-transform-origin:bottom right;
+
+    -moz-transform: translateX(-40%)translateY(-100%) rotate(-70deg); /* Firefox */
+    -moz-transform-origin:bottom right;
+
+    -webkit-transform: translateX(-40%)translateY(-100%) rotate(-70deg); /* Safari and Chrome */
+    -webkit-transform-origin:bottom right;
+
+    -o-transform: translateX(-40%)translateY(-100%) rotate(-70deg); /* Opera */
+    -o-transform-origin:bottom right;
+}
+.flot{  
+    background: transparent;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    display: block;
+    float: right;
+    margin-left: 100px;
+    margin-right: 5px;
+    outline: 0;
+    outline: none;
+}
+.flot-next{  
+    border: none;
+    background: transparent;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    display: block;
+    float: right;
+    margin-right: -100px;
+    margin-top: -1px;
+    outline: 0;
+    outline: none;  
+}
+.flot-next::before, .flot-next::after {
+    height: 0.8em;
+    width: 0.2em;
+    background: #afafaf;
+    content: "";
+    position: absolute;
+}
+.flot-next::before {
+    top: 0.5em;
+    right: .9em;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.flot-next::after {
+    top: 0em;
+    right: .9em;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.flot-next:hover:after,.flot-next:hover:before {
+    height: 0.8em;
+    width: 0.2em;
+    background: #374200;
+    content: "";
+    position: absolute;
+    outline: 0;
+    outline: none;
+}
+.flot-next:focus:after,.flot-next:focus:before {
+    height: 0.8em;
+    width: 0.2em;
+    background: #374200;
+    content: "";
+    position: absolute;
+    outline: 0;
+    outline: none;
+}
+.flot-next_before {
+    border: none;
+    background: transparent;
+    height: 1em;
+    width: 1em;
+    position: relative;
+    display: block;
+    float: right;
+    margin-right: 100px;
+    margin-top: 5px;
+    outline: 0;
+    outline: none;
+}
+.flot-next_before::before, .flot-next_before::after {
+    height: 0.8em;
+    width: 0.2em;
+    background: #afafaf;
+    content: "";
+    position: absolute;
+}
+.flot-next_before::before {
+    bottom: 0.6em;
+    right: .9em;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.flot-next_before::after {
+    top: 0em;
+    right: .9em;
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.flot-next_before:hover:after,.flot-next_before:hover:before {
+    height: 0.8em;
+    width: 0.2em;
+    background: #374200;
+    content: "";
+    position: absolute;
+    outline: 0;
+    outline: none;
+}
+.flot-next_before:focus:after,.flot-next_before:focus:before {
+    height: 0.8em;
+    width: 0.2em;
+    background: #374200;
+    content: "";
+    position: absolute;
+    outline: 0;
+    outline: none;
+}
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.flot-y-axis{
+    left:5px  !important;;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*.animation{
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: -10;
+}
+
+.animation-active{
+    height: 40px;
+    display: block;
+}*/
+
+
+.det_rep_filter_cl{
+    position: relative; 
+    font-size: 11px; 
+    width: 100%;
+    height: 70px; 
+    background-color: #455267; 
+    margin-top: 1px; 
+    display:none; 
+}
+
+.util>.nav-tabs {
+    margin: 0;
+    height: 30px;
+    /*border-bottom: 1.5px solid #d45500;*/
+
+}
+.util>.nav > li > a {
+    color:#4cae4c;
+    height: 30px;
+}
+
+.tab-content {
+    border-top-color:transparent;
+    /*    border-left: 1.5px solid #d45500 ; 
+        border-right: 1.5px solid #d45500;
+        border-bottom:  1.5px solid #d45500;*/
+    /*overflow: auto;*/
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    outline-offset: 1.5px;
+}
+
+.util>.nav-tabs>li.active>a, .util>.nav-tabs>li.active>a:hover, .util>.nav-tabs>.active>a:focus {
+    color: #000;
+    background: transparent;
+    border-width: 1.5px;
+    /*    border-left-color: #d45500;
+        border-right-color: #d45500;
+        border-top-color: #d45500;*/
+    border-top-width: 2px;
+    border-bottom-color: #ffefef;
+    height: 30px;
+    border-top-right-radius: 0.5em;
+}
+.default_content{
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: #f0f5f5;
+    overflow: auto;
+}
+#profile_content>.btn-group{
+    width: 100%;
+    /*margin-top: 15px;*/
+}
+.profile_button, .profile_button:focus{
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    background: #f0f5f5;
+    border: none;
+    float:left;
+    color:#006666;
+    text-align: left;
+    text-indent: 1em;
+    font-family: Helvetica;
+}
+
+.profile_button:before{
+    content: "\02295";
+    font-size: 13px;
+    color:green;
+    padding-right: 3px;
+}
+
+.profile_button.active:before{
+    content: "\0229D";
+    font-size: 14px;
+    color:green;
+    padding-right: 3px;
+    border: none;
+}
+
+/*.profile_button_grp > .sub_profile_button_grp >.profile_button >.active{
+    content: "\0229D";
+    font-size: 16px;
+    color:blue;
+    float:left;
+    border: none;
+}
+
+.profile_button_grp >.sub_profile_button_grp >.active:before{
+    content: "\0229D";
+    font-size: 16px;
+    color:blue;
+    float:left;
+    border: none;
+}*/
+.app_button_list{
+    background-color: #269abc;
+    top: 10px;  
+}
+
+a.dt-button.add_app_prof_button{
+    background: #33469c;
+    border-radius: 5px;
+    color:white;
+    height: 20px;
+    margin-top: 5px;
+    font-size: 10px;
+    padding-top: 2px;
+    margin-left: 35px;
+}
+a.dt-button.add_app_prof_button:hover{
+    background:#1f36a2;
+}
+
+a.dt-button.del_app_prof_button{
+    background: #d65959;
+    border-radius: 5px;
+    color:white;
+    height: 20px;
+    margin-top: 5px;
+    font-size: 10px;
+    padding-top: 2px;
+}
+a.dt-button.del_app_prof_button:hover{
+    background:#d62b2b;
+}
+
+a.dt-button.add_app_prof_button.disabled, 
+a.dt-button.del_app_prof_button.disabled
+{
+    background:#a1a1a2;
+}
+
+.bwm_app_prof_rmv_button{
+    margin-top:10px;
+    float:left;
+    background: url('../images/delete.png') no-repeat 0 0;
+    /*    background-image: url(image/delete.png);
+        background-color:#f0f5f5;*/
+    width:90px;
+    height:20px;
+    border:none;
+    /*background-repeat:no-repeat;*/
+    font-size:10px;
+    text-align:center;
+}
+.removed {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+.createprofile{
+    float: right;
+    width: 90px;
+    height: 25px;
+    background-color: #009688;
+    border: none;
+    color: white;
+    margin-top: 5px;
+    margin-right: 10px;
+    font-size: 11px;
+    border-radius: 5px;    
+}
+.createprofile:disabled,.dt-buttons:disabled,
+.createprofile[disabled],.dt-buttons[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+#app_bwm_all_tab:hover,
+#app_bwm_profile_tab:hover{
+    background: #D5E4F3;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 15, 2017, 1:08:10 PM
+    Author     : Hasareli Fernando
+*/
+
+.update_button_area{
+    width: calc(100% - 15px);
+    height: 45px;
+    margin-top:20px;
+    position: relative;
+    margin-left: 20px;       
+}
+.update_button_area button{
+    display: inline;
+    background-color:#4CAF50 ;
+    width:100px; 
+    border: none;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 12px;
+    height: 30px;
+}
+.update_detail{
+    margin-top: 15px;
+    max-height: 225px;
+    overflow-y: auto;
+}
+.update_status{
+    margin-top: 65px;
+    height: 225px;
+    overflow-y: auto;
+}
+.connection_status{
+    margin-top: 50px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4CAF50;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 20px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+/***** Custom Input Styling *****/
+
+label.fileLabel input[type="file"] {
+    position: fixed;
+    z-index: -1000;
+    display: none;
+}
+.fileLabel {
+    border: 2px solid #AAA;
+    border-radius: 4px;
+    padding: 2px 5px;
+    margin: 2px;
+    background: #f1f5fb;
+    cursor:pointer;
+    font-size: 12px;
+}
+.fileLabel:hover {
+    background: #CCC;
+}
+.fileLabel:active {
+    background: #CCF;
+}
+.fileLabel :invalid + span {
+    color: #A44;
+}
+.fileLabel :valid + span {
+    color: #4A4;
+}
+
+/*****/
+
+#offline_file_upload:disabled, #license_file_upload:disabled{
+    background-color: #bfbfbf;
+}
+
+.pq_upd_config_bck_sched,
+.pq_upd_config_bck_serv{
+    position: relative; 
+    /*font-size: 11px;*/ 
+    width: 100%;
+    height: 40px; 
+    background-color: transparent; 
+    margin-top: 1px; 
+    display:none; 
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2016, 9:42:33 AM
+    Author     : Himantha
+*/
+
+#Dashboard_Traffic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    border-radius: 0;
+}
+
+.pq_tc_dgm_refresh {
+    width: 52px;
+    height: 100%;
+    background-color: #222;
+    background-image: url(../image/refresh_off.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 2px;
+}
+
+.pq_tc_dgm_refresh:hover{
+    background-image: url(../image/refresh_on.png); 
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2016, 10:20:23 AM
+    Author     : himantha
+*/
+
+#App_Database_Container::-webkit-scrollbar{
+    width:  50px;
+}
+
+#App_Database_Container::-webkit-scrollbar-track-piece{
+    background-color:transparent;
+}
+
+
+/*.pq_bwh_move_bar{
+    width: 100%;
+    height: 30px;
+    background-color: #a2aec7;
+}*/
+
+.pq_bwh_prv_btxt{
+    margin-left: calc(50% - 82px);
+    float: left;
+    width: 60px;
+}
+
+.pq_bwh_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_bwh_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_bwh_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 30, 2017, 4:21:45 PM
+    Author     : himantha
+*/
+
+.pq_bwh_grap_tool_bar{
+    width: 100%;
+    height: 40px;
+    background-color: lightslategray;
+    font-size: 12px;
+}
+
+.pq_bwh_graph_holder {
+    width: 100%; 
+    height: calc(50% - 15px); 
+    background-color: whitesmoke;
+}
+
+.pq_bwh_graph_headl{
+    width: 100%;
+    height: 32px;
+    background-color: #2e6da4;
+    color: white;
+    font-size: 13px;
+}
+
+.pq_bwh_graph_htxt{
+    margin-left: 5px;
+    float: left;
+}
+
+.pq_bwh_link_selection{
+    float: right;
+    margin-right: 10px;
+}
+
+
+.pq_bwh_graph_plate{
+    width: 100%;
+    height: calc(100% - 32px);
+    background-color: whitesmoke;
+    float: left;
+}
+
+.pq_bwh_grap_hgap{
+    width: 100%;
+    height: 4px;
+}
+
+.pq_bwh_grapth_endt{
+    float: right;
+    font-size: 12px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.pq_bwh_link_png{
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_min_com{
+    float: right;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.pq_bwh_move_bar{
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    background-color: #a2aec7;
+}
+
+.pq_bwh_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_bwh_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}
+.pq_bwh_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_bwh_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_bwh_prv_btxt{
+    margin-left: calc(50% - 76px);
+    float: left;
+    width: 60px;
+}
+
+
+.pq_bwh_ession_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: right;
+}
+
+.pq_bwh_ession_png:hover{
+    content: url(../image/close_session_act.png); 
+}
+
+
+.pq_bwh_ession_btxt{
+    margin-left: 15px;
+    float: right;
+    width: 100px;
+}
+
+.pq_bwh_next_button{    
+}
+
+.pq_bwh_prev_button{    
+}
+
+.pq_bwh_ession_button {
+}
+
+.custom-menu {
+    display: none;
+    z-index:2000;
+    position: absolute;
+    background-color:#c4d8da;
+    border: 1px solid #08b2fe;
+    overflow: hidden;
+    height: 30px;
+    width: 220px;
+    white-space:wrap;
+}
+
+.custom-menu li {
+    padding: 5px 10px;
+}
+
+.custom-menu:hover {
+    background-color: #c4c6c7;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bootstrap-datetimepicker-widget td.day {
+    width: 200px;
+    line-height: 10px;
+    font-size: 11px;
+}
+
+th.dow {
+    font-size: 12px;
+}
+
+.pq_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bw_hist_nxt_prev_btn {    
+    font-size: 14px; 
+    font-family:Georgia; 
+    color:#4a4242; 
+    width: 100px;
+    height: 30px;    
+    float: left;
+    border:none; 
+    border-radius:5px; 
+    display:block; 
+    padding-left: 20px;
+    background-color: transparent;   
+}
+
+#bw_hist_prev_btn{    
+    background: url(../image/previous_nom.png) right no-repeat;
+}
+
+#bw_hist_next_btn {    
+    background: url(../image/next_nom.png) left no-repeat; 
+}
+
+#bw_hist_prev_btn:disabled {    
+    color:#aaaaaa; 
+    background: url(../image/previous_nom_dis.png) right no-repeat;
+}
+
+#bw_hist_next_btn:disabled {    
+    color:#aaaaaa; 
+    background: url(../image/next_nom_dis.png) left no-repeat;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 3, 2016, 11:01:46 AM
+    Author     : himantha
+*/
+
+#Profile, #LDAP_Server, #DHCP_Server, #AppSignature, #Basic_Settings {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;   
+}
+
+.statusModalButton{
+
+    background:#5cd65c; 
+    font-size: 16px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    margin:auto; 
+    /*display:block;*/ 
+    height: 40px;       
+}
+
+.statusModalButton:hover{
+    background-color: #47d147;
+}
+
+.StatusContentHolderHeader {    
+    border-radius: 5px 5px 0px 0px;    
+    width: 100%;
+    height: 30px; 
+    background:#1a1d23;
+    padding-left: 20px;  
+}
+
+.StatusContentHolderHeaderText {
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    color:whitesmoke;    
+    padding-top: 1%;
+}
+
+.pqpie_modal {
+    display: none;
+    position: absolute; 
+    z-index: 10; 
+    background-color: rgba(240,245,245,0.92); 
+    /*background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 59%,rgba(244,244,244,1) 72%);*/
+    /*background-color: rgba(255,255,255,0.9);*/ 
+    height: 100%;
+    width: 100%;
+}
+
+.pqpie_cmodal {
+    margin: auto;
+    padding: 2px;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 24, 2016, 10:46:02 AM
+    Author     : himantha
+*/
+
+#App_Overall_Usage, #IP_Usage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+#C_Usage, #C_History {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+.reporting_search_bar{    
+    background-color: cadetblue;
+    color: white;
+    height: 50px;
+    background: #ebfafa;
+    /*    background: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5)); */
+    border-radius: 0;
+}
+
+.drop_down_label_reporting{
+    margin-left: 23px;
+    margin-top: 10px;
+    color: black;
+    font-size: 11px;
+    font-family:helvetica;
+    font-style: inherit ;
+}
+
+.field_prop_reporting{
+    margin-top: 10px;
+    color: black;
+    width: 125px; 
+    height: 25px;
+    font-size: 12px; 
+    font-family:helvetica;
+    padding-left: 2px;
+}
+
+.field_prop_reporting:disabled{
+    margin-top: 10px;
+    color:  #ccccb3;
+    width: 125px;
+    height: 25px;
+    font-size: 12px; 
+    font-family:helvetica;
+    padding-left: 2px;
+}
+
+#ReportSummaryHolder{
+    background:  #006666;
+
+    /*margin-top: 1px;*/
+    /*box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);*/
+    border-radius: 5px 5px 5px 5px;
+    border-color: black;
+    /*margin-left: 25px;*/
+    width: 400px;
+    height: 92%; 
+    /*margin-top: 15px;*/
+    float:right;
+}
+
+#ReportSummaryHolderHeader {
+    /*border-radius: 15px 15px 0px 0px;*/    
+    /*background: #004d66;*/
+    margin: 5px;
+
+    border: 1px solid white;
+    /*width: 100%;*/
+    height: 30px; 
+    position: relative;   
+    background: transparent;
+    /*background: #0088cc;*/
+    /*background:-webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/
+    text-align: center;    
+}
+
+.ReportSummaryContainers{
+    /*border-radius: 15px 15px 0px 0px;*/    
+    /*background: #004d66;*/
+    margin: 5px;
+    margin-top: 15px;
+    border: 1px solid #0baf7f;
+    /*width: 100%;*/
+    height: 10%; 
+    position: relative;   
+    background: transparent;
+    /*background: #0088cc;*/
+    /*background:-webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/
+    text-align: center;    
+}
+
+.editor-datetime {
+    position: relative;
+}
+
+.ReportSummaryHeaderText {
+    /*text: 5px;*/
+    font-family: Helvetica;
+    font-size: 18px;
+    font-weight: bold;
+    color:#fff;    
+    padding-top: 0.6%;
+}
+
+#toggleChartButton_1{    
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 0px;
+    font-size: 12px;
+    font-family:helvetica;  
+    background:#54bf07; 
+    color:#fff; 
+    width:50px; 
+    border:none; 
+    border-radius: 5px 0px 0px 5px; 
+    height: 30px;    
+}
+
+#toggleChartButton_2{
+    margin-top: 10px;
+    margin-left: -10px;
+    font-size: 12px;
+    font-family:helvetica;  
+    background:#ff9900; 
+    color:#fff; 
+    width:43px; 
+    border:none; 
+    border-radius: 0px 5px 5px 0px; 
+    height: 30px; 
+}
+
+#toggleChartButton_1:disabled, #toggleChartButton_2:disabled{
+    background:gray;
+}
+
+#Report_Apps_table{
+    /*    -webkit-animation-name: dropHeader;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 1.6s;*/
+
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 1.5s;    
+}
+/*
+@-webkit-keyframes dropHeader {
+    0% {
+        -webkit-transform: translateY(-80px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}*/
+@keyframes dropHeader {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#usageUDPlot::-webkit-scrollbar,#summaryPlotContainer_table::-webkit-scrollbar{
+    width:0px;
+}
+
+#usageUDPlot::-webkit-scrollbar-track-piece, #summaryPlotContainer_table::-webkit-scrollbar{
+    background-color:transparent;
+}
+
+.a.dt-button.green {
+    background:#268384; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:120px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;    
+    padding: 5px;
+    text-align: center;
+    margin-left: 90px;
+}
+
+.a.dt-button.green:hover {
+    background:#195e5f; 
+}
+
+.timeSelector{
+    background: red;
+    width: 30px;
+}
+
+.timeSelectorText{
+    font-size: 11px;
+    color:#fff;
+
+}
+
+input[type=radio]{
+    width   : 28px;
+    margin  : 0;
+    padding : 0;
+    opacity : 0;
+}
+
+input[type=radio]+ label{
+    display      : inline-block;
+    margin-left  : -28px;
+    padding-left : 25px;
+    background   : url('/image/checks.png') no-repeat 0 0;
+    line-height  : 24px;
+}
+
+input[type=radio]:checked + label{
+    background-position : 0 -48px;
+}
+
+
+.create,.edit,.delete{
+    background:#1a8cff; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;    
+}
+
+.rep_field_prop{
+    width: 200px; 
+    height: 25px;
+    font-size: 12px; 
+    font-family:helvetica;
+    padding-left: 2px;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 8, 2016, 12:02:43 PM
+    Author     : hasith
+*/
+
+#pq_session_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_sources_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_destinations_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_applications_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+.pq_session_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_session_filter_bar{
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.pq_session_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_session_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}
+.pq_session_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: calc(50% - 76px);
+    float: left;
+}
+
+.pq_session_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_session_prv_btxt{
+    margin-left: calc(50% - 76px);
+    float: left;
+    width: 60px;
+}
+
+.pq_session_next_button{    
+}
+
+.pq_session_prev_button{    
+}
+
+#myProgress {
+    position: relative;
+    /*    width: 200px;*/
+    height: 10px;
+    background-color: green;
+}
+
+.pq_session_indicator {
+    position: relative;
+    /*    width: 200px;*/
+    height: 10px;
+    background-color: #286090;
+}
+
+#myBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: #843534;
+}
+
+.pq_session_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_session_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pq_session_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.pq_session_wbtn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #286090;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 60px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pq_url_wbtn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #006666;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 60px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pq_session_wbtn span, .pq_url_wbtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn span:after, .pq_url_wbtn span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn:hover span, .pq_url_wbtn:hover span {
+    padding-right: 15px;
+}
+
+.pq_session_wbtn:hover span:after, .pq_url_wbtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 17, 2016, 9:06:42 PM
+    Author     : hasith
+*/
+/*.pq_sessionw_goback {
+    width: 32px;
+    height: 100%;
+    background-color: #000\9;
+    background-image: url(../image/back_inact.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}*/
+
+#lv_sessions_watch_status_bar_back_btn, #lv_session_watch_status_bar_back_btn{
+    width: 175px;
+    height: 70%;
+    background-color: #00bcd4; 
+    display:inline-block; 
+    float: left; 
+    border-radius: 5px; 
+    margin: 4px auto 4px 5px;
+    cursor:pointer; 
+}
+
+#lv_sessions_watch_status_bar_back_btn:hover, #lv_session_watch_status_bar_back_btn:hover{
+    background-color: #006a77;
+}
+
+/*#lv_session_watch_status_bar_back_btn{
+    width: 155px;
+    height: 80%;
+    background-color: #00bcd4; 
+    display:inline-block; 
+    float: left; 
+    border-radius: 5px; 
+    margin: 2px auto 2px 5px;
+}*/
+
+/*#lv_session_watch_status_bar_back_btn:hover{
+    background-color: #006a77;
+}*/
+
+/*.pq_sessionw_goback:hover{
+    background-image: url(../image/back_act.png); 
+}*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 26, 2016, 1:05:37 PM
+    Author     : hasith
+*/
+.pq_tc_dgm_refresh {
+    width: 52px;
+    height: 100%;
+    background-color: #222;
+    background-image: url(../image/refresh_off.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right;
+    margin-right: 2px;
+}
+
+.pq_tc_dgm_refresh:hover{
+    background-image: url(../image/refresh_on.png); 
+}
+
+.text{
+    font-size:10px;
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 28, 2016, 3:02:59 PM
+    Author     : Hasith Dharmarathna <hasith@paraqum.com at ParaQum tec>
+*/
+
+
+.pq_flow_filter_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    background: #2a3338;
+}
+
+.pq_tc_diagram_filter_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    padding: 4px;
+}
+
+.pq_flow_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_flow_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pq_flow_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.pq_flow_fadd {
+    width: 100px;
+    height: 26px;
+    float: left;        
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.pq_flow_fadd:hover{
+    background-color: #2b542c;
+}
+
+.pq_flow_drop_down {
+    display: none;
+    position: absolute;
+    background-color: whitesmoke;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.pq_flow_drop_down a{
+    color: #122b40;
+    padding: 3px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.pq_flow_drop_down_text{
+    font-size: 11px;
+    cursor:pointer;
+    font-family: Helvetica;
+}
+
+.pq_flow_dropwb {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    z-index: 100;
+}
+
+.pq_bwh_endtime_png{
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.pq_flow_drop_down a:hover{
+    background-color: #e6e6d2;
+}
+
+.bq_bwh_lend_time{
+    float: right;
+    margin-right: 10px;
+    color: white;
+}
+
+.pq_flow_dis_element {    
+    position: relative;
+    float: left;
+    background-color: #1c94c4;
+    width: auto;
+    height: 26px;
+    /*padding: 1px;*/
+    margin-right: 10px;
+}
+
+.pq_flow_dis_element_title {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;color: white;
+    text-decoration: none;
+}
+
+.pq_flow_dis_element_value {
+    font-size: 11px;
+    padding-left: 1px; 
+    padding-right: 10px;
+    float: left;color: black;
+    text-decoration: none;
+}
+
+
+.pq_flow_dis_element_image {
+    float: left;
+    background-image: url(../image/remove.png);
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+}
+
+.pq_flow_dis_element_image:hover{
+    background-image: url(../image/remove_inact.png); 
+}
+
+.pq_flow_input_element {
+    height: 26px;
+    width:  auto;
+    border: none;
+    background-color: #0f68ad;
+    float: left;    
+}
+
+.pq_flow_input_field {
+    height: 20px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 3px;
+    font-size: 11px;
+}
+
+.pq_flow_input_label {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+.pq_flow_remove {
+    width: 90px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/cancel_off.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/cancel_off.png) 4px no-repeat; 
+    float: right;
+    margin-right: 3px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_remove:hover{
+    background-image: url(../image/cancel_on.png); 
+}
+
+.pq_flow_refresh {
+    width: 72px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/refresh_on.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/refresh_on.png) 4px no-repeat; 
+    float: right;
+    margin-right: 3px;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_refresh:hover{
+    background-image: url(../image/refresh_off.png); 
+}
+
+.pq_flow_apply {
+    width: 90px;
+    height: 26px;
+    /*    background-color: #000\9;
+        background-image: url(../image/apply_off.png); 
+        background-repeat: no-repeat;*/
+    background:#7f41e8 url(../image/apply_off.png) 4px no-repeat; 
+    float: right;
+    color: white;
+    border:none;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 4px;
+    background-size: 14px 14px;
+}
+
+.pq_flow_apply:hover{
+    background-image: url(../image/apply_on.png); 
+}
+
+.pq_flow_not_selected {
+    width: 400px;
+    height: 100px;
+    background-color: #1b6d85;
+}
+
+.pq_flow_not_selected_img {
+    background-image: url(../image/flow_thumb.png);
+    width: 64px;
+    height: 64px;
+    float: left;
+}
+
+.pq_flow_not_selected_txt{
+    font-size: 15px;
+    padding-left: 10px; 
+    padding-right: 1px;
+    float: left;
+    color: white;
+}
+
+.pq_flow_not_selected_thumb {
+    background-image: url(../image/info.png);
+    width: 16px;
+    height: 16px;
+    float: right;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.pq_flow_details_element {
+    height: 140px;
+    width: 100%;
+    background-color: rgba(2,4,4,0.1);
+    padding: 4px;
+}
+
+.pq_flow_details_element_filter {
+    width: 900px;
+    height: 100%;
+    /*background-color: #000\9;*/
+    float: left;
+}
+
+.pq_flow_details_element_bar {
+    height: 40px;;
+    width: 100%;
+    /*background-color: #000\9;*/
+}
+
+.pq_flow_details_element_cell {
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 200px;
+    height: 38px;
+    background-color: rgba(16, 78, 139, 0.6);
+}
+
+.pq_flow_details_element_thumb {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    float: left;
+    background-color: rgba(50,205,50,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.01);
+}
+
+.pq_flow_details_element_ttl {
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_details_element_val {
+    font-size: 11px;
+    padding-left: 1px; 
+    padding-right: 10px;
+    float: left;color: black;
+}
+
+.pq_flow_info_element {
+    width: 400px;
+    height: 100%;
+    /*background-color: #000\9;*/
+    float: right;
+}
+
+.pq_flow_info_speed_element {
+    width: 158px;
+    height: 100%;
+    background-color: darkslategray; 
+    float: left;
+    margin-right: 2px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pq_flow_info_speed_val {
+    width: 100%;
+    height: 100px;
+    background-color: darkslategray;
+}
+
+.pq_flow_info_speed_val_txt {
+    font-size: 20px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_info_speed_ttl {
+    width: 100%;
+    height: 32px;
+    background-color: white;
+}
+
+.pq_flow_info_speed_ttl_txt{
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: black;
+}
+
+.pq_flow_info_other_element {
+    width: calc(100% - 160px);
+    height: 100%;
+    /*background-color: #000\9;*/ 
+    float: left;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.pq_flow_info_packet_element {
+    width: 100%;
+    height: 50%;
+    margin-top: 2px;
+    /*    background-color: #000\9;*/
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.01), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.pq_flow_info_other_val {
+    width: 100%;
+    height: calc(80% - 4px);
+    background-color: darkslategray;
+}
+
+.pq_flow_info_other_val_txt{
+    font-size: 18px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: white;
+}
+
+.pq_flow_info_other_ttl {
+    width: 100%;
+    height: 20%;
+    background-color: white;
+}
+
+.pq_flow_info_other_ttl_txt{
+    font-size: 11px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    float: left;color: black;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 16, 2016, 2:13:01 PM
+    Author     : Hasith Dharmarathna <hasith@paraqum.com at ParaQum tec>
+*/
+.pq_flow_filter_graph_container{
+    width: 100%;
+    height: calc(100% - 180px);
+    padding: 4px;
+    background-color: rgba(23,45,55,0.1);
+}
+
+.pq_flow_filter_graph_item{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23,45,55,0.1);
+}#Quota_Management, 
+#Quota_App_Profiles, 
+#Quota_URL_Profiles, 
+#Quota_Serv_Profiles, 
+#Quota_Prof, 
+#Quota_App_Quota, 
+#Quota_Usage,
+#Quota_Usage_Det
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;     
+}/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 22, 2016, 11:05:21 AM
+    Author     : User_Pc
+*/
+
+#Rule_Addition, 
+#Object_Addr_IP, 
+#Object_Addr_Mac, 
+#Object_Addr_AD, 
+#Object_Addr_Prof, 
+#Dest_Rule,
+#App_Rule, 
+#Object_App_List,
+#Object_DHCP_User_List,
+#Service_Rule,
+#Object_Service_List,
+#Object_Schedules, 
+#Object_Admin_Pipes, 
+#Object_User_Pipes,
+#URL_Rule,
+#Object_URL_List,
+#New_App_Control,
+#Rule_Monitor, 
+#Shaper_Monitor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+button:disabled,button:disabled:hover,
+#addAddressToSystem:disabled,#addScheduleToSystem:disabled {
+    background: #dddddd;
+    color:gray;
+}
+
+.edit_panel{
+    width: 100%; 
+    height: 40px;
+    background: #fff;
+}
+
+.create,.edit, .reset, .delete, .userRule{
+    background:#1a8cff; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;    
+}
+
+.addPort{
+    background:#1a8cff; 
+    font-size: 16px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:25px; 
+    height:25px;    
+    border:none; 
+    border-radius:5px;  
+    margin-left: 130px;
+    font-weight: bold;
+
+}
+
+.plot{
+    width: 55px; 
+    height: 25px; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    /*left: 150px;*/ 
+    /*float:right;*/
+}
+
+.edit_panel_button:hover{
+    background-color: #0066cc;
+} 
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 100px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    height: 500px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;    
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.drop_down_label{
+
+    font-size: 12px;
+    font-family:helvetica;
+    font-style: inherit ;
+}
+
+.field_prop{
+    width: 200px; 
+    height: 25px;
+    font-size: 12px; 
+    font-family:helvetica;
+    float: right;
+    padding-left: 2px;
+}
+
+.check_box_prop{
+    /*margin-left: 160px;*/
+    font-size: 12px; 
+    font-family:helvetica;
+}
+
+.addUpdateRules{
+
+    background:#5cd65c; 
+    font-size: 16px; 
+    font-family:helvetica; 
+    color:#fff; width:250px; 
+    border:none; 
+    border-radius:5px; 
+    margin:auto; 
+    display:block; 
+    height: 40px;       
+}
+
+.addUpdateRules:hover{
+    background-color: #47d147;
+}  
+
+#createNewAppCtrl{
+    background:#1a8cff; 
+    font-size: 12px; 
+    font-family:helvetica; 
+    color:#fff; 
+    width:150px; 
+    border:none; 
+    border-radius:5px; 
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 5px;        
+}
+
+#createNewAppCtrl:disabled {
+    background: #dddddd;
+    color:gray;
+}
+
+.modalTitle{
+    color:#757575; 
+    font-size: 20px;
+}
+
+.pq_back_btn {
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;    
+    width: 150px; 
+    height:30px; 
+    font-size: 12px; 
+    background: #eea236 
+}
+
+.pq_back_btn span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.pq_back_btn span:after {
+    content: '«';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -10px;
+    transition: 0.5s;
+}
+
+.pq_back_btn:hover span {
+    padding-left: 15px;
+}
+
+.pq_back_btn:hover span:after{
+    opacity: 1;
+    left: 0;
+}
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2016, 9:42:33 AM
+    Author     : Himantha
+*/
+
+.pq_session_indicator {
+    position: relative;
+    /*    width: 200px;*/
+    height: 10px;
+    background-color: #286090;
+}
+
+#myBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: #843534;
+}
+
+#myProgress {
+    position: relative;
+    height: 10px;
+    background-color: green;
+}
+
+.Pq_TableHolder{
+    background: #fff;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 20px;
+    width: 97%;
+    height: 90%; 
+    margin-top: 15px;
+}
+
+#Session_Sources,
+#Session_Destination,
+#Session_Sessions,
+#Session_Applications,
+#Session_Services{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;    
+}
+
+
+#Status{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+
+.StatusTablesFont {
+    font-family: serif ;
+    font-size: 12px;    
+}
+
+table.dataTable thead th {  
+    background: #035252;
+    /*background: -webkit-linear-gradient(rgba(0,102,102,1) 51%,rgba(0,30,40,1) 100%);*/
+    color: #fff;
+    font-size: 12px;
+}
+
+
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    background:#357ED5;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+/*Shadow watch*/
+
+.pq_session_goback {
+    width: 32px;
+    height: 100%;
+    background-color: #000\9;
+    background-image: url(../image/back_inact.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+.pq_session_goback:hover{
+    background-image: url(../image/back_act.png); 
+}
+
+.pq_bwevent_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_bwevent_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#pq_lsrc_go_back_text:hover{
+    font-weight: bold;
+
+}
+
+.pq_sessionw_goback {
+    width: 32px;
+    height: 100%;
+    background-color: #000\9;
+    background-image: url(../image/back_inact.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: left;
+}
+
+.pq_sessionw_goback:hover{
+    background-image: url(../image/back_act.png); 
+}
+
+.pq_sessionw_goback_text{   
+    color: #D5E4F3;    
+    float: left;
+    margin-left: 7px; 
+    text-decoration: none; 
+    cursor:pointer;     
+}
+
+.pq_sessionw_goback_text:hover{   
+    color: #ffffcc;  
+    float: left;
+    margin-left: 7px; 
+    text-decoration: none; 
+    cursor:pointer;          
+}
+
+/*.pq_session_wbtn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #286090;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 60px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pq_session_wbtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn:hover span {
+    padding-right: 15px;
+}
+
+.pq_session_wbtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}*/
+
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 14, 2016, 9:42:33 AM
+    Author     : Himantha
+*/
+
+/*#Status{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    border-radius: 0;
+}*/
+
+#Status_Traffic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+#Resources{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+}
+
+#Status_Notifications{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    /*z-index: -1;*/
+    border-radius: 0;
+    min-height: 600px;
+    min-width: 1140px;      
+}
+
+

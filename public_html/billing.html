@@ -1,0 +1,38 @@
+<div id="Billing"> 
+    <div id="Billing_Holder" class="Pq_TableHolder" style="height: calc(100% - 30px);">                 
+        <div id="Billing_label" class="BWPlotHolderHeader BWPlotHolderHeaderText">Billing Details</div> 
+        <div id="billing_table_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel" style="margin-bottom: 15px; position: relative">      
+                <label class='drop_down_label_reporting' style="color:black; margin-left: 20px; font-size: 13px;"> Month : </label> 
+                <input type="text" id="billing_month_select" placeholder="Select billing month" class="field_prop_reporting" style="font-size: 10px; color:black; width: 60px; text-indent: 5px; height: 20px;">      
+                <button class='pq_url_wbtn' style="float:right; display:inline-block; width: 110px; height: 25px; font-size: 11px; margin-left: 5px; background: #7f41e8 url(../image/download_1.png) 5px no-repeat; text-indent: 20px;" onclick="get_user_billing_report()">Download PDF</button>
+            </div>  
+            <div style="width: 100%; height: 25px; margin-top: 5px"> 
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter" id="billing_s_bw_info" style="font-size: 11px; margin-left: 3px; width:70%; float: left">Bandwidth at the start of the month :</div>
+            </div>  
+            <div style="width: 100%; height: 25px; margin-top: 5px"> 
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter" id="billing_a_bw_info" style="font-size: 11px; margin-left: 3px; width:70%; float: left">Bandwidth allocated during the month :</div>
+            </div>   
+            <div style="width: 100%; height: 25px; margin-top: 5px"> 
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter" id="billing_f_bw_info" style="font-size: 11px; margin-left: 3px; width:70%; float: left">Bandwidth freed during the month :</div>
+            </div>               
+            <div style="width: 100%; height: 25px; margin-top: 5px"> 
+                <img class="pq_vcenter" src="image/bullet.png" style="width: 10px;height: 10px;margin-left: 18px; float: left"/>
+                <div class="pq_vcenter" id="billing_u_bw_info" style="font-size: 11px; margin-left: 3px; width:70%; float: left">Bandwidth remaining :</div>
+            </div>                 
+            <table id="Billing_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>User</th>
+                        <th>User Bandwidth (Kbps)</th> 
+                        <th>Action</th>
+                        <th>Action Date</th>                  
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+    </div>     
+</div> 

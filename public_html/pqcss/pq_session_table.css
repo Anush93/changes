@@ -1,0 +1,175 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 8, 2016, 12:02:43 PM
+    Author     : hasith
+*/
+
+#pq_session_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_sources_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_destinations_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+#pq_applications_table tr td {
+    font-size: 12px; 
+    padding-top: 2px;
+    padding-bottom:  2px;
+}
+
+.pq_session_next_png{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pq_session_filter_bar{
+    width: 100%;
+    height: 40px;
+    background-color: #2a3338;
+    padding: 4px;
+    text-decoration: none;
+}
+
+.pq_session_next_png:hover{
+    content: url(../image/next_act.png); 
+}
+
+.pq_session_next_btxt{
+    margin-left: 15px;
+    float: left;
+    width: 60px;
+}
+.pq_session_prv_png{
+    width: 20px;
+    height: 20px;    
+    margin-left: calc(50% - 76px);
+    float: left;
+}
+
+.pq_session_prv_png:hover{
+    content: url(../image/previous_act.png); 
+}
+
+.pq_session_prv_btxt{
+    margin-left: calc(50% - 76px);
+    float: left;
+    width: 60px;
+}
+
+.pq_session_next_button{    
+}
+
+.pq_session_prev_button{    
+}
+
+#myProgress {
+    position: relative;
+    /*    width: 200px;*/
+    height: 10px;
+    background-color: green;
+}
+
+.pq_session_indicator {
+    position: relative;
+    /*    width: 200px;*/
+    height: 10px;
+    background-color: #286090;
+}
+
+#myBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: #843534;
+}
+
+.pq_session_vcenter{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pq_session_hcenter{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pq_session_hvcenter{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.pq_session_wbtn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #286090;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 60px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pq_url_wbtn {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #006666;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 10px;
+    padding: 2px;
+    width: 60px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.pq_session_wbtn span, .pq_url_wbtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn span:after, .pq_url_wbtn span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+}
+
+.pq_session_wbtn:hover span, .pq_url_wbtn:hover span {
+    padding-right: 15px;
+}
+
+.pq_session_wbtn:hover span:after, .pq_url_wbtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}

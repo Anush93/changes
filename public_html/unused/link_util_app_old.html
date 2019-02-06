@@ -1,0 +1,52 @@
+<div id="Link_Utilization">
+    <div style="width: 100%;height: 40px;background-color: #222">
+        <div class="btn-group pq_vcenter" style=" float: right;margin-right: 20px">
+            <button type="button" onclick="btn_link_util_bw_load_now(1)" autofocus="autofocus" class="btn btn-primary btn-xs">Downlink</button>
+            <button type="button" onclick="btn_link_util_bw_load_now(2)" class="btn btn-primary btn-xs">Uplink</button>
+        </div>          
+    </div>
+
+    <div class="Pq_LinkPlotHolder" id="pq_dlink_util_plot" style="z-index: 100; height: calc(100% - 65px); width:97%; position: absolute">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText " style="height:4.5%">Downlink Utilization</div> 
+        <div class="System" style="width:calc(20% - 30px)">
+            <div style="height: calc(100% - 25px);width: 100%;">                   
+                <div style="border-radius: 15px 15px 0 0; height: 30px" class="SystemStatsPanelHeader" >
+                    <div class="pq_vcenter SystemStatsPanelHeaderText" style="font-size: 14px;">Application List</div>
+                </div>
+                <!--<button id="selectAllDlinkTable" class='addUpdateRules' style="font-size: 11px; margin-top: 5px; margin-bottom: -5px; width:150px; height: 25px;background: #1a8cff" onclick="Display_Dlink_Util_Table(1); set_visibility_all_dlink_apps(true)">Select All Applications</button>--> 
+                <div style="width: 100%; height: calc(100% - 15px); overflow-y: auto;">
+                    <table id="App_Dlink_Util_table" class="display cell-border AppUserTablesFont " cellspacing="0" width="100%" ></table>  
+                </div>  
+                <!--<button onclick="init_dlink_utilization()" class='addUpdateRules' style="width:50%; height: 20px; margin-top: 5px; ">Add</button>--> 
+                <!--<button id="applyDlinkTableUpdates" onclick="select_dlink_checked_apps()" class='addUpdateRules' style="width:50%; height: 30px; margin-top: 5px; ">Apply</button>--> 
+
+            </div>
+        </div>   
+        <div class="Pq_LinkPlotHolder" style="height:91%; width: calc(80% - 30px)">    
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText " style="font-size: 14px; height: 30px">Application Bandwidth</div> 
+            <div id="Dash_Dlink_Plot" class="Pq_HPlot" style="width: 97%; height: 90%; padding: 20px"></div>
+        </div>   
+
+    </div>
+
+    <div class="Pq_LinkPlotHolder"  id="pq_ulink_util_plot" style="z-index: -10; height: calc(100% - 65px); width:97%; position: absolute">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height:4.5%">Uplink Utilization</div> 
+        <div class="System" style="width:calc(20% - 30px)">
+            <div style="height: calc(100% - 25px);width: 100%;">                    
+                <div style="border-radius: 15px 15px 0 0; height: 30px" class="SystemStatsPanelHeader" >
+                    <div class="pq_vcenter SystemStatsPanelHeaderText" style="font-size: 14px;">Application List</div>
+                </div>
+                <!--<button id="selectAllUlinkTable" class='addUpdateRules' style="font-size: 11px; margin-top: 5px; margin-bottom: -5px; width:150px; height: 25px;background: #1a8cff">Select All Applications</button>--> 
+                <div style="width: 100%; height: calc(100% - 15px); overflow-y: auto;">
+                    <table id="App_Ulink_Util_table" class="display cell-border AppUserTablesFont " cellspacing="0" width="100%" ></table>  
+                </div>  
+                <!--<button onclick="Display_Ulink_Util_Table(0)" class='addUpdateRules' style="width:50%; height: 20px; margin-top: 5px; ">Add</button>--> 
+                <!--<button id="applyUlinkTableUpdates" class='addUpdateRules' style="width:50%; height: 30px; margin-top: 5px; ">Apply</button>--> 
+            </div>
+        </div>                 
+        <div class="Pq_LinkPlotHolder" style="height:91%; width: calc(80% - 30px)">   
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText" style="font-size: 14px; height: 30px">Application Bandwidth</div> 
+            <div id="Dash_Ulink_Plot" class="Pq_HPlot" style="width: 97%; height: 90%; padding: 20px"></div>
+        </div>                    
+    </div>  
+</div>   

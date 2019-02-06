@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="shortcut icon" href="">
+        <title>ParaQum Traffic Shaper</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">     
+
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>       
+        <link href="css/dataTables.jqueryui.min.css" rel="stylesheet" type="text/css"/>    
+        <link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>     
+        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/buttons.dataTables.min.css" rel="stylesheet" type="text/css"/>           
+        <link href="css/select.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/rowReorder.dataTables.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/clockpicker.min.css" rel="stylesheet" type="text/css"/>        
+        <link href="css/common.min.css" rel="stylesheet" type="text/css"/>
+
+        <!--        <link href="pqcss/main_page.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/session_watch.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/dashboard_traffic.css" rel="stylesheet" type="text/css"/>        
+                <link href="pqcss/dashboard_applications_users.css" rel="stylesheet" type="text/css"/>    
+                <link href="pqcss/status.css" rel="stylesheet" type="text/css"/>   
+                <link href="pqcss/pq_ui_bw_tc_diagram.css" rel="stylesheet" type="text/css"/>   
+                <link href="pqcss/pq_ui_flow_filter.css" rel="stylesheet" type="text/css"/>   
+                <link href="pqcss/pq_ui_flow_filter_graph.css" rel="stylesheet" type="text/css"/>           
+                <link href="pqcss/pq_session_table.css" rel="stylesheet" type="text/css"/>       
+                <link href="pqcss/pq_ui_bw_session_watch.css" rel="stylesheet" type="text/css"/>        
+                <link href="pqcss/rule_addition.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_reporting.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_bw_history.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_profiles.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_app_signatures.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_quota.css" rel="stylesheet" type="text/css"/>         
+                <link href="pqcss/pq_updates.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_link_util.css" rel="stylesheet" type="text/css"/>
+                <link href="pqcss/pq_det_reporting.css" rel="stylesheet" type="text/css"/>-->
+
+        <link href="pqcss/pq_web_core.min.css" rel="stylesheet" type="text/css"/>   
+
+        <script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+        <script src="js/moment.min.js" type="text/javascript"></script>        
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>   
+        <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>     
+        <script src="js/randomColor.min.js" type="text/javascript"></script>   
+        <script src="js/d3.v3.min.js" type="text/javascript"></script>        
+        <script src="js/d3.chart.min.js" type="text/javascript"></script>
+        <script src="js/d3.chart.sankey.min.js" type="text/javascript"></script>      
+        <script src="js/d3pie.min.js" type="text/javascript"></script>
+        <script src="js/Chart.min.js" type="text/javascript"></script>
+        <script src="js/liquidFillGauge.min.js" type="text/javascript"></script>
+        <script src="js/pdfmake.min.js" type="text/javascript"></script>     
+        <script src="js/datatable_helpers.min.js" type="text/javascript"></script>
+        <script src="js/dygraph-combined.min.js" type="text/javascript"></script>        
+        <script src="js/viz.v1.0.0.min.js" type="text/javascript"></script> 
+        <script src="js/clockpicker.min.js" type="text/javascript"></script>        
+        <script src="js/smooth-plotter.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ajax-blob-arraybuffer.min.js" type="text/javascript"></script>
+        <script src="js/jquery.cookie.min.js" type="text/javascript"></script>
+        <script src="js/list.min.js" type="text/javascript"></script>
+        <script src="js/jscolor.min.js" type="text/javascript"></script>
+        <script src="js/jspdf.min.js" type="text/javascript"></script>
+        <script src="js/jspdf.plugin.autotable.min.js" type="text/javascript"></script>
+        <script src="js/jquery.flot.min.js" type="text/javascript"></script> 
+        <script src="js/jquery.flot.symbol.min.js" type="text/javascript"></script> 
+        <script src="js/jquery.flot.time.min.js" type="text/javascript"></script>
+        <script src="js/jquery.flot.categories.min.js" type="text/javascript"></script>
+        <script src="js/jquery.flot.crosshair.min.js" type="text/javascript"></script>
+        <script src="js/jquery.flot.axislabels.min.js" type="text/javascript"></script>        
+        <script src="js/jquery.flot.resize.min.js" type="text/javascript"></script>
+
+        <!--        <script src="pqjs/pq_strnfy_web.js" type="text/javascript"></script>         
+                <script src="pqjs/pqpiechart.js" type="text/javascript"></script>
+                <script src="pqjs/pqvariables.js" type="text/javascript"></script>
+                <script src="pqjs/pq_cjs_connect.js" type="text/javascript"></script>        
+                <script src="pqjs/pq_lcjs_connect.js" type="text/javascript"></script> 
+                <script src="pqjs/pq_traffic_diagram.js" type="text/javascript"></script>     
+                <script src="pqjs/pqflow.js" type="text/javascript"></script>            
+                <script src="pqjs/pqinfo.js" type="text/javascript"></script>
+                <script src="pqjs/pqusers.js" type="text/javascript"></script>
+                <script src="pqjs/pq_link_util.js" type="text/javascript"></script>
+                <script src="pqjs/pqsourcedestapp.js" type="text/javascript"></script>    
+                <script src="pqjs/pqmodal.js" type="text/javascript"></script>
+                <script src="pqjs/pq_quota.js" type="text/javascript"></script>  
+                <script src="pqjs/pqsummary.js" type="text/javascript"></script>
+                <script src="pqjs/pq_bw_hist.js" type="text/javascript"></script>
+                <script src="pqjs/pq_shaping.js" type="text/javascript"></script>
+                <script src="pqjs/pqwovariables.js" type="text/javascript"></script>
+                <script src="pqjs/pqnwvariables.js" type="text/javascript"></script>
+                <script src="pqjs/pq_index_d_dev.js" type="text/javascript"></script> 
+                <script src="pqjs/pq_config.js" type="text/javascript"></script>
+                <script src="pqjs/pqmgmt.js" type="text/javascript"></script>
+                <script src="pqjs/pq_updates.js" type="text/javascript"></script>
+                <script src="pqjs/pqpie.js" type="text/javascript"></script>
+                <script src="pqjs/pqresize.js" type="text/javascript"></script>
+                <script src="pqjs/pq_wo_status_alerts.js" type="text/javascript"></script>
+                <script src="pqjs/pq_acjs_connector.js" type="text/javascript"></script> 
+                <script src="pqjs/pq_ha.js" type="text/javascript"></script>
+                <script src="pqjs/pq_version.min.js" type="text/javascript"></script>-->
+
+        <script src="pqjs/pq_version.min.js" type="text/javascript"></script>
+        <script src="pqjs/pq_web_core.min.js" type="text/javascript"></script>
+        <script src="pqjs/pqcore_init.min.js" type="text/javascript"></script>
+
+    </head>
+
+    <body id="Body">
+
+        <div id = "Header">       
+            <div id="Header_Text" >Traffic Shaper
+                <div class="dropdown" style="float: right; margin-top: 5px; margin-right: 20px;">
+                    <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" style="background-image: url('image/d_arrow_black.png');background-repeat: no-repeat;background-color: transparent;background-position: center;float: right; width: 24px;"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="z-index: 1;left:-125px;min-width: 150px">
+                        <form style="height: 30px;  margin-top: 0px ;border-top: solid 1px #035252;border-bottom: solid 1px #035252; " name="form1" method="post" action="/" >                       
+                            <img class="pq_hvcenter" src="image/log_out.png" style="float: left; margin-left: -50px; width: 27px;"/>            
+                            <input class="pq_vcenter" style="float: right;margin-right: 50px; background:none; border-width:0px;font-size: 12px;color: #204d74; " name="submit2" value="Logout" type="submit" id="submit2">                        
+                        </form>
+                    </div>
+                </div>            
+                <a class="pq_vcenter" id="pq_user_prof_name" style="float: right; margin-top: 10px; color: black;font-size: 12px;margin-left: 5px; text-decoration: none;"></a>                                    
+            </div>      
+            <div id="Header_Pq">
+                <img style="width: 150px;margin-left: 27px" src="image/header.png"/>
+            </div> 
+        </div>
+
+        <div id = "Header_Border" style="height: 0px">        
+        </div>                
+
+        <!--Main menu tabs-->
+
+        <div id="Menu" style="overflow: hidden">    
+            <div class="panel-group" id="accordion" >
+                <div class="panel " style = "border-radius: 0; border: transparent" >
+                    <div id="Dashboard_Panel"  class="panel-heading panel-clr_one">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a data-toggle="collapse" href="#collapse1" data-parent="#accordion"><img class="Pq_VCenter" style="float: left;" alt="Dashboard" src="image/dashboard.png"/>Dashboard</a></h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse in">                              
+                        <ul class="nav" >
+                            <li id="dash_dev_link" class="panel-sub" ><a onclick="load_window(WINDOW_LINK_SUMMARY);" href="#">Link Summary</a></li>
+                            <li id="dash_user_sum" class="panel-sub" ><a onclick="load_window(WINDOW_USER_SUMMARY);" href="#">User Summary</a></li> 
+                            <li id="dash_vlan" class="panel-sub " style="display: none"><a onclick="load_window(WINDOW_DASH_VLAN);" href="#">VLAN</a></li> 
+                            <li id="dash_sources" class="panel-sub " ><a onclick="load_window(WINDOW_DASH_SOURCE);" href="#">Sources</a></li>
+                            <li id="dash_dests" class="panel-sub " ><a onclick="load_window(WINDOW_DASH_DEST);" href="#">Destinations</a></li>
+                            <li id="dash_apps" class="panel-sub " ><a onclick="load_window(WINDOW_DASH_APP);" href="#">Applications</a></li>                             
+                        </ul>
+                    </div>
+
+                    <div id="Link_Util_Panel" class="panel-heading panel-clr_one">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" data-toggle="collapse" href="#collapse2" data-parent="#accordion"><img class="Pq_VCenter" style="float: left" alt="Sessions" src="image/link.png"/>Link Utilization</a></h4>
+                    </div>
+                    <div id="collapse2" class="panel-collapse collapse">
+                        <ul class="nav" >
+                            <li class="panel-sub" ><a onclick="load_window(WINDOW_APP_LINK_UTIL)" href="#">Applications</a></li>   
+                            <!--<li id="link_util_app_win" class="panel-sub" ><a onclick="load_window(event, 'link_util_app_win', WINDOW_APP_LINK_UTIL);" href="#">Applications</a></li>-->   
+                        </ul> 
+                    </div>                      
+
+                    <div id="Session_Panel" class="panel-heading panel-clr_one">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" data-toggle="collapse" href="#collapse3" data-parent="#accordion"><img class="Pq_VCenter" style="float: left" alt="Sessions" src="image/session.png"/>Session Watch</a></h4>
+                    </div>
+                    <div id="collapse3" class="panel-collapse collapse">
+                        <ul class="nav">
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_SES_SES)" href="#">Sessions</a></li>                            
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_SES_SOURCE)" href="#">Sources</a></li>
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_SES_DEST)" href="#">Destinations</a></li>
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_SES_APP)" href="#">Applications</a></li>   
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_SES_SERV)" href="#">Services</a></li>  
+                        </ul>                        
+                    </div>               
+
+                    <div id="Status_Panel" class="panel-heading panel-clr_one">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" data-toggle="collapse" href="#collapse4" data-parent="#accordion"><img class="Pq_VCenter" style="float: left" alt="Status" src="image/traffic.png"/>Visualize</a></h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse">
+                        <ul class="nav">
+                            <li class="panel-sub"><a onclick="load_window(WINDOW_TRAFFIC)" href="#">Traffic</a></li>           
+                        </ul>                        
+                    </div>                    
+
+                    <div id="Rule_Panel" class="panel-heading panel-clr_one">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" onclick="Clear(); Init_WO_Param(1, 1, 1, 0)" data-toggle="collapse" href="#collapse5" data-parent="#accordion"><img class="Pq_VCenter" style="float: left" alt="Rules" src="image/protocols.png"/>Rules</a></h4>
+                    </div>
+
+                    <div id="collapse5" class="panel-collapse collapse" >
+                        <div class="panel-group" id="accordion_2" >
+                            <div class="panel" style = "border-radius: 0; border:none" >
+                                <div id="Rule_Addition_Panel" style="padding-left: 23px;"  class="panel-heading panel-sub ">
+                                    <h4 class="panel-title secondary-header_panel" style="font-size: 12px;"><a class="collapsed"  onclick="Clear();"  data-toggle="collapse" href="#collapse10" data-parent="#accordion_2">Rule Addition</a></h4>
+                                </div>     
+                                <div id="collapse10" class="panel-collapse panel-collapse-sub collapse">                              
+                                    <ul class="nav" >
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_RULE_DESTINATIONS)" href="#">Destinations</a></li>  
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_RULE_URL)" href="#">URLs</a></li>  
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_RULE_APPLICATIONS)" href="#">Applications</a></li>  
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_RULE_SERVICE)" href="#">Services</a></li>  
+                                    </ul>
+                                </div>                                     
+
+                                <div id="Objects_Panel" style="padding-left: 23px;" class="panel-heading panel-sub">
+                                    <h4 class="panel-title secondary-header_panel" style="font-size: 12px;"><a class="collapsed"  onclick="Clear();" data-toggle="collapse" href="#collapse8" data-parent="#accordion_2">Objects</a></h4>
+                                </div>
+                                <div id="collapse8" class="panel-collapse panel-collapse-sub collapse">                              
+                                    <ul class="nav" >
+                                        <li class="panel-sub "><a onclick="load_window(WINDOW_OBJ_SCHEDULE)" href="#"> 
+                                                <div style="margin-left: 0px; ">Schedules</div>
+                                            </a></li>  
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_OBJ_ADMIN_PIPES)" href="#"> 
+                                                <div style="margin-left: 0px; ">Admin Pipes</div>
+                                            </a></li>  
+                                        <li class="panel-sub"><a onclick="load_window(WINDOW_OBJ_USER_PIPES)" href="#"> 
+                                                <div style="margin-left: 0px; ">User Pipes</div>
+                                            </a></li>  
+                                    </ul>
+                                </div>
+                            </div>  
+                        </div> 
+                    </div>
+
+                    <div id="History_Panel" class="panel-heading panel-clr_one ">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" data-toggle="collapse" href="#collapse7" data-parent="#accordion"><img class="Pq_VCenter" style="float: left" alt="History" src="image/history.png"/>History</a></h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse">
+                        <ul class="nav">
+                            <li id="bw_hist_win" class="panel-sub"><a onclick="load_window(WINDOW_BW_HIST)" href="#">Bandwidth History</a></li>
+                        </ul>                        
+                    </div>      
+
+                    <div id="Settings_Panel" class="panel-heading panel-clr_one ">
+                        <h4 class="panel-title header_panel" style="font-size: 13px;"><a class="collapsed" data-toggle="collapse" href="#collapse11" data-parent="#accordion"><img class="Pq_VCenter" style="float: left;" alt="Settings" src="image/settings.png"/>Settings</a></h4>
+
+                    </div> 
+                    <div id="collapse11" class="panel-collapse collapse ">
+                        <ul class="nav">
+                            <li id="set_prof_win" class="panel-sub" style="display:none"><a onclick="load_window(WINDOW_PROFILE);" href="#">User Profiles</a></li>  
+                            <li id="set_mgmt_win" class="panel-sub" style="display:none"><a onclick="load_window(WINDOW_MANAGEMENT)" href="#">Management</a></li>   
+                            <li id="set_ha_win" class="panel-sub" style="display:none"><a onclick="load_window(WINDOW_HIGH_AVAILABILITY)" href="#">High Availability</a></li>  
+                            <li id="set_maint_win" class="panel-sub" style="display:none"><a onclick="load_window(WINDOW_MAINTENANCE)" href="#">Maintenance</a></li>   
+                            <li id="set_info_win" class="panel-sub" style="display:none"><a onclick="load_window(WINDOW_SYSTEM_UPDATES)" href="#">System Info</a></li>     
+                        </ul>                          
+                    </div>
+                    <div id="tooltip_dt"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--Main menu tab contents-->
+
+        <div id="Content" >            
+        </div>    
+
+        <div id="StatusModal" class="modal">
+            <div id="StatusModalContent" class="modal-content" style="width:370px; height:170px; margin: auto; border-radius: 17px; padding: 0px; background: whitesmoke">
+                <div id="StausText" class="StatusContentHolderHeader StatusContentHolderHeaderText "></div> 
+                <div id="userStatusModalImage" style="display: inline-block; float: left; margin: 12px;"></div> 
+                <div id="userStatusModalText" style="display: inline-block; width:280px; height:120px;"></div> 
+            </div>
+        </div> 
+
+        <div id="DisconnectModal" class="modal">
+            <div id="createDisconnectModalContent" class="modal-content" style="height: 200px;">
+                <label class="modalTitle" style=" margin-left: 28%"> System Status </label><br><br>
+                <label class="drop_down_label"> The System is Disconnected! Please Refresh to Continue </label>
+                <button id="discon_refresh" class="addUpdateRules" onClick="window.location.reload();" style="margin-top: 40px; width: 100px" >Refresh</button>                  
+            </div>
+        </div> 
+
+        <div id="RuleUserModal" class="modal">
+            <div id="RuleUserModalContent" class="modal-content" style="height: 220px; width: 350px;">
+                <span id="CloseRuleUserModal" class="close">×</span>
+                <label class="modalTitle" style="margin-left: 115px;"> Set User </label><br><br>
+                <input type="search" id="rule_user_search_input" placeholder="Search Users..">
+
+                <label class="drop_down_label"> User : </label>
+                <select id="rule_user_modal_dropdown" class="field_prop" style="width: 260px;">
+                </select> <br>
+                <button class="addUpdateRules" onClick="set_user_for_rules()" style="margin-top: 20px; width: 100px" >Change</button>                  
+            </div>
+        </div>         
+
+        <div id="LiveWatchDisconnectModal" class="modal" style="z-index: 1000">
+            <div id="createLiveWatchDisconnectModalContent" class="modal-content" style="height: 150px; width: 270px; padding: 0px; border: none">
+                <div class="StatusContentHolderHeader StatusContentHolderHeaderText" style="height:35px"><img style="margin-right: 10px;" src="image/info-icon.png"/>Live Watch Status</div> 
+                <label class="drop_down_label" style="margin-top: 20px; margin-left: 20px;"> Live Watch accessed by another User! </label>
+                <button class="addUpdateRules" onClick="$('#LiveWatchDisconnectModal').hide()" style="margin-top: 20px; width: 80px; background-color: #903d34;height: 30px; font-size: 14px;" >OK</button>                  
+            </div>
+        </div>  
+
+        <script>
+
+            $(document).ready(function () {
+
+                var clicked_main_menu_el = $('.panel-clr_one').click(function (e) {
+                    clicked_main_menu_el.css("background", "linear-gradient(to bottom, #151715 0%,#4b4b4c 10%,#0e0e0e 100%)");
+                    $(this).css("background", "#ffae00");
+                });
+
+                var clicked_sub_menu_el = $('.panel-sub').click(function (e) {
+                    clicked_main_menu_el.css("background", "linear-gradient(to bottom, #151715 0%,#4b4b4c 10%,#0e0e0e 100%)");
+                    clicked_sub_menu_el.css("background", "linear-gradient(to bottom, #151515 0%,#212121 10%,#0e0e0e 100%)");
+                    $(this).css("background", "#6f5e5e");
+                });
+
+                var secondsubmenucollapse = $('.panel-heading').click(function (e) {
+                    if ($("#collapse8").hasClass("in")) {
+                        $('#collapse8').collapse("hide");
+                    }
+                });
+
+                update_application_list();
+                get_user_id();
+                Update_Profile_Data(false, true);
+
+                load_window(WINDOW_LINK_SUMMARY);
+                $('#dash_dev_link').css({"background": "#6f5e5e"});
+
+                $("#rule_user_search_input").keyup(function (e) {
+                    search_dropdown_list(document.getElementById("rule_user_search_input"), document.getElementById("rule_user_modal_dropdown"), e.target.value);
+                });
+            });
+
+        </script>
+    </body>
+
+</html>

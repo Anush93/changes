@@ -1,0 +1,101 @@
+<div id="C_Usage" tabindex="1">
+    <div id="App_Overall_Usage" style="overflow: scroll; min-width: 1130px; min-height: 560px"> 
+        <!--        <div style="position: relative; font-size: 11px; width: 100%;height: 40px; background-color: #222222">
+                    <label class="drop_down_label_reporting" style="margin-left: 15px; color:#fff"> Reporting Mode : </label>    
+                    <input id="radio_r_quick" type="radio" name="report_mode" value="1" style="margin-left: 25px" checked><label class="timeSelectorText" for="radio_hourly">Quick Mode</label>     
+                    <input id="radio_r_custom" type="radio" name="report_mode" value="2" style="margin-left: 20px" ><label class="timeSelectorText" for="radio_daily" >Custom Mode</label>              
+                </div>-->
+
+        <div style="position: relative; font-size: 11px; width: 100%;height: 40px; background-color: #455267">
+            <div id="summary_opt_container" style="display:inline-block">
+
+                <label class="drop_down_label_reporting" style="margin-left: 15px; color:#fff"> Reporting Mode : </label>    
+                <input id="radio_r_quick" type="radio" name="report_mode" value="1" style="margin-left: 15px" checked><label class="timeSelectorText" for="radio_r_quick">Quick Mode</label>     
+                <input id="radio_r_custom" type="radio" name="report_mode" value="2" style="margin-left: 10px" ><label class="timeSelectorText" for="radio_r_custom" >Custom Mode</label> 
+
+                <label class="drop_down_label_reporting" style="margin-left: 25px; color:#fff"> User : </label>                            
+                <select id="userID" class="field_prop_reporting" disabled style="width: 175px; font-size: 10px; height: 20px;">
+                    <option value="99" disabled>All Users</option>
+                </select> 
+
+                <label class="drop_down_label_reporting" style="margin-left: 30px; color:#fff"> Application : </label>
+                <select id="appID" class="field_prop_reporting" style="font-size: 10px; height: 20px;">
+                    <option value="">~All Applications~</option>
+                </select>  
+
+                <label class="drop_down_label_reporting" style="margin-left: 28px; color:#fff" > Application Count : </label>
+                <select id="appCount" name="source" class="field_prop_reporting" style="width:50px; font-size: 10px; height: 20px;">
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="40">40</option>    
+                    <option value="50">50</option>
+                </select>                                  
+
+                <label class="drop_down_label_reporting" style="margin-left: 28px; color:#fff"> Link : </label>
+                <select id="linkType" name="source" class="field_prop_reporting" style="font-size: 10px; width: 68px; ; height: 20px;">
+                    <option value="1">Total</option>
+                    <option value="2">Uplink</option>
+                    <option value="3">Downlink</option>
+                </select>                                  
+            </div>             
+        </div>
+
+        <div id="quickReportBar"  style="position: relative; font-size: 11px; width: 100%;height: 40px; background-color: #455267; padding-top: 5px">
+            <input id="radio_q_this_hour" type="radio" name="quickDurationSelector" value="1" style="margin-left: 20px" data-container="body" data-toggle="tooltip" title="Data Usage of only this hour is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_this_hour" >This Hour</label>              
+            <input id="radio_q_hour" type="radio" name="quickDurationSelector" value="2" style="margin-left: 20px" data-container="body" data-toggle="tooltip" title="Data Usage of only the last completed hour is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_hour" >Last Hour</label>  
+            <input id="radio_q_this_day" type="radio" name="quickDurationSelector" value="3" style="margin-left: 20px" data-container="body" data-toggle="tooltip" checked title="Data Usage of only this day is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_this_day" >This Day</label>             
+            <input id="radio_q_day" type="radio" name="quickDurationSelector" value="4" style="margin-left: 20px" data-container="body" data-toggle="tooltip" title="Data Usage of only yesterday is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_day" >Yesterday</label>  
+            <input id="radio_q_this_month" type="radio" name="quickDurationSelector" value="5" style="margin-left: 20px" data-container="body" data-toggle="tooltip" title="Data Usage of only this month is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_this_month" >This Month</label>  
+            <input id="radio_q_month" type="radio" name="quickDurationSelector" value="6" style="margin-left: 15px" data-container="body" data-toggle="tooltip" title="Data Usage of only the last month is displayed" data-placement="bottom"><label class="timeSelectorText" for="radio_q_month">Last Month</label>          
+        </div>  
+
+        <div id="customReportBar"  hidden style="position: relative; font-size: 11px; width: 100%;height: 40px; background-color: #455267">
+
+            <input id="radio_hourly" type="radio" name="durationSelector" value="1" style="margin-left: 10px" data-container="body" data-toggle="tooltip" title="A time duration within two days in terms of hours can be selected" data-placement="bottom" checked><label class="timeSelectorText " for="radio_hourly">Hourly</label>     
+            <input id="radio_daily" type="radio" name="durationSelector" value="2" data-container="body" data-toggle="tooltip" title="A time duration within two months in terms of days can be selected" data-placement="bottom" ><label class="timeSelectorText" for="radio_daily" >Daily</label>      
+            <input id="radio_monthly" type="radio" name="durationSelector" value="3" data-container="body" data-toggle="tooltip" title="A time duration within two years in terms of months can be selected" data-placement="bottom"><label class="timeSelectorText" for="radio_monthly">Monthly</label>                    
+            <input id="radio_yearly" type="radio" name="durationSelector" value="4" data-container="body" data-toggle="tooltip" title="A time duration between years can be selected" data-placement="bottom"><label class="timeSelectorText" for="radio_yearly">Yearly</label>            
+            
+            <div id="summary_datetimepicker_container" style="display:inline-block">
+                <label style="margin-left: 92px; color:#fff" class='drop_down_label_reporting'> From : </label> 
+                <input type="text" id="startDateTime" placeholder="Start date and time" class="field_prop_reporting" style="font-size: 10px; color:black; width: 140px; text-indent: 5px; height: 20px;">      
+                <label class='drop_down_label_reporting' style="color:#fff; margin-left: 30px;"> To : </label>  
+                <input type="text" id="endDateTime" placeholder="End date and time" class="field_prop_reporting" style="font-size: 10px; color:black; width: 140px; text-indent: 5px; height: 20px;">                              
+            </div>
+
+            <!--<label style="float:right; margin-right: 50px; color:#fff; cursor:pointer; display:inline-block" class='drop_down_label_reporting'> Go </label>--> 
+            <!--<div class='pq_flow_apply' style="float:right; margin-right: 20px; cursor: pointer; display:inline-block; color:whitesmoke; font-weight: bold" onclick='CalcTimeDiff();'>Generate</div>--> 
+
+<!--            <button type="button" id="createProfile" onclick = "CreateProfile()" class="create">Create New</button>-->
+            <button  class='pq_flow_apply' style="float:right; margin-right: 70px; display:inline-block; color:whitesmoke; border: none; font-weight: bold; background-color:transparent; padding-right: 10px; padding-left: 30px" onclick='CalcTimeDiff();'>Generate</button>
+            
+            
+        </div>
+        <div class="Pq_TableHolder" id="usage_t_holder" style="width:97%; height: calc(100% - 100px); min-height: 510px">
+            <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Usage Report</div> 
+
+            <div id="ReportSummaryHolder" style="display:inline-block; margin: 15px; width: 50%; height: calc(97% - 40px)">
+                <div id="ReportSummaryHolderHeader" class=" BWPlotHolderHeaderText" style="font-size: 14px; border:none">Usage Summary</div> 
+                <div class=" ReportSummaryContainers ReportSummaryHeaderText" style="font-size: 12px; padding-top: 5px">Reporting Duration<br>
+                    <input id="dif" type="text" class="rep_field_prop" style="border:none; background: transparent; color:goldenrod; font-family: verdana; font-size: 12px; margin-top: 1%; width:470px; text-align: center;" disabled> 
+                </div>
+                <div class=" ReportSummaryContainers ReportSummaryHeaderText" style="font-size: 12px; padding-top: 5px">Total Data Usage<br>
+                    <input id="tot_data" type="text" class="rep_field_prop" style="border:none; background: transparent; color:goldenrod; font-family: verdana; font-size: 12px; margin-top: 1%; margin-right: 20px; width:340px; text-align: center" disabled > 
+                </div>                              
+                <div class=" ReportSummaryContainers ReportSummaryHeaderText" style="font-size: 12px; width: 48%; display:inline-block; margin-right: 1px; padding-top: 5px">Total Data Sent<br>
+                    <input id="up_data" type="text" class="rep_field_prop" style="border:none; background: transparent; color:goldenrod; font-family: verdana; font-size: 12px; margin-top: 1%; margin-right: 15px; width:160px; text-align: center" disabled > 
+                </div>                        
+                <div class=" ReportSummaryContainers ReportSummaryHeaderText" style="font-size: 12px; width: 48%; display:inline-block;  margin-left: 1px; padding-top: 5px">Total Data Received<br>
+                    <input id="dwn_data" type="text" class="rep_field_prop" style="border:none; background: transparent; color:goldenrod; font-family: verdana; font-size: 12px; margin-top: 1%; margin-right: 15px; width:160px; text-align: center" disabled > 
+                </div>
+                <div id="usageUDPlot" class=" ReportSummaryContainers ReportSummaryHeaderText" style="font-size: 12px; height: calc(70% - 120px); overflow-y: scroll; padding-top: 5px;">Application Usage<br><br>
+                </div>                            
+            </div>
+
+            <div id="summaryPlotContainer" class="Pq_TableHolder" style="width:45%; float:left; height: calc(97% - 45px); margin-left: 1%;">                
+
+            </div>                       
+        </div>    
+    </div>  
+</div> 

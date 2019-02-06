@@ -1,0 +1,54 @@
+<div id="C_Shadow_Session_Watch">
+    <div id="pq_lses_stat_bar" style="font-size: 11px; width: 100%;height: 40px; background-color: #005d00">
+        <button class='pq_url_wbtn' style="float:left; display:inline-block; width: 130px; height: 30px; font-size: 11px; margin-left: 5px; background: #00bcd4 url(../image/back_act.png) 5px no-repeat; text-indent: 25px;" onclick='pq_go_back_all_session_clicked()'>Back to Sessions</button>        
+        <img src="image/server_large.png" style="float: left; margin: 10px 5px 10px 20px; width: 20px; height: 20px;"/>
+        <a id ="pq_ls_sip_text" style="color: white; float: left; text-decoration: none;font-size: 11px" class="pq_bwevent_vcenter"> Client IP:  192.168.1.121</a>
+        <img src="image/port.png" style="float: left; margin: 10px 5px 10px 20px; width: 20px; height: 20px;"/>
+        <a id ="pq_ls_sport_text" style="color: white; float: left; text-decoration: none;font-size: 11px" class="pq_bwevent_vcenter"> Destination Port: 80</a>
+        <img src="image/client_large.png" style="float: left; margin: 10px 5px 10px 20px; width: 20px; height: 20px;"/>
+        <a id ="pq_ls_dip_text" style="color: white; float: left; text-decoration: none;font-size: 11px" class="pq_bwevent_vcenter"> Server IP:  192.168.1.121</a>
+        <img src="image/port.png" style="float: left; margin: 10px 5px 10px 20px; width: 20px; height: 20px;"/>
+        <a id ="pq_ls_dport_text" style="color: white; float: left; text-decoration: none;font-size: 11px" class="pq_bwevent_vcenter"> Source Port: 5134</a>
+        <img src="image/application_large.png" style="float: left; margin: 10px 5px 10px 20px; width: 20px; height: 20px;"/>
+        <a  id ="pq_ls_app_text" style="color: white; float: left; text-decoration: none;font-size: 11px" class="pq_bwevent_vcenter"> Application: Unknown</a>
+    </div>
+    <div style="width: 100%; height: 2px; background-color: lightblue"></div>
+
+    <div style="width: 100%; height: calc(100% - 45px); background: #fff; position: absolute;  "> 
+        <div class="Pq_TableHolder" style="height: calc(50% - 20px); width:calc(100% - 35px); display: inline-block;">
+            <div id='plot_live_session_downlink_header' class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Session Downlink Bandwidth (10 s Average)</div>  
+            <div style="width: 100%;height: 30px;background-color: #222">
+                <img src="image/down_ch.png" style="float: left; margin-right: 15px; margin-left: 10px" class="pq_bwevent_vcenter"/>
+
+                <a id="pq_ls_downlink_pkt" style="float: right; width: 220px; color: whitesmoke; text-decoration: none; font-size: 12px"  class="pq_bwevent_vcenter">Packets: 0 </a>
+                <div style="width: 20px;height: 20px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+                <a id="pq_ls_downlink_usage" style="float: right; width: 220px; color: whitesmoke; text-decoration: none; font-size: 12px"  class="pq_bwevent_vcenter">Data Received: 0 MB</a>
+                <div style="width: 20px;height: 20px;background-color: green; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+            </div>
+            <div style="width: 100%; height:calc(100% - 70px);">
+                <div id='plot_live_session_downlink' style="width: calc(100% - 35px); height:calc(50% - 90px);background-color: whitesmoke; position: absolute; z-index: 100"></div>
+           </div>
+        </div>
+
+        <div class="Pq_TableHolder" style="height: calc(50% - 20px); width:calc(100% - 35px); display: inline-block;">
+            <div id='plot_live_session_uplink_header' class="BWPlotHolderHeader BWPlotHolderHeaderText" style="height: 35px; font-size: 14px">Session Uplink Bandwidth (10 s Average)</div>  
+            <div style="width: 100%;height: 30px;background-color: #222">
+                <img src="image/up_ch.png" style="float: left; margin-right: 15px; margin-left: 10px" class="pq_bwevent_vcenter"/>
+                <a id="pq_ls_uplink_pkt" style="float: right; width: 220px;color: whitesmoke; text-decoration: none; font-size: 12px"  class="pq_bwevent_vcenter">Packets: 0 </a>
+                <div style="width: 20px;height: 20px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+                <a id="pq_ls_uplink_usage" style="float: right; width: 220px;color: whitesmoke; text-decoration: none; font-size: 12px" class="pq_bwevent_vcenter">Data Sent:    0 MB</a>
+                <div style="width: 20px;height: 20px;background-color: #a8334d; float: right; margin-right: 20px" class="pq_bwevent_vcenter">                    
+                </div>
+            </div>
+            <div style="width: 100%; height:calc(100% - 70px);">
+                <div id='plot_live_session_uplink' style="width: calc(100% - 35px); height:calc(50% - 90px);background-color: whitesmoke; position: absolute; z-index: 100"></div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+
+

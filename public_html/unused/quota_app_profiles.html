@@ -1,0 +1,84 @@
+<div id="Quota_App_Profiles"> 
+    <div id="Quota_App_Profiles_Holder" class="Pq_TableHolder" style="position:relative; height: calc(100% - 40px);">
+        <div class="BWPlotHolderHeader BWPlotHolderHeaderText">Quota Application Profiles</div> 
+        <div id="quota_app_profile_holder" style="width: 100%; padding: 20px">
+            <div class="edit_panel">
+                <button type="button" id="newQuotaAppProfCreate" onclick = "Create_Q(3)" class=" create">Create New</button> 
+                <button type="button" disabled id="newQuotaAppProfDelete" onclick = "Delete_Q(3)" class=" delete">Delete</button>  
+                <button type="button" id="addApp2List" class="pq_url_wbtn" style="float:right; width: 105px; height:30px; font-size: 12px; background: #208830" ><span>Application List</span></button>  
+            </div>   
+            <table id="Quota_App_Prof_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr> 
+                        <th>App Prof ID</th> 
+                        <th>Profile Name</th>                                    
+                        <th>Details</th>  
+                        <th>Occurrences</th>     
+                    </tr>
+                </thead>
+            </table>  
+        </div> 
+        <div id="object_new_quota_app_holder" class="Pq_TableHolder" style="width: calc(100% - 40px); height:55%; position:absolute; bottom:25px">
+            <div id="object_new_quota_application_holder" style="width: 100%; padding: 20px">    
+                <div class="edit_panel">     
+                    <button type="button" disabled id="editQuotaAppProfCreate" onclick = "New_Quota_App_Control(1)" class="create">Add Application</button>               
+                    <button type="button" disabled id="editQuotaAppProfEdit" onclick = "New_Quota_App_Control(2)" class="edit">Edit Application</button>  
+                    <button type="button" disabled id="editQuotaAppProfDel" onclick = "Delete_Q(4)" class="delete">Delete Application</button> 
+                </div>                            
+                <table id="Quota_App_Prof_List_Table" class="hover row-border order-column StatusTablesFont" cellspacing="0" width="100%"> 
+                    <thead>
+                        <tr> 
+                            <th>App ID</th> 
+                            <th>Application</th> 
+                            <th>Quota Profile</th> 
+                        </tr>
+                    </thead>
+                </table>  
+            </div>                 
+        </div>        
+    </div>   
+
+    <div id="CreateQuotaAppName" class="modal">
+        <div class="modal-content" style=" height: 200px;">
+            <span class="close">×</span>
+            <label class="modalTitle" style=" margin-left: 40px"> Add Quota Application Profile </label><br><br>
+            <label class="drop_down_label"> Name : </label>
+            <input id="addQuotaAppObjectName" required type="text" class="field_prop" style="width: 300px;" pattern="\w{1,24}"> <br><br>   
+            <br>
+            <button id="addQuotaAppCtrlNameToTable" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>  
+
+    <div id="CreateQuotaAppModal" class="modal">
+        <div id="CreateQuotaAppModalContent" class="modal-content" style="height: 220px">
+            <span class="close">×</span>
+            <label class="modalTitle" style="  margin-left: 70px"> Add Application Quota </label><br><br>            
+            <label class="drop_down_label"> Application : </label>
+            <input type="search" list="addAppQuotaID" class="field_prop">
+            <datalist id="addAppQuotaID" >
+            </datalist><br><br>  
+            <input id="addedQuotaApp" hidden type="text" class="field_prop">
+            <label class="drop_down_label"> Quota Profile: </label>
+            <select id="add_quota_app_profile" class="field_prop"> 
+            </select><br><br>
+            <button id="addQuotaAppCtrlToTable" class='addUpdateRules'>Add to System</button>  
+        </div>
+    </div>      
+
+    <div id="EditQuotaAppModal" class="modal">
+        <div  id="EditQuotaAppModalContent" class="modal-content" style="height: 220px">
+            <span class="close">×</span>
+            <label class="modalTitle" style="margin-left: 75px"> Edit Application Quota</label><br><br>                
+            <label class="drop_down_label"> Application : </label>
+            <input id="editQuotaAddedApp" type="text" class="field_prop"> <br><br>                  
+            <label class="drop_down_label"> Quota Profile : </label>
+            <select id="edit_quota_app_profile" class="field_prop"> 
+            </select><br><br>
+            <button id="editQuotaAppCtrlToTable" class='addUpdateRules'>Update</button>  
+        </div>
+    </div>  
+
+</div>
+     
+
+
